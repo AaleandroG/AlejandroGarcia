@@ -1,0 +1,1553 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Alejandro García — Ecosistema digital de herramientas, IA y recursos para creadores y empresas.">
+<meta name="theme-color" content="#0a0a0a">
+<title>Alejandro García — Ecosistema Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+/* ─── TOKENS ──────────────────────────────────────────────── */
+:root {
+  --bg:       #0a0a0a;
+  --bg2:      #111111;
+  --bg3:      #181818;
+  --bg4:      #202020;
+  --line:     rgba(255,255,255,0.07);
+  --line2:    rgba(255,255,255,0.12);
+  --text:     #f0ede8;
+  --muted:    rgba(240,237,232,0.45);
+  --faint:    rgba(240,237,232,0.18);
+  --accent:   #e8d5a3;
+  --accent2:  #c8a96e;
+  --green:    #4ade80;
+  --blue:     #60a5fa;
+  --purple:   #a78bfa;
+  --coral:    #fb7185;
+  --r:        8px;
+  --r2:       14px;
+  --r3:       20px;
+  --serif:    'Instrument Serif', Georgia, serif;
+  --sans:     'Geist', sans-serif;
+  --mono:     'Geist Mono', monospace;
+}
+
+/* ─── RESET ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: var(--sans); }
+
+/* ─── NOISE OVERLAY ───────────────────────────────────────── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
+}
+
+/* ─── SCROLLBAR ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 2px; }
+
+/* ─── LAYOUT ──────────────────────────────────────────────── */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.container--sm { max-width: 800px; margin: 0 auto; padding: 0 2rem; }
+
+/* ─── NAV ─────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(10,10,10,0.8);
+  backdrop-filter: blur(20px) saturate(150%);
+  border-bottom: 1px solid var(--line);
+  transition: all 0.3s;
+}
+nav.scrolled { padding: 0.9rem 2rem; }
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.nav-logo-mark {
+  width: 28px;
+  height: 28px;
+  background: var(--accent);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1rem;
+  color: #0a0a0a;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--r);
+  transition: all 0.2s;
+  letter-spacing: 0.01em;
+}
+.nav-links a:hover { color: var(--text); background: var(--bg3); }
+
+.nav-cta {
+  background: var(--accent);
+  color: #0a0a0a !important;
+  font-weight: 500 !important;
+  padding: 0.45rem 1rem !important;
+  border-radius: var(--r) !important;
+}
+.nav-cta:hover { background: var(--accent2) !important; }
+
+.nav-mobile-btn {
+  display: none;
+  background: none;
+  border: 1px solid var(--line2);
+  color: var(--text);
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--r);
+  font-size: 1rem;
+}
+
+/* ─── HERO ────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Radial glow background */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(ellipse at center, rgba(232,213,163,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Grid lines decoration */
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  background: var(--bg3);
+  border: 1px solid var(--line2);
+  border-radius: 999px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.6s ease both;
+}
+.hero-badge span {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 2s ease infinite;
+}
+@keyframes pulse {
+  0%,100% { opacity:1; transform:scale(1); }
+  50% { opacity:0.5; transform:scale(0.8); }
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  animation: fadeUp 0.6s 0.1s ease both;
+}
+.hero-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.hero-subtitle-line {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-family: var(--serif);
+  font-weight: 400;
+  color: var(--faint);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
+  animation: fadeUp 0.6s 0.2s ease both;
+}
+
+.hero-desc {
+  max-width: 560px;
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 auto 3rem;
+  animation: fadeUp 0.6s 0.3s ease both;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #0a0a0a;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--r);
+  border: none;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  letter-spacing: -0.01em;
+}
+.btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.9rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--r);
+  border: 1px solid var(--line2);
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn-ghost:hover { color: var(--text); border-color: var(--line2); background: var(--bg3); }
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 5rem;
+  animation: fadeUp 0.6s 0.5s ease both;
+}
+.hero-stat-divider {
+  width: 1px; height: 28px;
+  background: var(--line2);
+}
+.hero-stat-value {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.hero-stat-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-top: 0.1rem;
+}
+
+/* ─── MARQUEE ─────────────────────────────────────────────── */
+.marquee-section {
+  padding: 2rem 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+  position: relative;
+}
+.marquee-section::before,
+.marquee-section::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 100px;
+  z-index: 2;
+}
+.marquee-section::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+.marquee-section::after  { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+
+.marquee-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.82rem;
+  color: var(--faint);
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.marquee-item::before {
+  content: '';
+  width: 4px; height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+/* ─── SECTION BASE ────────────────────────────────────────── */
+section { padding: 6rem 0; }
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 20px; height: 1px;
+  background: var(--accent);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.section-title em { font-style: italic; color: var(--accent); }
+.section-desc {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 520px;
+}
+
+/* ─── TOOLS SECTION ───────────────────────────────────────── */
+.tools-section { background: var(--bg); }
+
+.tools-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.tools-filter {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  background: transparent;
+  border: 1px solid var(--line2);
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  font-family: var(--sans);
+  transition: all 0.2s;
+  letter-spacing: 0.02em;
+}
+.filter-btn:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+.filter-btn.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #0a0a0a;
+  font-weight: 500;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--r3);
+  overflow: hidden;
+}
+
+.tool-card {
+  background: var(--bg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: all 0.25s;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.tool-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba(232,213,163,0.04), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.tool-card:hover::before { opacity: 1; }
+.tool-card:hover { background: var(--bg2); }
+
+.tool-icon {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  border: 1px solid var(--line2);
+  background: var(--bg3);
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.tool-card:hover .tool-icon { border-color: var(--accent); }
+
+.tool-name {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.tool-desc {
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+  flex: 1;
+}
+.tool-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+}
+.tool-tag {
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid var(--line2);
+  color: var(--faint);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.tool-tag.new {
+  border-color: rgba(74,222,128,0.3);
+  color: var(--green);
+}
+.tool-tag.ai {
+  border-color: rgba(167,139,250,0.3);
+  color: var(--purple);
+}
+.tool-arrow {
+  font-size: 0.9rem;
+  color: var(--faint);
+  transition: all 0.2s;
+}
+.tool-card:hover .tool-arrow { color: var(--accent); transform: translate(2px, -2px); }
+
+/* ─── AI SECTION ──────────────────────────────────────────── */
+.ai-section {
+  background: var(--bg2);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.ai-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.ai-card {
+  background: var(--bg);
+  border: 1px solid var(--line2);
+  border-radius: var(--r2);
+  padding: 2rem;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+.ai-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.ai-card:hover::after { opacity: 0.5; }
+.ai-card:hover { border-color: rgba(232,213,163,0.2); transform: translateY(-2px); }
+
+.ai-card.featured {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  background: var(--bg3);
+}
+
+.ai-card-number {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--faint);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.06em;
+}
+.ai-card-title {
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+}
+.ai-card-desc {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Mini terminal widget */
+.ai-terminal {
+  background: var(--bg);
+  border: 1px solid var(--line2);
+  border-radius: var(--r);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  overflow: hidden;
+}
+.ai-terminal-bar {
+  background: var(--bg3);
+  padding: 0.6rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.ai-terminal-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+}
+.ai-terminal-content {
+  padding: 1rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.ai-terminal-content .cmd { color: var(--accent); }
+.ai-terminal-content .out { color: var(--green); }
+.ai-terminal-content .cursor {
+  display: inline-block;
+  width: 8px; height: 14px;
+  background: var(--accent);
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+@keyframes blink {
+  0%,100%{opacity:1;} 50%{opacity:0;}
+}
+
+/* ─── ABOUT SECTION ───────────────────────────────────────── */
+.about-section { background: var(--bg); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.about-visual {
+  position: relative;
+}
+.about-card-main {
+  background: var(--bg2);
+  border: 1px solid var(--line2);
+  border-radius: var(--r3);
+  padding: 2.5rem;
+  position: relative;
+}
+.about-avatar {
+  width: 72px; height: 72px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  border-radius: var(--r2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  color: #0a0a0a;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+.about-name {
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+}
+.about-role {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1.5rem;
+}
+.about-tag {
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid var(--line2);
+  color: var(--muted);
+}
+
+/* Floating cards -->
+.float-card {
+  position: absolute;
+  background: var(--bg3);
+  border: 1px solid var(--line2);
+  border-radius: var(--r);
+  padding: 0.75rem 1rem;
+  font-size: 0.8rem;
+  backdrop-filter: blur(10px);
+  animation: float 4s ease-in-out infinite;
+}
+.float-card-1 {
+  top: -24px; right: -20px;
+  animation-delay: 0s;
+}
+.float-card-2 {
+  bottom: -20px; left: -20px;
+  animation-delay: 2s;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.float-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.1rem;
+}
+.float-label {
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* About text -->
+.about-text .section-title { margin-bottom: 1.5rem; }
+.about-text p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 1.25rem;
+}
+.about-text p strong { color: var(--text); font-weight: 500; }
+
+.about-links {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.about-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--line2);
+  border-radius: var(--r);
+  transition: all 0.2s;
+}
+.about-link:hover { color: var(--text); border-color: var(--line2); background: var(--bg3); }
+
+/* ─── RESOURCES SECTION ───────────────────────────────────── */
+.resources-section {
+  background: var(--bg2);
+  border-top: 1px solid var(--line);
+}
+
+.resources-list {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--r2);
+  overflow: hidden;
+}
+.resource-item {
+  background: var(--bg2);
+  padding: 1.5rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.resource-item:hover { background: var(--bg3); }
+.resource-num {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--faint);
+  width: 24px;
+  flex-shrink: 0;
+  letter-spacing: 0.05em;
+}
+.resource-icon {
+  width: 36px; height: 36px;
+  border-radius: var(--r);
+  background: var(--bg4);
+  border: 1px solid var(--line2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+.resource-info { flex: 1; }
+.resource-title {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.2rem;
+}
+.resource-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.resource-badge {
+  font-size: 0.72rem;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  background: var(--bg4);
+  border: 1px solid var(--line2);
+  color: var(--muted);
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+}
+.resource-badge.free {
+  color: var(--green);
+  border-color: rgba(74,222,128,0.25);
+  background: rgba(74,222,128,0.06);
+}
+.resource-arrow {
+  color: var(--faint);
+  font-size: 1rem;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.resource-item:hover .resource-arrow { color: var(--accent); transform: translate(2px,-2px); }
+
+/* ─── NEWSLETTER ──────────────────────────────────────────── */
+.newsletter-section {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+}
+.newsletter-box {
+  background: var(--bg2);
+  border: 1px solid var(--line2);
+  border-radius: var(--r3);
+  padding: 4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.newsletter-box::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 400px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.4;
+}
+
+.newsletter-title {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+.newsletter-title em { font-style: italic; color: var(--accent); }
+.newsletter-desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  max-width: 400px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.7;
+}
+.newsletter-form {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 420px;
+  margin: 0 auto;
+}
+.newsletter-input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--line2);
+  border-radius: var(--r);
+  padding: 0.75rem 1rem;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s;
+}
+.newsletter-input::placeholder { color: var(--faint); }
+.newsletter-input:focus { border-color: rgba(232,213,163,0.4); }
+.newsletter-note {
+  font-size: 0.75rem;
+  color: var(--faint);
+  margin-top: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* ─── FOOTER ──────────────────────────────────────────────── */
+footer {
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  padding: 3rem 0 2rem;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 1rem;
+  max-width: 280px;
+}
+.footer-col-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--faint);
+  margin-bottom: 1.25rem;
+  font-weight: 500;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.footer-links a {
+  font-size: 0.85rem;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--text); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.78rem;
+  color: var(--faint);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.footer-social {
+  display: flex;
+  gap: 0.5rem;
+}
+.footer-social a {
+  width: 32px; height: 32px;
+  border: 1px solid var(--line2);
+  border-radius: var(--r);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: var(--muted);
+  transition: all 0.2s;
+}
+.footer-social a:hover { color: var(--text); border-color: var(--line2); background: var(--bg3); }
+
+/* ─── ANIMATIONS ──────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-mobile-btn { display: block; }
+  .ai-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+  .ai-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .hero-stats { gap: 1.5rem; }
+  .newsletter-form { flex-direction: column; }
+}
+@media (max-width: 600px) {
+  .container { padding: 0 1.25rem; }
+  .tools-header { flex-direction: column; align-items: flex-start; }
+  .footer-top { grid-template-columns: 1fr; }
+  .newsletter-box { padding: 2.5rem 1.5rem; }
+  .float-card-1, .float-card-2 { display: none; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ═══ NAV ════════════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="nav-logo">
+    <div class="nav-logo-mark">A</div>
+    <span>Alejandro García</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#herramientas">Herramientas</a></li>
+    <li><a href="#ia">IA</a></li>
+    <li><a href="#recursos">Recursos</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#newsletter" class="nav-cta">Acceder →</a></li>
+  </ul>
+  <button class="nav-mobile-btn" onclick="toggleMenu()" aria-label="Menú">☰</button>
+</nav>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════ -->
+<section class="hero" id="inicio">
+  <div class="hero-grid"></div>
+
+  <div class="hero-badge">
+    <span></span>
+    Ecosistema digital · En construcción
+  </div>
+
+  <h1 class="hero-title">Herramientas que<br><em>funcionan.</em></h1>
+  <p class="hero-subtitle-line">Tecnología que escala.</p>
+
+  <p class="hero-desc">
+    Un ecosistema de herramientas digitales, inteligencia artificial y recursos diseñados para creadores, empresas y personas que quieren hacer más con menos.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#herramientas" class="btn-primary">
+      Explorar herramientas
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <a href="#sobre-mi" class="btn-ghost">
+      Conocer el proyecto
+    </a>
+  </div>
+
+  <div class="hero-stats">
+    <div>
+      <div class="hero-stat-value">20+</div>
+      <div class="hero-stat-label">Herramientas</div>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div>
+      <div class="hero-stat-value">100%</div>
+      <div class="hero-stat-label">Gratuitas</div>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div>
+      <div class="hero-stat-value">IA</div>
+      <div class="hero-stat-label">Integrada</div>
+    </div>
+    <div class="hero-stat-divider"></div>
+    <div>
+      <div class="hero-stat-value">0</div>
+      <div class="hero-stat-label">Anuncios</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MARQUEE ═════════════════════════════════════════════ -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marqueeTrack">
+    <span class="marquee-item">Generador QR</span>
+    <span class="marquee-item">Conversor de unidades</span>
+    <span class="marquee-item">Herramientas IA</span>
+    <span class="marquee-item">Calculadoras</span>
+    <span class="marquee-item">Generador de paletas</span>
+    <span class="marquee-item">Hora mundial</span>
+    <span class="marquee-item">Resumen con IA</span>
+    <span class="marquee-item">Utilidades de texto</span>
+    <span class="marquee-item">Conversor de monedas</span>
+    <span class="marquee-item">Productividad</span>
+    <span class="marquee-item">Agentes IA</span>
+    <span class="marquee-item">APIs abiertas</span>
+    <!-- duplicate for infinite scroll -->
+    <span class="marquee-item">Generador QR</span>
+    <span class="marquee-item">Conversor de unidades</span>
+    <span class="marquee-item">Herramientas IA</span>
+    <span class="marquee-item">Calculadoras</span>
+    <span class="marquee-item">Generador de paletas</span>
+    <span class="marquee-item">Hora mundial</span>
+    <span class="marquee-item">Resumen con IA</span>
+    <span class="marquee-item">Utilidades de texto</span>
+    <span class="marquee-item">Conversor de monedas</span>
+    <span class="marquee-item">Productividad</span>
+    <span class="marquee-item">Agentes IA</span>
+    <span class="marquee-item">APIs abiertas</span>
+  </div>
+</div>
+
+<!-- ═══ TOOLS ═══════════════════════════════════════════════ -->
+<section class="tools-section" id="herramientas">
+  <div class="container">
+    <div class="tools-header reveal">
+      <div>
+        <div class="section-label">Herramientas</div>
+        <h2 class="section-title">Todo lo que<br>necesitas, <em>gratis.</em></h2>
+      </div>
+      <div class="tools-filter">
+        <button class="filter-btn active" data-filter="all">Todas</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="ia">IA</button>
+        <button class="filter-btn" data-filter="productividad">Productividad</button>
+      </div>
+    </div>
+
+    <div class="tools-grid" id="toolsGrid">
+
+      <div class="tool-card reveal" data-cat="web" tabindex="0" role="link" aria-label="Generador de códigos QR">
+        <div class="tool-icon">⬛</div>
+        <div class="tool-name">Generador QR</div>
+        <div class="tool-desc">Crea códigos QR personalizados para URLs, textos o contactos. Descarga en PNG o SVG.</div>
+        <div class="tool-meta">
+          <span class="tool-tag">Web</span>
+          <span class="tool-arrow">↗</span>
+        </div>
+      </div>
+
+      <div class="tool-card reveal" data-cat="web" tabindex="0">
+        <div class="tool-icon">🕐</div>
+        <div class="tool-name">Hora exacta mundial</div>
+        <div class="tool-desc">Consulta la hora en cualquier ciudad del mundo. Convierte zonas horarias al instante.</div>
+        <div class="tool-meta">
+          <span class="tool-tag">Web</span>
+          <span class="tool-arrow">↗</span>
+        </div>
+      </div>
+
+      <div class="tool-card reveal" data-cat="web" tabindex="0">
+        <div class="tool-icon">📐</div>
+        <div class="tool-name">Conversor de unidades</div>
+        <div class="tool-desc">Convierte entre miles de unidades: longitud, peso, temperatura, velocidad y mucho más.</div>
+        <div class="tool-meta">
+          <span class="tool-tag">Web</span>
+          <span class="tool-arrow">↗</span>
+        </div>
+      </div>
+
+      <div class="tool-card reveal" data-cat="ia" tabindex="0">
+        <div class="tool-icon">✨</div>
+        <div class="tool-name">Resumidor con IA</div>
+        <div class="tool-desc">Pega cualquier texto o URL y obtén un resumen inteligente en segundos.</div>
+        <div class="tool-meta">
+          <span class="tool-tag ai">IA</span>
+          <span class="tool-arrow">↗</span>
+        </div>
+      </div>
+
+      <div class="tool-card reveal" data-cat="web" tabindex="0">
+        <div class="tool-icon">🎨</div>
+        <div class="tool-name">Generador de paletas</div>
+        <div class="tool-desc">Crea paletas de color armoniosas para tus proyectos. Exporta en HEX, RGB o CSS.</div>
+        <div class="tool-meta">
+          <span class="tool-tag new">Nuevo</span>
+          <span class="tool-arrow">↗</span>
+        </div>
+      </div>
+
+      <div class="tool-card reveal" data-cat="productividad" tabindex="0">
+        <div class="tool-icon">📝</div>
+        <div class="tool-name">Utilidades de texto</div>
+        <div class="tool-desc">Mayúsculas, conteo de palabras, eliminación de duplicados, formato JSON y más.</div>
+        <div class="tool-meta">
+          <span class="tool-tag">Productividad</span>
+          <span class="tool-arrow">↗</span>
+        </div>
+      </div>
+
+      <div class="tool-card reveal" data-cat="ia" tabindex="0">
+        <div class="tool-icon">🤖</div>
+        <div class="tool-name">Generador de prompts</div>
+        <div class="tool-desc">Crea prompts optimizados para ChatGPT, Claude, Midjourney y otros modelos de IA.</div>
+        <div class="tool-meta">
+          <span class="tool-tag ai">IA</span>
+          <span class="tool-tag new">Nuevo</span>
+          <span class="tool-arrow">↗</span>
+        </div>
+      </div>
+
+      <div class="tool-card reveal" data-cat="web" tabindex="0">
+        <div class="tool-icon">💱</div>
+        <div class="tool-name">Conversor de monedas</div>
+        <div class="tool-desc">Tipos de cambio en tiempo real para más de 150 divisas internacionales.</div>
+        <div class="tool-meta">
+          <span class="tool-tag">Web</span>
+          <span class="tool-arrow">↗</span>
+        </div>
+      </div>
+
+      <div class="tool-card reveal" data-cat="productividad" tabindex="0">
+        <div class="tool-icon">🔐</div>
+        <div class="tool-name">Generador de contraseñas</div>
+        <div class="tool-desc">Contraseñas seguras y únicas. Configura longitud, caracteres y complejidad.</div>
+        <div class="tool-meta">
+          <span class="tool-tag">Productividad</span>
+          <span class="tool-arrow">↗</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="text-align:center; margin-top:2.5rem;" class="reveal">
+      <a href="#" class="btn-ghost">Ver todas las herramientas (20+) →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IA ═══════════════════════════════════════════════════ -->
+<section class="ai-section" id="ia">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Inteligencia Artificial</div>
+      <h2 class="section-title">IA que trabaja<br><em>para ti.</em></h2>
+      <p class="section-desc">Herramientas y agentes de IA diseñados para acelerar tu trabajo, no para complicarlo.</p>
+    </div>
+
+    <div class="ai-grid">
+
+      <div class="ai-card featured reveal">
+        <div>
+          <div class="ai-card-number">01 — Destacado</div>
+          <h3 class="ai-card-title">Asistente IA personal</h3>
+          <p class="ai-card-desc">Un asistente entrenado con el contexto del ecosistema Alejandro García. Responde preguntas, sugiere herramientas y te ayuda a encontrar exactamente lo que necesitas.</p>
+          <div style="margin-top:1.5rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a href="#" class="btn-primary" style="font-size:0.82rem; padding:0.55rem 1.25rem;">Probar ahora →</a>
+            <a href="#" class="btn-ghost" style="font-size:0.82rem; padding:0.55rem 1.1rem;">Saber más</a>
+          </div>
+        </div>
+        <div class="ai-terminal">
+          <div class="ai-terminal-bar">
+            <div class="ai-terminal-dot" style="background:#ff5f56"></div>
+            <div class="ai-terminal-dot" style="background:#ffbd2e"></div>
+            <div class="ai-terminal-dot" style="background:#27c93f"></div>
+            <span style="font-size:0.72rem; color:var(--faint); margin-left:auto;">asistente-ag · activo</span>
+          </div>
+          <div class="ai-terminal-content">
+            <div><span class="cmd">tú →</span> ¿Qué herramienta uso para convertir unidades?</div>
+            <div style="margin-top:0.5rem;"><span class="out">ag →</span> Te recomiendo el Conversor de unidades.</div>
+            <div style="opacity:0.6; font-size:0.75rem; margin-top:0.25rem;"> Cubre más de 50 categorías: longitud, peso,<br> temperatura, velocidad, datos...</div>
+            <div style="margin-top:0.75rem;"><span class="cmd">tú →</span> <span class="cursor"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-card reveal" tabindex="0">
+        <div class="ai-card-number">02</div>
+        <h3 class="ai-card-title">Automatizaciones</h3>
+        <p class="ai-card-desc">Conecta tus herramientas favoritas y automatiza flujos de trabajo repetitivos con agentes IA que aprenden de tus patrones.</p>
+      </div>
+
+      <div class="ai-card reveal" tabindex="0">
+        <div class="ai-card-number">03</div>
+        <h3 class="ai-card-title">API abierta</h3>
+        <p class="ai-card-desc">Integra las herramientas del ecosistema en tus propias aplicaciones. Documentación completa y SDKs disponibles próximamente.</p>
+      </div>
+
+      <div class="ai-card reveal" tabindex="0">
+        <div class="ai-card-number">04</div>
+        <h3 class="ai-card-title">Agentes para empresas</h3>
+        <p class="ai-card-desc">Soluciones de IA personalizadas para equipos y empresas. Desde chatbots hasta flujos de trabajo complejos con contexto propio.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ABOUT ═════════════════════════════════════════════════ -->
+<section class="about-section" id="sobre-mi">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-visual reveal">
+        <div class="about-card-main">
+          <div class="about-avatar">A</div>
+          <div class="about-name">Alejandro García</div>
+          <div class="about-role">Desarrollador · Creador digital · Estratega</div>
+          <div class="about-tags">
+            <span class="about-tag">Next.js</span>
+            <span class="about-tag">TypeScript</span>
+            <span class="about-tag">IA / LLMs</span>
+            <span class="about-tag">Producto</span>
+            <span class="about-tag">UX</span>
+          </div>
+          <div style="height:1px; background:var(--line); margin:1rem 0;"></div>
+          <div style="font-size:0.8rem; color:var(--muted); line-height:1.6;">
+            "Construyo herramientas que me gustaría tener. Si son útiles para mí, lo serán para más personas."
+          </div>
+        </div>
+        <div class="float-card float-card-1">
+          <div class="float-value">20+</div>
+          <div class="float-label">Herramientas activas</div>
+        </div>
+        <div class="float-card float-card-2">
+          <div style="display:flex;align-items:center;gap:0.5rem;">
+            <span style="width:8px;height:8px;border-radius:50%;background:var(--green);"></span>
+            <div class="float-label">Ecosistema activo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-text reveal">
+        <div class="section-label">Sobre el proyecto</div>
+        <h2 class="section-title">No es una web.<br>Es un <em>ecosistema.</em></h2>
+        <p>
+          Este proyecto nació de una idea simple: <strong>crear herramientas digitales que realmente funcionen</strong>, sin distracciones, sin anuncios y sin fricciones innecesarias.
+        </p>
+        <p>
+          Lo que empezó como un conjunto de utilidades web está creciendo hasta convertirse en una plataforma completa con <strong>herramientas de IA, automatizaciones, recursos y aplicaciones</strong> diseñadas para durar años.
+        </p>
+        <p>
+          Cada módulo está pensado para integrarse con los demás. Cada decisión técnica considera cómo afectará al conjunto dentro de 3 años. <strong>Escalabilidad sin deuda técnica.</strong>
+        </p>
+        <div class="about-links">
+          <a href="#" class="about-link">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2a5 5 0 100 10A5 5 0 007 2z" stroke="currentColor" stroke-width="1.3"/><path d="M5 7s.5 2 2 2 2-2 2-2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M5.5 5h.01M8.5 5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Blog
+          </a>
+          <a href="#" class="about-link">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4 1.5 1.5 4 1.5 7S4 12.5 7 12.5c1.5 0 2-.5 2-.5V9.5S7.5 10 6.5 9C5.5 8 5.5 6 6.5 5s2.5-.5 3 0V2.5S9.5 1.5 7 1.5z" stroke="currentColor" stroke-width="1.3"/></svg>
+            GitHub
+          </a>
+          <a href="#" class="about-link">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="10" height="10" rx="3" stroke="currentColor" stroke-width="1.3"/><circle cx="7" cy="7" r="2" stroke="currentColor" stroke-width="1.3"/><circle cx="10" cy="4" r="0.6" fill="currentColor"/></svg>
+            Instagram
+          </a>
+          <a href="#newsletter" class="about-link">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4l5 4 5-4M2 4h10v7H2V4z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg>
+            Newsletter
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RESOURCES ════════════════════════════════════════════ -->
+<section class="resources-section" id="recursos">
+  <div class="container">
+    <div class="reveal">
+      <div class="section-label">Recursos</div>
+      <h2 class="section-title">Aprende y<br><em>crece.</em></h2>
+      <p class="section-desc">Guías, plantillas y recursos gratuitos para creadores y equipos que quieren avanzar.</p>
+    </div>
+
+    <div class="resources-list reveal">
+
+      <div class="resource-item">
+        <span class="resource-num">01</span>
+        <div class="resource-icon">📘</div>
+        <div class="resource-info">
+          <div class="resource-title">Guía completa de prompts para IA</div>
+          <div class="resource-desc">Más de 100 prompts listos para usar con ChatGPT, Claude y otros modelos.</div>
+        </div>
+        <span class="resource-badge free">Gratis</span>
+        <span class="resource-arrow">↗</span>
+      </div>
+
+      <div class="resource-item">
+        <span class="resource-num">02</span>
+        <div class="resource-icon">🗂️</div>
+        <div class="resource-info">
+          <div class="resource-title">Kit de automatización para Notion</div>
+          <div class="resource-desc">Templates y bases de datos para organizar proyectos, tareas y aprendizaje.</div>
+        </div>
+        <span class="resource-badge free">Gratis</span>
+        <span class="resource-arrow">↗</span>
+      </div>
+
+      <div class="resource-item">
+        <span class="resource-num">03</span>
+        <div class="resource-icon">⚡</div>
+        <div class="resource-info">
+          <div class="resource-title">Stack tecnológico 2025</div>
+          <div class="resource-desc">Las herramientas que uso para construir productos digitales desde cero.</div>
+        </div>
+        <span class="resource-badge">Artículo</span>
+        <span class="resource-arrow">↗</span>
+      </div>
+
+      <div class="resource-item">
+        <span class="resource-num">04</span>
+        <div class="resource-icon">🧠</div>
+        <div class="resource-info">
+          <div class="resource-title">Arquitectura para ecosistemas digitales</div>
+          <div class="resource-desc">Cómo diseñar plataformas modulares que escalan durante años sin reescribir.</div>
+        </div>
+        <span class="resource-badge">Próximamente</span>
+        <span class="resource-arrow">↗</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEWSLETTER ════════════════════════════════════════════ -->
+<section class="newsletter-section" id="newsletter">
+  <div class="container--sm">
+    <div class="newsletter-box reveal">
+      <h2 class="newsletter-title">Nuevas herramientas<br>cada <em>semana.</em></h2>
+      <p class="newsletter-desc">Suscríbete y recibe las últimas herramientas, recursos y artículos del ecosistema directamente en tu bandeja de entrada.</p>
+      <form class="newsletter-form" onsubmit="handleSubscribe(event)">
+        <input
+          type="email"
+          class="newsletter-input"
+          placeholder="tu@email.com"
+          id="emailInput"
+          required
+          autocomplete="email"
+        >
+        <button type="submit" class="btn-primary">Suscribirse →</button>
+      </form>
+      <p class="newsletter-note" id="subscribeMsg">Sin spam. Cancela cuando quieras.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-mark">A</div>
+          <span>Alejandro García</span>
+        </div>
+        <p>Ecosistema digital de herramientas, IA y recursos para creadores y empresas que quieren hacer más con menos.</p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Herramientas</div>
+        <ul class="footer-links">
+          <li><a href="#">Generador QR</a></li>
+          <li><a href="#">Conversor de unidades</a></li>
+          <li><a href="#">Hora mundial</a></li>
+          <li><a href="#">Paletas de color</a></li>
+          <li><a href="#">Ver todas →</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Proyecto</div>
+        <ul class="footer-links">
+          <li><a href="#">Sobre mí</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Recursos</a></li>
+          <li><a href="#">Hoja de ruta</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <ul class="footer-links">
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Términos</a></li>
+          <li><a href="#">Cookies</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2025 Alejandro García · Hecho con precisión.</span>
+      <div class="footer-social">
+        <a href="#" aria-label="GitHub">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4 1.5 1.5 4 1.5 7c0 2.4 1.6 4.5 3.7 5.2.3 0 .4-.1.4-.3v-1c-1.5.3-1.8-.7-1.8-.7-.2-.6-.6-.8-.6-.8-.5-.3 0-.3 0-.3.5 0 .8.5.8.5.5.8 1.2.6 1.5.4 0-.3.2-.6.3-.7-1.2-.1-2.5-.6-2.5-2.7 0-.6.2-1.1.5-1.5-.1-.1-.2-.6 0-1.3 0 0 .4-.1 1.4.5.4-.1.8-.2 1.2-.2s.8.1 1.2.2c1-.6 1.4-.5 1.4-.5.3.7.1 1.2 0 1.3.3.4.5.9.5 1.5 0 2.1-1.3 2.6-2.5 2.7.2.2.4.5.4 1v1.5c0 .2.1.3.4.3C10.9 11.5 12.5 9.4 12.5 7c0-3-2.5-5.5-5.5-5.5z" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M12.5 2.5s-1 .6-1.7.7c-.7-.8-1.7-1.2-2.8-.9-1 .3-1.7 1.2-1.7 2.2v.5C4.4 5.2 2.8 4.3 1.8 3c-.6 1-.4 2.3.5 3-0.4 0-.8-.1-1.2-.4 0 1.3.9 2.4 2.2 2.7-.4.1-.8.1-1.2 0 .4 1.2 1.5 2 2.7 2C3.8 11 2.5 11.5 1 11.5c1.2.8 2.6 1 4 1 4.8 0 7.4-4 7.4-7.4V4.7c.5-.4 1-.9 1.1-1.5-.4.2-1 .4-1.5.4.5-.3.9-.8 1-1.4" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.5" y="1.5" width="11" height="11" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M4 6v4M4 4.5v.1M7 10V7.5c0-1 .5-1.5 1.5-1.5S10 6.5 10 7.5V10" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ SCRIPTS ════════════════════════════════════════════ -->
+<script>
+// Nav scroll
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 60);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Tool card mouse glow
+document.querySelectorAll('.tool-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+    card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+  });
+});
+
+// Filter
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.tool-card').forEach(card => {
+      const show = f === 'all' || card.dataset.cat === f;
+      card.style.display = show ? '' : 'none';
+    });
+  });
+});
+
+// Subscribe
+function handleSubscribe(e) {
+  e.preventDefault();
+  const msg = document.getElementById('subscribeMsg');
+  const input = document.getElementById('emailInput');
+  msg.style.color = '#4ade80';
+  msg.textContent = '✓ ¡Suscripción confirmada! Te llegará un email de bienvenida.';
+  input.value = '';
+  setTimeout(() => {
+    msg.style.color = '';
+    msg.textContent = 'Sin spam. Cancela cuando quieras.';
+  }, 4000);
+}
+
+// Mobile menu toggle (simple)
+function toggleMenu() {
+  const links = document.querySelector('.nav-links');
+  if (links.style.display === 'flex') {
+    links.style.display = '';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:70px;left:0;right:0;background:rgba(10,10,10,0.98);padding:2rem;gap:0.5rem;border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(20px);z-index:99;';
+  }
+}
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => {
+    const links = document.querySelector('.nav-links');
+    links.style.display = '';
+  });
+});
+</script>
+</body>
+</html>
