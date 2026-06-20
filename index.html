@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Automatizamos tareas repetitivas con inteligencia artificial para que tu empresa ahorre tiempo, reduzca costes y crezca más rápido. Diagnóstico gratuito.">
-<meta name="keywords" content="automatización empresas, agentes IA, chatbots IA, automatización procesos, consultoría inteligencia artificial">
+<meta name="description" content="Automatización de procesos, páginas web profesionales y herramientas a medida para negocios que quieren ahorrar tiempo y digitalizarse. Diagnóstico gratuito.">
+<meta name="keywords" content="automatización de procesos, diseño de páginas web, herramientas personalizadas, digitalización de negocios, consultoría tecnológica">
 <meta name="author" content="Alejandro García">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Alejandro García — IA y Automatización para Empresas">
-<meta property="og:description" content="Automatizamos tareas repetitivas para que tu empresa ahorre tiempo y crezca más rápido. Diagnóstico gratuito.">
+<meta property="og:title" content="Alejandro García — Automatización, Web y Herramientas a Medida">
+<meta property="og:description" content="Ayudamos a negocios a ahorrar tiempo automatizando procesos, con páginas web profesionales y herramientas hechas a medida.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://alejandrogarcia.dev">
 <link rel="canonical" href="https://alejandrogarcia.dev">
-<title>IA y Automatización para Empresas — Alejandro García</title>
+<title>Automatización, Web y Herramientas a Medida — Alejandro García</title>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Alejandro García","description":"Automatización de procesos y agentes de inteligencia artificial para empresas.","areaServed":"ES","serviceType":["Automatización empresarial","Chatbots IA","Captación de leads","Automatización comercial","Consultoría IA"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Alejandro García","description":"Automatización de procesos, diseño de páginas web y herramientas personalizadas para negocios.","areaServed":"ES","serviceType":["Automatización de procesos","Creación de páginas web","Sistemas y herramientas personalizadas","Optimización y digitalización","Consultoría tecnológica"]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,9 +70,6 @@ input,select,textarea{font-family:var(--sans);}
 .hero-title{font-size:clamp(2.3rem,5.4vw,4.3rem);font-weight:600;line-height:1.12;letter-spacing:-.03em;max-width:780px;margin-bottom:1.5rem;}
 .hero-title .ac{color:var(--indigo);}
 .hero-sub{max-width:540px;font-size:1.03rem;color:var(--muted);line-height:1.7;margin:0 auto 1rem;}
-.hero-meta{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.8rem;color:var(--faint);margin-bottom:2.25rem;flex-wrap:wrap;}
-.hero-meta b{color:var(--white);font-weight:500;}
-.hero-meta .sep{width:3px;height:3px;border-radius:50%;background:var(--faint);}
 .hero-ctas{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;justify-content:center;margin-bottom:3.5rem;}
 .btn-primary{background:var(--indigo);color:white;font-weight:600;font-size:.9rem;padding:.8rem 1.75rem;border-radius:var(--r);border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:.18s;}
 .btn-primary:hover{background:var(--indigo2);transform:translateY(-1px);}
@@ -110,7 +107,9 @@ input,select,textarea{font-family:var(--sans);}
 <style>
 /* SERVICES - each with CTA */
 .services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;}
-.service-card{background:var(--bg);padding:1.85rem;display:flex;flex-direction:column;gap:.9rem;transition:background .2s;}
+.service-card{background:var(--bg);padding:1.85rem;display:flex;flex-direction:column;gap:.9rem;transition:background .2s;position:relative;overflow:hidden;}
+.service-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),var(--indigo3),transparent 60%);opacity:0;transition:opacity .35s;pointer-events:none;}
+.service-card:hover::before{opacity:1;}
 .service-card:hover{background:var(--bg2);}
 .service-icon{width:42px;height:42px;border-radius:var(--r2);background:var(--bg3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
 .service-name{font-size:1rem;font-weight:600;letter-spacing:-.015em;}
@@ -195,7 +194,58 @@ input,select,textarea{font-family:var(--sans);}
 .about-role{font-size:.78rem;color:var(--muted);margin-bottom:1.2rem;}
 .about-quote{font-size:.8rem;color:var(--muted);line-height:1.6;font-style:italic;padding-top:.9rem;border-top:1px solid var(--line);}
 
-footer{border-top:1px solid var(--line);padding:2.75rem 0 2rem;background:var(--bg);}
+/* ECOSISTEMA — sección premium, minimalista, no distrae de la agencia */
+#ecosistema{position:relative;overflow:hidden;}
+#ecosistema::before{
+  content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);
+  width:1000px;height:500px;
+  background:radial-gradient(ellipse at center,rgba(91,95,239,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.eco-grid-bg{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 65% 65% at 50% 0%,black 0%,transparent 100%);
+  opacity:.5;
+}
+.eco-header{text-align:center;max-width:600px;margin:0 auto 3rem;position:relative;}
+.eco-header .eyebrow{justify-content:center;}
+.eco-header .sec-title{margin-bottom:.85rem;}
+
+.eco-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.1rem;position:relative;}
+.eco-card{
+  background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r3);
+  padding:1.75rem;display:flex;flex-direction:column;gap:.9rem;
+  position:relative;overflow:hidden;transition:border-color .25s,transform .25s;
+}
+.eco-card::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at 50% 0%,rgba(91,95,239,.07),transparent 65%);
+  opacity:0;transition:opacity .3s;
+}
+.eco-card:hover{border-color:rgba(91,95,239,.28);transform:translateY(-3px);}
+.eco-card:hover::before{opacity:1;}
+.eco-card.eco-featured{border-color:rgba(91,95,239,.3);background:linear-gradient(160deg,var(--bg3),var(--bg2));}
+
+.eco-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;position:relative;}
+.eco-icon{width:44px;height:44px;border-radius:var(--r2);background:var(--bg3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.eco-status{
+  font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
+  padding:.22rem .6rem;border-radius:999px;border:1px solid var(--line2);color:var(--faint);
+  display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap;
+}
+.eco-status .dot{width:5px;height:5px;border-radius:50%;background:var(--faint);}
+.eco-status.eco-soon{color:var(--amber);border-color:rgba(245,158,11,.3);}
+.eco-status.eco-soon .dot{background:var(--amber);animation:ecoblink 2s ease infinite;}
+@keyframes ecoblink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.eco-name{font-size:1rem;font-weight:600;letter-spacing:-.015em;position:relative;}
+.eco-desc{font-size:.82rem;color:var(--muted);line-height:1.6;flex:1;position:relative;}
+.eco-tags{display:flex;flex-wrap:wrap;gap:.35rem;position:relative;}
+.eco-tag{font-size:.68rem;padding:.18rem .55rem;border-radius:999px;border:1px solid var(--line2);color:var(--faint);}
+
+.eco-note{text-align:center;font-size:.78rem;color:var(--faint);max-width:480px;margin:2.25rem auto 0;line-height:1.7;position:relative;}
 .footer-g{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;margin-bottom:2.25rem;}
 .footer-brand p{font-size:.79rem;color:var(--muted);line-height:1.7;margin-top:.85rem;max-width:260px;}
 .footer-h{font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:1rem;}
@@ -216,6 +266,7 @@ footer{border-top:1px solid var(--line);padding:2.75rem 0 2rem;background:var(--
   .footer-g{grid-template-columns:1fr;}
   #floatCta span{display:none;}
   #floatCta{padding:.8rem;border-radius:50%;}
+  .eco-card.eco-featured{grid-column:auto;}
 }
 </style>
 </head>
@@ -227,6 +278,7 @@ footer{border-top:1px solid var(--line);padding:2.75rem 0 2rem;background:var(--
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#casos">Casos de uso</a></li>
       <li><a href="#herramientas">Herramientas</a></li>
+      <li><a href="#ecosistema">Ecosistema</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <div class="nav-right">
@@ -243,9 +295,9 @@ footer{border-top:1px solid var(--line);padding:2.75rem 0 2rem;background:var(--
 
   <div class="hero-badge"><div class="d"></div>Plazas limitadas de diagnóstico este mes</div>
 
-  <h1 class="hero-title">Automatizamos tareas repetitivas<br>para que tu negocio <span class="ac">ahorre tiempo</span><br>y crezca más rápido.</h1>
+  <h1 class="hero-title">Automatizamos procesos, creamos páginas web<br>y construimos <span class="ac">herramientas a medida</span><br>para tu negocio.</h1>
 
-  <p class="hero-sub">Implementamos sistemas de IA y automatización a medida: atención al cliente, captación de leads y procesos internos que hoy hace tu equipo a mano.</p>
+  <p class="hero-sub">Ayudamos a negocios a ahorrar tiempo, digitalizar procesos manuales y tener una presencia online profesional. Sin paquetes genéricos: cada proyecto se adapta a lo que tu negocio necesita.</p>
 
   <div class="hero-ctas">
     <a href="#contacto" class="btn-primary">Solicitar diagnóstico gratuito <span aria-hidden="true">→</span></a>
@@ -270,10 +322,10 @@ footer{border-top:1px solid var(--line);padding:2.75rem 0 2rem;background:var(--
       <g>
         <rect x="350" y="50" width="220" height="100" rx="12" fill="#1c1f23" stroke="#5b5fef" stroke-width="1.5"/>
         <circle cx="370" cy="70" r="4" fill="#5b5fef"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
-        <text x="384" y="74" fill="#5b5fef" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1">AUTOMATIZACIÓN</text>
-        <text x="370" y="100" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="600">Agentes IA +</text>
-        <text x="370" y="120" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="600">integraciones</text>
-        <text x="370" y="139" fill="rgba(237,239,242,0.45)" font-family="Geist Mono, monospace" font-size="10">24/7 · sin errores</text>
+        <text x="384" y="74" fill="#5b5fef" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1">SOLUCIÓN A MEDIDA</text>
+        <text x="370" y="100" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="600">Automatización,</text>
+        <text x="370" y="120" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="600">web o herramienta</text>
+        <text x="370" y="139" fill="rgba(237,239,242,0.45)" font-family="Geist Mono, monospace" font-size="10">según lo que necesites</text>
       </g>
       <line x1="570" y1="100" x2="665" y2="100" stroke="rgba(237,239,242,0.3)" stroke-width="1.5" marker-end="url(#arrow)"/>
       <g>
@@ -289,14 +341,14 @@ footer{border-top:1px solid var(--line);padding:2.75rem 0 2rem;background:var(--
 
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span class="mq-item">Automatización de procesos</span><span class="mq-item">Chatbots IA</span>
-    <span class="mq-item">Captación de leads</span><span class="mq-item">Automatización comercial</span>
-    <span class="mq-item">Consultoría IA</span><span class="mq-item">Atención al cliente 24/7</span>
-    <span class="mq-item">Integraciones CRM</span><span class="mq-item">Gestión documental</span>
-    <span class="mq-item">Automatización de procesos</span><span class="mq-item">Chatbots IA</span>
-    <span class="mq-item">Captación de leads</span><span class="mq-item">Automatización comercial</span>
-    <span class="mq-item">Consultoría IA</span><span class="mq-item">Atención al cliente 24/7</span>
-    <span class="mq-item">Integraciones CRM</span><span class="mq-item">Gestión documental</span>
+    <span class="mq-item">Automatización de procesos</span><span class="mq-item">Páginas web profesionales</span>
+    <span class="mq-item">Herramientas a medida</span><span class="mq-item">Digitalización de negocios</span>
+    <span class="mq-item">Consultoría tecnológica</span><span class="mq-item">Paneles internos</span>
+    <span class="mq-item">Formularios avanzados</span><span class="mq-item">Optimización de procesos</span>
+    <span class="mq-item">Automatización de procesos</span><span class="mq-item">Páginas web profesionales</span>
+    <span class="mq-item">Herramientas a medida</span><span class="mq-item">Digitalización de negocios</span>
+    <span class="mq-item">Consultoría tecnológica</span><span class="mq-item">Paneles internos</span>
+    <span class="mq-item">Formularios avanzados</span><span class="mq-item">Optimización de procesos</span>
   </div>
 </div>
 <!-- SERVICIOS — cada uno con CTA propio -->
@@ -304,7 +356,7 @@ footer{border-top:1px solid var(--line);padding:2.75rem 0 2rem;background:var(--
   <div class="w">
     <div class="reveal">
       <div class="eyebrow">Servicios</div>
-      <h2 id="serv-h2" class="sec-title">Cinco formas de que tu negocio<br>deje de perder <span class="ac">tiempo y clientes.</span></h2>
+      <h2 id="serv-h2" class="sec-title">Cinco formas de que tu negocio<br>ahorre <span class="ac">tiempo y gane en imagen.</span></h2>
       <p class="sec-body">Cada servicio resuelve un problema operativo concreto. Empezamos por el que más impacto tenga en tu caso.</p>
     </div>
 
@@ -312,63 +364,66 @@ footer{border-top:1px solid var(--line);padding:2.75rem 0 2rem;background:var(--
 
       <div class="service-card">
         <div class="service-icon">⚙️</div>
-        <div class="service-name">Automatización empresarial</div>
-        <div class="service-desc">Eliminamos el trabajo manual repetitivo de tu día a día.</div>
+        <div class="service-name">Automatización de procesos</div>
+        <div class="service-desc">Eliminamos las tareas repetitivas que te quitan horas cada semana.</div>
         <div class="service-list">
-          <span>Procesos internos</span>
-          <span>Administración</span>
-          <span>Gestión documental</span>
-          <span>Seguimiento de clientes</span>
-        </div>
-        <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">💬</div>
-        <div class="service-name">Chatbots IA</div>
-        <div class="service-desc">Responden y atienden a tus clientes aunque tú no estés.</div>
-        <div class="service-list">
-          <span>Sitio web</span>
-          <span>WhatsApp</span>
-          <span>Atención al cliente</span>
-          <span>Soporte de primer nivel</span>
-        </div>
-        <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🎯</div>
-        <div class="service-name">Captación de leads</div>
-        <div class="service-desc">Capturamos y cualificamos clientes potenciales sin que se te escape ninguno.</div>
-        <div class="service-list">
-          <span>Formularios inteligentes</span>
-          <span>Seguimiento automático</span>
-          <span>Cualificación de clientes</span>
-        </div>
-        <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">📤</div>
-        <div class="service-name">Automatización comercial</div>
-        <div class="service-desc">Tu CRM y tus comunicaciones funcionando sin que nadie las toque.</div>
-        <div class="service-list">
+          <span>Gestión de datos</span>
+          <span>Formularios</span>
           <span>Correos automáticos</span>
-          <span>Integración con CRM</span>
-          <span>Seguimiento de oportunidades</span>
-          <span>Recordatorios</span>
+          <span>Seguimiento de clientes</span>
+          <span>Flujos internos</span>
+        </div>
+        <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🌐</div>
+        <div class="service-name">Creación de páginas web</div>
+        <div class="service-desc">Páginas web modernas, rápidas y pensadas para convertir visitas en clientes.</div>
+        <div class="service-list">
+          <span>Diseño profesional</span>
+          <span>Velocidad de carga</span>
+          <span>Adaptación móvil</span>
+          <span>SEO básico</span>
+          <span>Enfoque en conversión</span>
+        </div>
+        <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧩</div>
+        <div class="service-name">Sistemas y herramientas personalizadas</div>
+        <div class="service-desc">Si no existe una herramienta para lo que necesitas, la construimos.</div>
+        <div class="service-list">
+          <span>Paneles internos</span>
+          <span>Calculadoras</span>
+          <span>Formularios avanzados</span>
+          <span>Herramientas empresariales</span>
+          <span>Automatizaciones a medida</span>
+        </div>
+        <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <div class="service-name">Optimización y digitalización</div>
+        <div class="service-desc">Sustituimos procesos manuales por sistemas más eficientes y con menos errores.</div>
+        <div class="service-list">
+          <span>Ahorro de tiempo</span>
+          <span>Reducción de errores</span>
+          <span>Mejora de productividad</span>
         </div>
         <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
       </div>
 
       <div class="service-card">
         <div class="service-icon">🧭</div>
-        <div class="service-name">Consultoría IA</div>
-        <div class="service-desc">Si no sabes por dónde empezar, lo definimos juntos antes de construir nada.</div>
+        <div class="service-name">Consultoría tecnológica</div>
+        <div class="service-desc">Si no sabes por dónde empezar, analizamos tus procesos antes de construir nada.</div>
         <div class="service-list">
-          <span>Auditoría de procesos</span>
-          <span>Estrategia de implementación</span>
-          <span>Acompañamiento</span>
+          <span>Análisis de procesos actuales</span>
+          <span>Propuestas de mejora</span>
+          <span>Acompañamiento en la implementación</span>
         </div>
         <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
       </div>
@@ -568,11 +623,69 @@ footer{border-top:1px solid var(--line);padding:2.75rem 0 2rem;background:var(--
         <div class="about-card">
           <div class="about-av">AG</div>
           <div class="about-name">Alejandro García</div>
-          <div class="about-role">IA y automatización para empresas</div>
+          <div class="about-role">Automatización, web y herramientas a medida</div>
           <div class="about-quote">"El mejor sistema de IA es el que el cliente deja de notar porque simplemente funciona."</div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ECOSISTEMA — visión a largo plazo, sin distraer de la agencia -->
+<section id="ecosistema" class="sec sec-alt sec-bt sec-bb">
+  <div class="eco-grid-bg" aria-hidden="true"></div>
+  <div class="w">
+    <div class="eco-header reveal">
+      <div class="eyebrow">El proyecto a largo plazo</div>
+      <h2 class="sec-title">Ecosistema <span class="ac">Alejandro García.</span></h2>
+      <p class="sec-body" style="margin:0 auto;">La agencia es la actividad principal hoy. Pero es el primer proyecto de algo más grande: distintas líneas de negocio bajo la misma marca, construidas con el tiempo.</p>
+    </div>
+
+    <div class="eco-grid reveal">
+
+      <div class="eco-card eco-featured">
+        <div class="eco-top">
+          <div class="eco-icon">🧠</div>
+          <span class="eco-status"><span class="dot"></span>Activo hoy</span>
+        </div>
+        <div class="eco-name">Agencia de automatización y desarrollo</div>
+        <div class="eco-desc">El núcleo del ecosistema. Automatización de procesos, páginas web y herramientas a medida para negocios reales.</div>
+        <div class="eco-tags"><span class="eco-tag">Automatización</span><span class="eco-tag">Desarrollo web</span><span class="eco-tag">Consultoría</span></div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-top">
+          <div class="eco-icon">👕</div>
+          <span class="eco-status eco-soon"><span class="dot"></span>En desarrollo</span>
+        </div>
+        <div class="eco-name">Proveedores & Reventa</div>
+        <div class="eco-desc">Una futura plataforma centrada en proveedores, moda, camisetas de fútbol y negocios online de reventa.</div>
+        <div class="eco-tags"><span class="eco-tag">Moda</span><span class="eco-tag">Proveedores</span><span class="eco-tag">E-commerce</span></div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-top">
+          <div class="eco-icon">📊</div>
+          <span class="eco-status"><span class="dot"></span>Próximamente</span>
+        </div>
+        <div class="eco-name">Análisis de datos</div>
+        <div class="eco-desc">Herramientas y paneles para convertir datos en decisiones, pensados para pequeños negocios.</div>
+        <div class="eco-tags"><span class="eco-tag">Datos</span><span class="eco-tag">Paneles</span></div>
+      </div>
+
+      <div class="eco-card">
+        <div class="eco-top">
+          <div class="eco-icon">⚡</div>
+          <span class="eco-status"><span class="dot"></span>Próximamente</span>
+        </div>
+        <div class="eco-name">Nuevos experimentos digitales</div>
+        <div class="eco-desc">Espacio reservado para ideas en validación: nuevas herramientas, productos digitales y proyectos propios.</div>
+        <div class="eco-tags"><span class="eco-tag">Experimental</span></div>
+      </div>
+
+    </div>
+
+    <p class="eco-note reveal">Estas líneas de negocio están en fase de desarrollo o validación. No representan servicios disponibles todavía. Se irán activando a medida que estén listas.</p>
   </div>
 </section>
 
@@ -582,15 +695,15 @@ footer{border-top:1px solid var(--line);padding:2.75rem 0 2rem;background:var(--
     <div class="footer-g">
       <div class="footer-brand">
         <a class="logo" href="#hero"><div class="logo-mark">AG</div><span>Alejandro García</span></a>
-        <p>Automatización e inteligencia artificial para empresas que quieren ahorrar tiempo y crecer más rápido.</p>
+        <p>Automatización, páginas web y herramientas a medida para negocios que quieren ahorrar tiempo y crecer.</p>
       </div>
       <div>
         <div class="footer-h">Servicios</div>
         <ul class="footer-links">
-          <li><a href="#servicios">Automatización</a></li>
-          <li><a href="#servicios">Chatbots IA</a></li>
-          <li><a href="#servicios">Captación de leads</a></li>
-          <li><a href="#servicios">Consultoría IA</a></li>
+          <li><a href="#servicios">Automatización de procesos</a></li>
+          <li><a href="#servicios">Páginas web</a></li>
+          <li><a href="#servicios">Herramientas a medida</a></li>
+          <li><a href="#servicios">Consultoría tecnológica</a></li>
         </ul>
       </div>
       <div>
@@ -631,6 +744,15 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*55);obs.unobserve(e.target);}});
 },{threshold:.08,rootMargin:'0px 0px -35px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* Cursor glow micro-interaction on service cards */
+document.querySelectorAll('.service-card').forEach(card=>{
+  card.addEventListener('mousemove',e=>{
+    const r=card.getBoundingClientRect();
+    card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+    card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+  });
+});
 
 /* CALCULATORS */
 function calcAuto(){
