@@ -3,1448 +3,688 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Alejandro García — Ecosistema digital de tecnología, inteligencia artificial y herramientas diseñadas para resolver problemas reales.">
-<meta name="theme-color" content="#0a0a0a">
-<title>Alejandro García — Ecosistema Digital</title>
+<meta name="description" content="Automatizamos tareas repetitivas con inteligencia artificial para que tu empresa ahorre tiempo, reduzca costes y crezca más rápido. Diagnóstico gratuito.">
+<meta name="keywords" content="automatización empresas, agentes IA, chatbots IA, automatización procesos, consultoría inteligencia artificial">
+<meta name="author" content="Alejandro García">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Alejandro García — IA y Automatización para Empresas">
+<meta property="og:description" content="Automatizamos tareas repetitivas para que tu empresa ahorre tiempo y crezca más rápido. Diagnóstico gratuito.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alejandrogarcia.dev">
+<link rel="canonical" href="https://alejandrogarcia.dev">
+<title>IA y Automatización para Empresas — Alejandro García</title>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Alejandro García","description":"Automatización de procesos y agentes de inteligencia artificial para empresas.","areaServed":"ES","serviceType":["Automatización empresarial","Chatbots IA","Captación de leads","Automatización comercial","Consultoría IA"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-/* ─── TOKENS ──────────────────────────────────────────────── */
-:root {
-  --bg:      #0a0a0a;
-  --bg2:     #111111;
-  --bg3:     #181818;
-  --bg4:     #202020;
-  --line:    rgba(255,255,255,0.07);
-  --line2:   rgba(255,255,255,0.12);
-  --text:    #f0ede8;
-  --muted:   rgba(240,237,232,0.45);
-  --faint:   rgba(240,237,232,0.18);
-  --accent:  #e8d5a3;
-  --accent2: #c8a96e;
-  --green:   #4ade80;
-  --blue:    #60a5fa;
-  --purple:  #a78bfa;
-  --r:       8px;
-  --r2:      14px;
-  --r3:      20px;
-  --serif:   'Instrument Serif', Georgia, serif;
-  --sans:    'Geist', sans-serif;
-  --mono:    'Geist Mono', monospace;
+:root{
+  --bg:#0b0d0f; --bg2:#111417; --bg3:#1c1f23; --bg4:#26292e; --bg5:#33363b;
+  --line:rgba(237,239,242,.07); --line2:rgba(237,239,242,.12); --line3:rgba(237,239,242,.2);
+  --white:#edeff2; --muted:rgba(237,239,242,.48); --faint:rgba(237,239,242,.2);
+  --indigo:#5b5fef; --indigo2:#4548c9; --indigo3:rgba(91,95,239,.12);
+  --green:#10b981; --red:#ef4444; --amber:#f59e0b;
+  --r:7px; --r2:12px; --r3:18px; --r4:24px;
+  --sans:'Geist',system-ui,sans-serif; --mono:'Geist Mono',monospace;
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--bg);color:var(--white);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+button{cursor:pointer;font-family:var(--sans);}
+input,select,textarea{font-family:var(--sans);}
+::-webkit-scrollbar{width:3px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--bg5);border-radius:2px;}
+::selection{background:rgba(91,95,239,.3);}
+:focus-visible{outline:2px solid rgba(91,95,239,.6);outline-offset:2px;}
 
-/* ─── RESET ─────────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body {
-  font-family: var(--sans);
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-a { color: inherit; text-decoration: none; }
-img { display: block; max-width: 100%; }
-button { cursor: pointer; font-family: var(--sans); }
+.w{max-width:1180px;margin:0 auto;padding:0 1.75rem;}
+.w-sm{max-width:740px;margin:0 auto;padding:0 1.75rem;}
+.w-md{max-width:980px;margin:0 auto;padding:0 1.75rem;}
 
-/* ─── GRAIN ─────────────────────────────────────────────── */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.4;
-}
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:300;height:60px;display:flex;align-items:center;background:rgba(11,13,15,.82);backdrop-filter:blur(20px) saturate(150%);border-bottom:1px solid var(--line);transition:.3s;}
+#nav.sc{background:rgba(11,13,15,.97);border-color:var(--line2);}
+.nav-w{width:100%;max-width:1180px;margin:0 auto;padding:0 1.75rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.logo{display:flex;align-items:center;gap:.55rem;font-size:.92rem;font-weight:600;letter-spacing:-.01em;white-space:nowrap;}
+.logo-mark{width:27px;height:27px;background:var(--indigo);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:white;font-weight:700;}
+.nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+.nav-links a{font-size:.82rem;color:var(--muted);padding:.4rem .75rem;border-radius:var(--r);transition:.18s;}
+.nav-links a:hover{color:var(--white);background:var(--bg3);}
+.nav-right{display:flex;align-items:center;gap:.6rem;flex-shrink:0;}
+.btn-nav{font-size:.8rem;font-weight:600;padding:.42rem 1rem;border-radius:var(--r);border:none;cursor:pointer;transition:.18s;white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem;}
+.btn-nav.fill{background:var(--indigo);color:white;}
+.btn-nav.fill:hover{background:var(--indigo2);}
+.hamburger{display:none;background:none;border:1px solid var(--line2);color:var(--white);padding:.32rem .58rem;border-radius:var(--r);font-size:1rem;}
 
-/* ─── SCROLLBAR ─────────────────────────────────────────── */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: var(--bg); }
-::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 2px; }
+/* HERO */
+#hero{min-height:96vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 1.75rem 4rem;position:relative;overflow:hidden;}
+.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,black 0%,transparent 100%);}
+.hero-glow{position:absolute;top:5%;left:50%;transform:translateX(-50%);width:900px;height:560px;background:radial-gradient(ellipse at 50% 30%,rgba(91,95,239,.11) 0%,transparent 65%);pointer-events:none;}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.32rem .9rem;background:var(--bg3);border:1px solid var(--line2);border-radius:999px;font-size:.74rem;color:var(--muted);margin-bottom:2rem;}
+.hero-badge .d{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(16,185,129,.5);animation:ping 2s ease infinite;}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(16,185,129,.5);}70%{box-shadow:0 0 0 7px rgba(16,185,129,0);}100%{box-shadow:0 0 0 0 rgba(16,185,129,0);}}
+.hero-title{font-size:clamp(2.3rem,5.4vw,4.3rem);font-weight:600;line-height:1.12;letter-spacing:-.03em;max-width:780px;margin-bottom:1.5rem;}
+.hero-title .ac{color:var(--indigo);}
+.hero-sub{max-width:540px;font-size:1.03rem;color:var(--muted);line-height:1.7;margin:0 auto 1rem;}
+.hero-meta{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.8rem;color:var(--faint);margin-bottom:2.25rem;flex-wrap:wrap;}
+.hero-meta b{color:var(--white);font-weight:500;}
+.hero-meta .sep{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+.hero-ctas{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;justify-content:center;margin-bottom:3.5rem;}
+.btn-primary{background:var(--indigo);color:white;font-weight:600;font-size:.9rem;padding:.8rem 1.75rem;border-radius:var(--r);border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:.18s;}
+.btn-primary:hover{background:var(--indigo2);transform:translateY(-1px);}
+.btn-secondary{background:transparent;color:var(--muted);font-size:.9rem;padding:.8rem 1.55rem;border-radius:var(--r);border:1px solid var(--line2);cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:.18s;}
+.btn-secondary:hover{color:var(--white);background:var(--bg3);}
+.hero-note{font-size:.72rem;color:var(--faint);margin-top:-2.5rem;margin-bottom:3rem;}
 
-/* ─── LAYOUT ────────────────────────────────────────────── */
-.container    { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-.container--sm { max-width: 820px;  margin: 0 auto; padding: 0 2rem; }
-.container--md { max-width: 1000px; margin: 0 auto; padding: 0 2rem; }
+.flow-wrap{width:100%;max-width:880px;}
+.flow-svg{width:100%;height:auto;display:block;}
+.flow-caption{font-family:var(--mono);font-size:.68rem;color:var(--faint);letter-spacing:.04em;text-transform:uppercase;margin-top:1.1rem;}
 
-/* ─── NAV ───────────────────────────────────────────────── */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 1.25rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(10,10,10,0.82);
-  backdrop-filter: blur(20px) saturate(150%);
-  border-bottom: 1px solid var(--line);
-  transition: padding 0.3s;
-}
-nav.scrolled { padding: 0.9rem 2rem; }
+/* MARQUEE */
+.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative;padding:1.3rem 0;background:var(--bg2);}
+.marquee::before,.marquee::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent);}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent);}
+.marquee-track{display:flex;gap:2.5rem;width:max-content;animation:mq 36s linear infinite;}
+.marquee-track:hover{animation-play-state:paused;}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-item{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--faint);white-space:nowrap;}
+.mq-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--indigo);opacity:.6;}
 
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-.nav-logo-mark {
-  width: 28px; height: 28px;
-  background: var(--accent);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-size: 1rem;
-  color: #0a0a0a;
-  font-style: italic;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  list-style: none;
-}
-.nav-links a {
-  font-size: 0.85rem;
-  color: var(--muted);
-  padding: 0.4rem 0.75rem;
-  border-radius: var(--r);
-  transition: all 0.2s;
-  letter-spacing: 0.01em;
-}
-.nav-links a:hover { color: var(--text); background: var(--bg3); }
-.nav-cta {
-  background: var(--accent) !important;
-  color: #0a0a0a !important;
-  font-weight: 500 !important;
-  border-radius: var(--r) !important;
-}
-.nav-cta:hover { background: var(--accent2) !important; }
-.nav-mobile-btn {
-  display: none;
-  background: none;
-  border: 1px solid var(--line2);
-  color: var(--text);
-  padding: 0.4rem 0.65rem;
-  border-radius: var(--r);
-  font-size: 1rem;
-}
+.sec{padding:6rem 0;}
+.sec-alt{background:var(--bg2);}
+.sec-bt{border-top:1px solid var(--line);}
+.sec-bb{border-bottom:1px solid var(--line);}
+.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--indigo);margin-bottom:1.1rem;}
+.eyebrow::before{content:'';width:14px;height:1px;background:var(--indigo);}
+.sec-title{font-size:clamp(1.85rem,3.4vw,2.85rem);font-weight:600;line-height:1.12;letter-spacing:-.03em;margin-bottom:1rem;}
+.sec-title .ac{color:var(--indigo);}
+.sec-body{font-size:.95rem;color:var(--muted);line-height:1.8;max-width:520px;}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.in{opacity:1;transform:none;}
+</style>
+<style>
+/* SERVICES - each with CTA */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;}
+.service-card{background:var(--bg);padding:1.85rem;display:flex;flex-direction:column;gap:.9rem;transition:background .2s;}
+.service-card:hover{background:var(--bg2);}
+.service-icon{width:42px;height:42px;border-radius:var(--r2);background:var(--bg3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
+.service-name{font-size:1rem;font-weight:600;letter-spacing:-.015em;}
+.service-desc{font-size:.84rem;color:var(--muted);line-height:1.6;flex:1;}
+.service-list{display:flex;flex-direction:column;gap:.4rem;margin:.25rem 0 .5rem;}
+.service-list span{font-size:.78rem;color:var(--faint);display:flex;align-items:center;gap:.5rem;}
+.service-list span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--indigo);flex-shrink:0;}
+.service-cta{font-size:.78rem;color:var(--indigo);font-weight:600;display:inline-flex;align-items:center;gap:.35rem;transition:.18s;}
+.service-cta:hover{gap:.55rem;}
 
-/* ─── HERO ──────────────────────────────────────────────── */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 9rem 2rem 6rem;
-  position: relative;
-  overflow: hidden;
-}
-.hero-grid {
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(var(--line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--line) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 100%);
-  pointer-events: none;
-}
-.hero-glow {
-  position: absolute;
-  top: 15%; left: 50%;
-  transform: translateX(-50%);
-  width: 800px; height: 800px;
-  background: radial-gradient(ellipse at center, rgba(232,213,163,0.055) 0%, transparent 68%);
-  pointer-events: none;
-}
+/* CASOS DE USO — resultado, no tecnología */
+.usecase-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem;}
+.usecase-card{background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r2);padding:1.6rem;display:flex;flex-direction:column;gap:.7rem;transition:.2s;}
+.usecase-card:hover{border-color:rgba(91,95,239,.25);background:var(--bg3);}
+.usecase-sector{font-family:var(--mono);font-size:.68rem;color:var(--indigo);letter-spacing:.07em;text-transform:uppercase;}
+.usecase-result{font-size:1.02rem;font-weight:600;letter-spacing:-.015em;line-height:1.35;}
+.usecase-detail{font-size:.81rem;color:var(--muted);line-height:1.6;flex:1;}
+.usecase-metric{display:flex;align-items:baseline;gap:.4rem;margin-top:.25rem;}
+.usecase-metric .v{font-size:1.3rem;font-weight:700;color:var(--green);letter-spacing:-.02em;}
+.usecase-metric .l{font-size:.7rem;color:var(--faint);text-transform:uppercase;letter-spacing:.03em;}
 
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 1rem;
-  background: var(--bg3);
-  border: 1px solid var(--line2);
-  border-radius: 999px;
-  font-size: 0.78rem;
-  color: var(--muted);
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  margin-bottom: 2.75rem;
-  animation: fadeUp 0.6s ease both;
-}
-.hero-badge-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 8px var(--green);
-  animation: pulse 2s ease infinite;
-}
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.5;transform:scale(0.8);} }
+/* TOOLS — apoyo de venta, no protagonistas */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.1rem;}
+.tool-card{background:var(--bg);border:1px solid var(--line2);border-radius:var(--r2);padding:1.5rem;display:flex;flex-direction:column;}
+.tool-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem;}
+.tool-icon{width:38px;height:38px;border-radius:9px;background:var(--bg3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;}
+.tool-name{font-size:.92rem;font-weight:600;letter-spacing:-.01em;}
+.field-lbl{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.35rem;display:block;}
+.m-input{width:100%;background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r);padding:.58rem .8rem;color:var(--white);font-size:.85rem;outline:none;transition:border-color .18s;margin-bottom:.8rem;}
+.m-input:focus{border-color:rgba(91,95,239,.5);}
+.m-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.m-output{background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r);padding:.85rem;font-family:var(--mono);font-size:.82rem;color:var(--indigo);line-height:1.65;min-height:48px;margin-bottom:.6rem;}
+.tool-cta{display:block;text-align:center;background:var(--indigo3);border:1px solid rgba(91,95,239,.3);color:var(--indigo);font-size:.78rem;font-weight:600;padding:.55rem;border-radius:var(--r);margin-top:.4rem;transition:.18s;}
+.tool-cta:hover{background:rgba(91,95,239,.2);}
 
-.hero-title {
-  font-family: var(--serif);
-  font-size: clamp(2.8rem, 6.5vw, 5.8rem);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
-  margin-bottom: 2rem;
-  max-width: 820px;
-  animation: fadeUp 0.6s 0.1s ease both;
-}
-.hero-title em { font-style: italic; color: var(--accent); }
+/* PRUEBA SOCIAL */
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem;}
+.proof-card{background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r2);padding:1.6rem;display:flex;flex-direction:column;gap:.9rem;position:relative;}
+.proof-badge{position:absolute;top:1rem;right:1rem;font-family:var(--mono);font-size:.6rem;color:var(--faint);letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line2);padding:.12rem .45rem;border-radius:999px;}
+.proof-quote{font-size:.88rem;color:var(--white);line-height:1.6;font-style:italic;}
+.proof-person{display:flex;align-items:center;gap:.65rem;margin-top:.25rem;}
+.proof-av{width:34px;height:34px;border-radius:50%;background:var(--bg4);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600;color:var(--muted);flex-shrink:0;}
+.proof-name{font-size:.8rem;font-weight:600;}
+.proof-role{font-size:.72rem;color:var(--muted);}
 
-.hero-desc {
-  max-width: 580px;
-  font-size: 1.05rem;
-  color: var(--muted);
-  line-height: 1.75;
-  margin: 0 auto 3rem;
-  animation: fadeUp 0.6s 0.2s ease both;
-}
+/* CONTACT FORM */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
+.contact-form{background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r3);padding:2rem;}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;}
+.cf-input,.cf-textarea,.cf-select{width:100%;background:var(--bg);border:1px solid var(--line2);border-radius:var(--r);padding:.7rem .9rem;color:var(--white);font-size:.88rem;outline:none;transition:border-color .18s;margin-bottom:.9rem;font-family:var(--sans);}
+.cf-input:focus,.cf-textarea:focus,.cf-select:focus{border-color:rgba(91,95,239,.5);}
+.cf-textarea{resize:vertical;min-height:90px;}
+.cf-select{-webkit-appearance:none;cursor:pointer;}
+.cf-submit{width:100%;background:var(--indigo);color:white;font-weight:600;font-size:.9rem;padding:.8rem;border-radius:var(--r);border:none;cursor:pointer;transition:.18s;}
+.cf-submit:hover{background:var(--indigo2);}
+.cf-note{font-size:.72rem;color:var(--faint);margin-top:.85rem;text-align:center;}
+.cf-success{display:none;text-align:center;padding:2rem 1rem;}
+.cf-success.show{display:block;}
+.cf-success .ic{font-size:2rem;margin-bottom:.75rem;}
 
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  animation: fadeUp 0.6s 0.3s ease both;
-}
+.contact-info h3{font-size:1.3rem;font-weight:600;letter-spacing:-.02em;margin-bottom:1rem;line-height:1.25;}
+.contact-info p{font-size:.92rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;}
+.contact-channels{display:flex;flex-direction:column;gap:.75rem;}
+.channel{display:flex;align-items:center;gap:.85rem;padding:.85rem 1rem;background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r2);transition:.18s;}
+.channel:hover{border-color:rgba(91,95,239,.3);background:var(--bg3);}
+.channel-icon{width:36px;height:36px;border-radius:var(--r);background:var(--bg3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.channel-text b{display:block;font-size:.85rem;font-weight:600;}
+.channel-text span{font-size:.76rem;color:var(--muted);}
 
-.btn-primary {
-  background: var(--accent);
-  color: #0a0a0a;
-  font-weight: 500;
-  font-size: 0.88rem;
-  padding: 0.75rem 1.6rem;
-  border-radius: var(--r);
-  border: none;
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  letter-spacing: -0.01em;
-}
-.btn-primary:hover { background: var(--accent2); transform: translateY(-1px); }
-.btn-primary:active { transform: none; }
+/* FLOATING CTA */
+#floatCta{position:fixed;bottom:1.5rem;right:1.5rem;z-index:250;background:var(--indigo);color:white;font-weight:600;font-size:.85rem;padding:.8rem 1.3rem;border-radius:999px;display:flex;align-items:center;gap:.5rem;box-shadow:0 8px 30px rgba(91,95,239,.4);transition:transform .25s,opacity .25s;opacity:0;transform:translateY(20px) scale(.9);pointer-events:none;}
+#floatCta.show{opacity:1;transform:none;pointer-events:all;}
+#floatCta:hover{background:var(--indigo2);}
 
-.btn-ghost {
-  background: transparent;
-  color: var(--muted);
-  font-size: 0.88rem;
-  padding: 0.75rem 1.4rem;
-  border-radius: var(--r);
-  border: 1px solid var(--line2);
-  transition: all 0.2s;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-family: var(--sans);
-}
-.btn-ghost:hover { color: var(--text); background: var(--bg3); }
+/* ABOUT (compact, single purpose: build trust) */
+.about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:5rem;align-items:center;}
+.about-text p{font-size:.94rem;color:var(--muted);line-height:1.8;margin-bottom:1.1rem;}
+.about-text p strong{color:var(--white);font-weight:500;}
+.about-card{background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r3);padding:1.85rem;}
+.about-av{width:56px;height:56px;border-radius:var(--r2);background:linear-gradient(135deg,var(--indigo),var(--indigo2));display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:white;margin-bottom:1.2rem;}
+.about-name{font-size:1.02rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.2rem;}
+.about-role{font-size:.78rem;color:var(--muted);margin-bottom:1.2rem;}
+.about-quote{font-size:.8rem;color:var(--muted);line-height:1.6;font-style:italic;padding-top:.9rem;border-top:1px solid var(--line);}
 
-.hero-stats {
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  margin-top: 5.5rem;
-  animation: fadeUp 0.6s 0.4s ease both;
-}
-.hero-stat-divider { width: 1px; height: 28px; background: var(--line2); }
-.hero-stat-value {
-  font-size: 1.45rem;
-  font-weight: 600;
-  letter-spacing: -0.025em;
-}
-.hero-stat-label {
-  font-size: 0.75rem;
-  color: var(--muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  margin-top: 0.1rem;
-}
+footer{border-top:1px solid var(--line);padding:2.75rem 0 2rem;background:var(--bg);}
+.footer-g{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;margin-bottom:2.25rem;}
+.footer-brand p{font-size:.79rem;color:var(--muted);line-height:1.7;margin-top:.85rem;max-width:260px;}
+.footer-h{font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:1rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
+.footer-links a{font-size:.79rem;color:var(--muted);transition:.18s;}
+.footer-links a:hover{color:var(--white);}
+.footer-bot{padding-top:1.5rem;border-top:1px solid var(--line);font-size:.72rem;color:var(--faint);text-align:center;}
 
-/* ─── MARQUEE ───────────────────────────────────────────── */
-.marquee-wrap {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  overflow: hidden;
-  position: relative;
-  padding: 1.75rem 0;
-}
-.marquee-wrap::before,
-.marquee-wrap::after {
-  content: '';
-  position: absolute; top: 0; bottom: 0;
-  width: 120px; z-index: 2;
-}
-.marquee-wrap::before { left: 0;  background: linear-gradient(90deg, var(--bg), transparent); }
-.marquee-wrap::after  { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
-.marquee-track {
-  display: flex;
-  gap: 3rem;
-  width: max-content;
-  animation: scroll 35s linear infinite;
-}
-.marquee-track:hover { animation-play-state: paused; }
-@keyframes scroll { from{transform:translateX(0);} to{transform:translateX(-50%);} }
-.marquee-item {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-size: 0.8rem;
-  color: var(--faint);
-  white-space: nowrap;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
-.marquee-item::before {
-  content: '';
-  width: 4px; height: 4px;
-  border-radius: 50%;
-  background: var(--accent);
-  opacity: 0.55;
-}
-
-/* ─── SECTIONS BASE ─────────────────────────────────────── */
-section { padding: 7rem 0; }
-
-.section-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--accent);
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-}
-.section-label::before {
-  content: '';
-  display: block;
-  width: 18px; height: 1px;
-  background: var(--accent);
-}
-
-.section-title {
-  font-family: var(--serif);
-  font-size: clamp(2.2rem, 4vw, 3.6rem);
-  font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.025em;
-  margin-bottom: 1.25rem;
-}
-.section-title em { font-style: italic; color: var(--accent); }
-
-.section-desc {
-  font-size: 1rem;
-  color: var(--muted);
-  line-height: 1.8;
-  max-width: 540px;
-}
-
-/* ─── VISION ────────────────────────────────────────────── */
-.vision-section {
-  background: var(--bg);
-  border-top: 1px solid var(--line);
-}
-.vision-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 6rem;
-  align-items: start;
-}
-.vision-left { position: sticky; top: 7rem; }
-.vision-right p {
-  font-size: 0.97rem;
-  color: var(--muted);
-  line-height: 1.85;
-  margin-bottom: 1.4rem;
-}
-.vision-right p strong { color: var(--text); font-weight: 500; }
-.vision-right p.vision-statement {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  color: var(--text);
-  font-style: italic;
-  line-height: 1.6;
-  border-left: 1px solid var(--accent);
-  padding-left: 1.25rem;
-  margin: 2rem 0;
-}
-
-/* ─── PHILOSOPHY ────────────────────────────────────────── */
-.philosophy-section {
-  background: var(--bg2);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.philosophy-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
-}
-.philosophy-principles {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-.principle-item {
-  display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  gap: 1.25rem;
-  align-items: start;
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--line);
-}
-.principle-item:last-child { border-bottom: none; }
-.principle-num {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  color: var(--faint);
-  padding-top: 0.2rem;
-  letter-spacing: 0.06em;
-}
-.principle-title {
-  font-size: 0.95rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.35rem;
-}
-.principle-desc {
-  font-size: 0.83rem;
-  color: var(--muted);
-  line-height: 1.65;
-}
-
-/* ─── TOOLS ─────────────────────────────────────────────── */
-.tools-section { background: var(--bg); }
-.tools-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 3rem;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.tools-filter {
-  display: flex;
-  gap: 0.4rem;
-  flex-wrap: wrap;
-}
-.filter-btn {
-  background: transparent;
-  border: 1px solid var(--line2);
-  color: var(--muted);
-  font-size: 0.78rem;
-  padding: 0.38rem 0.9rem;
-  border-radius: 999px;
-  font-family: var(--sans);
-  transition: all 0.2s;
-  letter-spacing: 0.03em;
-}
-.filter-btn:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
-.filter-btn.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #0a0a0a;
-  font-weight: 500;
-}
-.tools-note {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  padding: 0.9rem 1.25rem;
-  background: var(--bg3);
-  border: 1px solid var(--line2);
-  border-radius: var(--r);
-  font-size: 0.82rem;
-  color: var(--muted);
-  margin-top: 1.5rem;
-}
-.tools-note::before {
-  content: '';
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex-shrink: 0;
-}
-.tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--r3);
-  overflow: hidden;
-}
-.tool-card {
-  background: var(--bg);
-  padding: 1.75rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  transition: background 0.25s;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-.tool-card::before {
-  content: '';
-  position: absolute; inset: 0;
-  background: radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(232,213,163,0.045), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.tool-card:hover::before { opacity: 1; }
-.tool-card:hover { background: var(--bg2); }
-.tool-icon {
-  width: 40px; height: 40px;
-  border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.15rem;
-  border: 1px solid var(--line2);
-  background: var(--bg3);
-  transition: border-color 0.2s;
-  flex-shrink: 0;
-}
-.tool-card:hover .tool-icon { border-color: rgba(232,213,163,0.35); }
-.tool-name { font-size: 0.92rem; font-weight: 500; letter-spacing: -0.01em; }
-.tool-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; flex: 1; }
-.tool-meta { display: flex; align-items: center; justify-content: space-between; margin-top: 0.2rem; }
-.tool-tag {
-  font-size: 0.7rem;
-  padding: 0.18rem 0.6rem;
-  border-radius: 999px;
-  border: 1px solid var(--line2);
-  color: var(--faint);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-.tool-tag.new  { border-color: rgba(74,222,128,0.3); color: var(--green); }
-.tool-tag.ai   { border-color: rgba(167,139,250,0.3); color: var(--purple); }
-.tool-arrow { font-size: 0.9rem; color: var(--faint); transition: all 0.2s; }
-.tool-card:hover .tool-arrow { color: var(--accent); transform: translate(2px,-2px); }
-
-/* ─── INNOVATION ────────────────────────────────────────── */
-.innovation-section {
-  background: var(--bg2);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.innovation-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5rem;
-  align-items: center;
-}
-.innovation-items {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: var(--r2);
-  overflow: hidden;
-}
-.innovation-item {
-  background: var(--bg2);
-  padding: 1.5rem;
-  transition: background 0.2s;
-  cursor: default;
-}
-.innovation-item:hover { background: var(--bg3); }
-.innovation-item-icon {
-  font-size: 1.1rem;
-  margin-bottom: 0.75rem;
-}
-.innovation-item-title {
-  font-size: 0.88rem;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-  margin-bottom: 0.3rem;
-}
-.innovation-item-desc {
-  font-size: 0.78rem;
-  color: var(--muted);
-  line-height: 1.55;
-}
-.innovation-text p {
-  font-size: 0.97rem;
-  color: var(--muted);
-  line-height: 1.85;
-  margin-bottom: 1.25rem;
-}
-.innovation-text p strong { color: var(--text); font-weight: 500; }
-
-/* ─── COMMUNITY / NEWSLETTER ────────────────────────────── */
-.community-section {
-  background: var(--bg);
-  border-top: 1px solid var(--line);
-}
-.community-box {
-  background: var(--bg2);
-  border: 1px solid var(--line2);
-  border-radius: var(--r3);
-  padding: 5rem 4rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-.community-box::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 50%; transform: translateX(-50%);
-  width: 500px; height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0.35;
-}
-.community-box::after {
-  content: '';
-  position: absolute;
-  top: -60px; left: 50%; transform: translateX(-50%);
-  width: 400px; height: 200px;
-  background: radial-gradient(ellipse at center, rgba(232,213,163,0.05) 0%, transparent 70%);
-  pointer-events: none;
-}
-.community-title {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.1;
-  margin-bottom: 1.25rem;
-  position: relative;
-}
-.community-title em { font-style: italic; color: var(--accent); }
-.community-desc {
-  font-size: 0.97rem;
-  color: var(--muted);
-  max-width: 440px;
-  margin: 0 auto 2.75rem;
-  line-height: 1.75;
-  position: relative;
-}
-.community-form {
-  display: flex;
-  gap: 0.75rem;
-  max-width: 420px;
-  margin: 0 auto;
-  position: relative;
-}
-.community-input {
-  flex: 1;
-  background: var(--bg);
-  border: 1px solid var(--line2);
-  border-radius: var(--r);
-  padding: 0.75rem 1rem;
-  font-family: var(--sans);
-  font-size: 0.88rem;
-  color: var(--text);
-  outline: none;
-  transition: border-color 0.2s;
-}
-.community-input::placeholder { color: var(--faint); }
-.community-input:focus { border-color: rgba(232,213,163,0.4); }
-.community-note {
-  font-size: 0.73rem;
-  color: var(--faint);
-  margin-top: 1rem;
-  letter-spacing: 0.03em;
-  position: relative;
-}
-
-/* ─── ABOUT ─────────────────────────────────────────────── */
-.about-section {
-  background: var(--bg2);
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 6rem;
-  align-items: center;
-}
-.about-text .section-title { margin-bottom: 1.75rem; }
-.about-text p {
-  font-size: 0.97rem;
-  color: var(--muted);
-  line-height: 1.85;
-  margin-bottom: 1.25rem;
-}
-.about-text p strong { color: var(--text); font-weight: 500; }
-.about-text p.about-statement {
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  color: var(--text);
-  font-style: italic;
-  line-height: 1.6;
-  border-left: 1px solid var(--accent);
-  padding-left: 1.25rem;
-  margin: 2rem 0;
-}
-.about-links {
-  display: flex;
-  gap: 0.6rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-}
-.about-link {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-  font-size: 0.82rem;
-  color: var(--muted);
-  padding: 0.45rem 0.9rem;
-  border: 1px solid var(--line2);
-  border-radius: var(--r);
-  transition: all 0.2s;
-}
-.about-link:hover { color: var(--text); background: var(--bg3); }
-
-/* About visual */
-.about-visual { position: relative; }
-.about-card {
-  background: var(--bg3);
-  border: 1px solid var(--line2);
-  border-radius: var(--r3);
-  padding: 2.25rem;
-}
-.about-avatar {
-  width: 68px; height: 68px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  border-radius: var(--r2);
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--serif);
-  font-size: 1.7rem;
-  color: #0a0a0a;
-  font-style: italic;
-  margin-bottom: 1.5rem;
-}
-.about-name { font-size: 1.2rem; font-weight: 500; letter-spacing: -0.02em; margin-bottom: 0.25rem; }
-.about-role { font-size: 0.82rem; color: var(--muted); margin-bottom: 1.5rem; }
-.about-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
-.about-tag {
-  font-size: 0.72rem;
-  padding: 0.25rem 0.65rem;
-  border-radius: 999px;
-  border: 1px solid var(--line2);
-  color: var(--muted);
-}
-.about-quote {
-  font-size: 0.82rem;
-  color: var(--muted);
-  line-height: 1.65;
-  font-style: italic;
-  padding-top: 1rem;
-  border-top: 1px solid var(--line);
-}
-.float-card {
-  position: absolute;
-  background: var(--bg4);
-  border: 1px solid var(--line2);
-  border-radius: var(--r);
-  padding: 0.75rem 1rem;
-  font-size: 0.78rem;
-  animation: float 4s ease-in-out infinite;
-}
-.float-card-1 { top: -20px; right: -16px; animation-delay: 0s; }
-.float-card-2 { bottom: -18px; left: -16px; animation-delay: 2s; }
-@keyframes float { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
-.float-val  { font-size: 1.2rem; font-weight: 600; letter-spacing: -0.02em; margin-bottom: 0.1rem; }
-.float-lbl  { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
-
-/* ─── FOOTER ────────────────────────────────────────────── */
-footer {
-  background: var(--bg);
-  border-top: 1px solid var(--line);
-  padding: 3.5rem 0 2rem;
-}
-.footer-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-.footer-brand p {
-  font-size: 0.83rem;
-  color: var(--muted);
-  line-height: 1.7;
-  margin-top: 1rem;
-  max-width: 280px;
-}
-.footer-col-title {
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--faint);
-  margin-bottom: 1.25rem;
-  font-weight: 500;
-}
-.footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
-.footer-links a { font-size: 0.83rem; color: var(--muted); transition: color 0.2s; }
-.footer-links a:hover { color: var(--text); }
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 2rem;
-  border-top: 1px solid var(--line);
-  font-size: 0.76rem;
-  color: var(--faint);
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.footer-social { display: flex; gap: 0.5rem; }
-.footer-social a {
-  width: 30px; height: 30px;
-  border: 1px solid var(--line2);
-  border-radius: var(--r);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.8rem;
-  color: var(--muted);
-  transition: all 0.2s;
-}
-.footer-social a:hover { color: var(--text); background: var(--bg3); }
-
-/* ─── ANIMATIONS ────────────────────────────────────────── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-.reveal {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.65s ease, transform 0.65s ease;
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ─── RESPONSIVE ────────────────────────────────────────── */
-@media (max-width: 960px) {
-  .nav-links { display: none; }
-  .nav-mobile-btn { display: block; }
-  .vision-grid, .philosophy-inner, .innovation-grid, .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-  .vision-left { position: static; }
-  .innovation-grid { direction: ltr; }
-  .footer-top { grid-template-columns: 1fr 1fr; }
-  .hero-stats { gap: 1.5rem; }
-}
-@media (max-width: 600px) {
-  .container, .container--sm, .container--md { padding: 0 1.25rem; }
-  section { padding: 5rem 0; }
-  .tools-header { flex-direction: column; align-items: flex-start; }
-  .footer-top { grid-template-columns: 1fr; }
-  .community-box { padding: 2.75rem 1.5rem; }
-  .community-form { flex-direction: column; }
-  .float-card-1, .float-card-2 { display: none; }
-  .innovation-items { grid-template-columns: 1fr; }
+@media (max-width:980px){
+  .nav-links{display:none;} .hamburger{display:block;}
+  .contact-wrap,.about-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .footer-g{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:640px){
+  .w,.w-sm,.w-md{padding:0 1.25rem;}
+  .sec{padding:4rem 0;}
+  .cf-row{grid-template-columns:1fr;}
+  .footer-g{grid-template-columns:1fr;}
+  #floatCta span{display:none;}
+  #floatCta{padding:.8rem;border-radius:50%;}
 }
 </style>
 </head>
-
 <body>
-
-<!-- ══════════════════ NAV ══════════════════════════════════ -->
 <nav id="nav">
-  <div class="nav-logo">
-    <div class="nav-logo-mark">A</div>
-    <span>Alejandro García</span>
+  <div class="nav-w">
+    <a class="logo" href="#hero"><div class="logo-mark">AG</div><span>Alejandro García</span></a>
+    <ul class="nav-links" role="list">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#casos">Casos de uso</a></li>
+      <li><a href="#herramientas">Herramientas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="#contacto" class="btn-nav fill">Diagnóstico gratuito</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">☰</button>
+    </div>
   </div>
-  <ul class="nav-links">
-    <li><a href="#vision">Visión</a></li>
-    <li><a href="#herramientas">Herramientas</a></li>
-    <li><a href="#innovacion">Innovación</a></li>
-    <li><a href="#sobre-mi">Proyecto</a></li>
-    <li><a href="#comunidad" class="nav-cta">Acceder →</a></li>
-  </ul>
-  <button class="nav-mobile-btn" onclick="toggleMenu()" aria-label="Menú">☰</button>
 </nav>
 
-<!-- ══════════════════ HERO ════════════════════════════════ -->
-<section class="hero" id="inicio">
-  <div class="hero-grid"></div>
-  <div class="hero-glow"></div>
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
 
-  <div class="hero-badge">
-    <div class="hero-badge-dot"></div>
-    Ecosistema activo · Fase 1
+  <div class="hero-badge"><div class="d"></div>Plazas limitadas de diagnóstico este mes</div>
+
+  <h1 class="hero-title">Automatizamos tareas repetitivas<br>para que tu negocio <span class="ac">ahorre tiempo</span><br>y crezca más rápido.</h1>
+
+  <p class="hero-sub">Implementamos sistemas de IA y automatización a medida: atención al cliente, captación de leads y procesos internos que hoy hace tu equipo a mano.</p>
+
+  <div class="hero-ctas">
+    <a href="#contacto" class="btn-primary">Solicitar diagnóstico gratuito <span aria-hidden="true">→</span></a>
+    <a href="#servicios" class="btn-secondary">Ver soluciones</a>
   </div>
+  <p class="hero-note">Sin compromiso · Respuesta en menos de 24 horas</p>
 
-  <h1 class="hero-title">
-    Construyendo un ecosistema digital<br>
-    diseñado para resolver<br>
-    <em>problemas reales.</em>
-  </h1>
-
-  <p class="hero-desc">
-    Una plataforma en constante evolución donde convergen tecnología, inteligencia artificial, automatización y herramientas digitales creadas para simplificar procesos, aumentar la productividad y generar valor a largo plazo.
-  </p>
-
-  <div class="hero-actions">
-    <a href="#herramientas" class="btn-primary">
-      Explorar el ecosistema
-      <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2.5 6.5h8M8 3.5l3 3-3 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
-    <a href="#vision" class="btn-ghost">Descubrir la visión</a>
-  </div>
-
-  <div class="hero-stats">
-    <div>
-      <div class="hero-stat-value">20+</div>
-      <div class="hero-stat-label">Herramientas</div>
-    </div>
-    <div class="hero-stat-divider"></div>
-    <div>
-      <div class="hero-stat-value">100%</div>
-      <div class="hero-stat-label">Gratuitas</div>
-    </div>
-    <div class="hero-stat-divider"></div>
-    <div>
-      <div class="hero-stat-value">IA</div>
-      <div class="hero-stat-label">Integrada</div>
-    </div>
-    <div class="hero-stat-divider"></div>
-    <div>
-      <div class="hero-stat-value">0</div>
-      <div class="hero-stat-label">Anuncios</div>
-    </div>
+  <div class="flow-wrap">
+    <svg class="flow-svg" viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama: de proceso manual a sistema automatizado con resultado medible">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M1 1L8 5L1 9" fill="none" stroke="rgba(237,239,242,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+        </marker>
+      </defs>
+      <g>
+        <rect x="20" y="60" width="220" height="80" rx="12" fill="#1c1f23" stroke="rgba(237,239,242,0.12)" stroke-width="1"/>
+        <text x="40" y="86" fill="rgba(237,239,242,0.45)" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1">ANTES</text>
+        <text x="40" y="110" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="500">Tareas manuales,</text>
+        <text x="40" y="128" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="500">tiempo perdido</text>
+      </g>
+      <line x1="240" y1="100" x2="335" y2="100" stroke="rgba(237,239,242,0.3)" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <g>
+        <rect x="350" y="50" width="220" height="100" rx="12" fill="#1c1f23" stroke="#5b5fef" stroke-width="1.5"/>
+        <circle cx="370" cy="70" r="4" fill="#5b5fef"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
+        <text x="384" y="74" fill="#5b5fef" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1">AUTOMATIZACIÓN</text>
+        <text x="370" y="100" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="600">Agentes IA +</text>
+        <text x="370" y="120" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="600">integraciones</text>
+        <text x="370" y="139" fill="rgba(237,239,242,0.45)" font-family="Geist Mono, monospace" font-size="10">24/7 · sin errores</text>
+      </g>
+      <line x1="570" y1="100" x2="665" y2="100" stroke="rgba(237,239,242,0.3)" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <g>
+        <rect x="680" y="60" width="220" height="80" rx="12" fill="#1c1f23" stroke="rgba(16,185,129,0.35)" stroke-width="1"/>
+        <text x="700" y="86" fill="#10b981" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1">DESPUÉS</text>
+        <text x="700" y="110" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="500">Más tiempo,</text>
+        <text x="700" y="128" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="500">más ingresos</text>
+      </g>
+    </svg>
+    <div class="flow-caption">Diagnóstico → Implementación → Resultado medible</div>
   </div>
 </section>
 
-<!-- ══════════════════ MARQUEE ═════════════════════════════ -->
-<div class="marquee-wrap">
+<div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span class="marquee-item">Generador QR</span>
-    <span class="marquee-item">Conversor de unidades</span>
-    <span class="marquee-item">Herramientas IA</span>
-    <span class="marquee-item">Automatizaciones</span>
-    <span class="marquee-item">Generador de paletas</span>
-    <span class="marquee-item">Hora mundial</span>
-    <span class="marquee-item">Agentes IA</span>
-    <span class="marquee-item">Utilidades de texto</span>
-    <span class="marquee-item">Análisis de datos</span>
-    <span class="marquee-item">APIs abiertas</span>
-    <span class="marquee-item">Productos SaaS</span>
-    <span class="marquee-item">Soluciones para empresas</span>
-    <span class="marquee-item">Generador QR</span>
-    <span class="marquee-item">Conversor de unidades</span>
-    <span class="marquee-item">Herramientas IA</span>
-    <span class="marquee-item">Automatizaciones</span>
-    <span class="marquee-item">Generador de paletas</span>
-    <span class="marquee-item">Hora mundial</span>
-    <span class="marquee-item">Agentes IA</span>
-    <span class="marquee-item">Utilidades de texto</span>
-    <span class="marquee-item">Análisis de datos</span>
-    <span class="marquee-item">APIs abiertas</span>
-    <span class="marquee-item">Productos SaaS</span>
-    <span class="marquee-item">Soluciones para empresas</span>
+    <span class="mq-item">Automatización de procesos</span><span class="mq-item">Chatbots IA</span>
+    <span class="mq-item">Captación de leads</span><span class="mq-item">Automatización comercial</span>
+    <span class="mq-item">Consultoría IA</span><span class="mq-item">Atención al cliente 24/7</span>
+    <span class="mq-item">Integraciones CRM</span><span class="mq-item">Gestión documental</span>
+    <span class="mq-item">Automatización de procesos</span><span class="mq-item">Chatbots IA</span>
+    <span class="mq-item">Captación de leads</span><span class="mq-item">Automatización comercial</span>
+    <span class="mq-item">Consultoría IA</span><span class="mq-item">Atención al cliente 24/7</span>
+    <span class="mq-item">Integraciones CRM</span><span class="mq-item">Gestión documental</span>
   </div>
 </div>
+<!-- SERVICIOS — cada uno con CTA propio -->
+<section id="servicios" class="sec sec-bt" aria-labelledby="serv-h2">
+  <div class="w">
+    <div class="reveal">
+      <div class="eyebrow">Servicios</div>
+      <h2 id="serv-h2" class="sec-title">Cinco formas de que tu negocio<br>deje de perder <span class="ac">tiempo y clientes.</span></h2>
+      <p class="sec-body">Cada servicio resuelve un problema operativo concreto. Empezamos por el que más impacto tenga en tu caso.</p>
+    </div>
 
-<!-- ══════════════════ VISIÓN ══════════════════════════════ -->
-<section class="vision-section" id="vision">
-  <div class="container">
-    <div class="vision-grid">
+    <div class="services-grid reveal" style="margin-top:2.5rem;">
 
-      <div class="vision-left reveal">
-        <div class="section-label">Visión</div>
-        <h2 class="section-title">Una visión<br>a <em>largo plazo.</em></h2>
-        <p class="section-desc">
-          La mayoría de proyectos digitales nacen para resolver una única necesidad. Este nace con una ambición diferente.
-        </p>
+      <div class="service-card">
+        <div class="service-icon">⚙️</div>
+        <div class="service-name">Automatización empresarial</div>
+        <div class="service-desc">Eliminamos el trabajo manual repetitivo de tu día a día.</div>
+        <div class="service-list">
+          <span>Procesos internos</span>
+          <span>Administración</span>
+          <span>Gestión documental</span>
+          <span>Seguimiento de clientes</span>
+        </div>
+        <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
       </div>
 
-      <div class="vision-right reveal">
-        <p>
-          Alejandro García es la construcción progresiva de un <strong>ecosistema tecnológico</strong> que integrará herramientas digitales, inteligencia artificial, automatizaciones, análisis de datos y futuras aplicaciones diseñadas para ayudar a personas y empresas a trabajar de forma más inteligente.
-        </p>
-        <p class="vision-statement">
-          Cada nueva herramienta, producto o servicio forma parte de una arquitectura común pensada para crecer, evolucionar y adaptarse a las necesidades del futuro.
-        </p>
-        <p>
-          No se trata de crear una página web. Se trata de <strong>construir una infraestructura digital con impacto real.</strong>
-        </p>
-        <p>
-          Cada decisión técnica, cada módulo y cada funcionalidad se diseña considerando cómo afectará al conjunto dentro de tres años. Escalabilidad sin deuda técnica. Crecimiento sin comprometer la calidad.
-        </p>
+      <div class="service-card">
+        <div class="service-icon">💬</div>
+        <div class="service-name">Chatbots IA</div>
+        <div class="service-desc">Responden y atienden a tus clientes aunque tú no estés.</div>
+        <div class="service-list">
+          <span>Sitio web</span>
+          <span>WhatsApp</span>
+          <span>Atención al cliente</span>
+          <span>Soporte de primer nivel</span>
+        </div>
+        <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <div class="service-name">Captación de leads</div>
+        <div class="service-desc">Capturamos y cualificamos clientes potenciales sin que se te escape ninguno.</div>
+        <div class="service-list">
+          <span>Formularios inteligentes</span>
+          <span>Seguimiento automático</span>
+          <span>Cualificación de clientes</span>
+        </div>
+        <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">📤</div>
+        <div class="service-name">Automatización comercial</div>
+        <div class="service-desc">Tu CRM y tus comunicaciones funcionando sin que nadie las toque.</div>
+        <div class="service-list">
+          <span>Correos automáticos</span>
+          <span>Integración con CRM</span>
+          <span>Seguimiento de oportunidades</span>
+          <span>Recordatorios</span>
+        </div>
+        <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">🧭</div>
+        <div class="service-name">Consultoría IA</div>
+        <div class="service-desc">Si no sabes por dónde empezar, lo definimos juntos antes de construir nada.</div>
+        <div class="service-list">
+          <span>Auditoría de procesos</span>
+          <span>Estrategia de implementación</span>
+          <span>Acompañamiento</span>
+        </div>
+        <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ FILOSOFÍA ═══════════════════════════ -->
-<section class="philosophy-section" id="filosofia">
-  <div class="container--md">
-    <div class="philosophy-inner">
+<!-- CASOS DE USO — resultado, no tecnología -->
+<section id="casos" class="sec sec-alt sec-bt sec-bb" aria-labelledby="casos-h2">
+  <div class="w">
+    <div class="reveal">
+      <div class="eyebrow">Casos de uso</div>
+      <h2 id="casos-h2" class="sec-title">Resultados, no <span class="ac">tecnología.</span></h2>
+      <p class="sec-body">Esto es lo que cambia en el día a día de un negocio cuando automatiza lo correcto.</p>
+    </div>
 
+    <div class="usecase-grid reveal" style="margin-top:2.5rem;">
+      <div class="usecase-card">
+        <div class="usecase-sector">Clínicas</div>
+        <div class="usecase-result">Citas y recordatorios sin llamadas perdidas</div>
+        <div class="usecase-detail">El sistema confirma, recuerda y reprograma citas automáticamente por SMS o WhatsApp.</div>
+        <div class="usecase-metric"><span class="v">-40%</span><span class="l">ausencias sin avisar</span></div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-sector">Inmobiliarias</div>
+        <div class="usecase-result">Ningún lead se enfría por falta de respuesta</div>
+        <div class="usecase-detail">Cada contacto recibe seguimiento automático desde el primer minuto, sin esperar a que un agente esté libre.</div>
+        <div class="usecase-metric"><span class="v">24/7</span><span class="l">respuesta inmediata</span></div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-sector">Restaurantes</div>
+        <div class="usecase-result">Reservas gestionadas solas, incluso de madrugada</div>
+        <div class="usecase-detail">Los clientes reservan por WhatsApp o web sin que nadie del equipo tenga que contestar al teléfono.</div>
+        <div class="usecase-metric"><span class="v">+0</span><span class="l">llamadas perdidas</span></div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-sector">E-commerce</div>
+        <div class="usecase-result">Atención al cliente que no descansa</div>
+        <div class="usecase-detail">Dudas de envío, devoluciones y estado de pedido resueltas al instante, sin esperar a que abra soporte.</div>
+        <div class="usecase-metric"><span class="v">90%</span><span class="l">consultas sin intervención humana</span></div>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-sector">Negocios locales</div>
+        <div class="usecase-result">Menos papeleo, más tiempo para el negocio</div>
+        <div class="usecase-detail">Facturas, informes y tareas administrativas que antes ocupaban horas, ahora se generan solas.</div>
+        <div class="usecase-metric"><span class="v">+5h</span><span class="l">libres a la semana</span></div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2rem;" class="reveal">
+      <a href="#contacto" class="btn-primary">Quiero esto en mi negocio →</a>
+    </div>
+  </div>
+</section>
+<!-- HERRAMIENTAS — apoyan la venta, no son el centro -->
+<section id="herramientas" class="sec sec-bt" aria-labelledby="tools-h2">
+  <div class="w">
+    <div class="reveal">
+      <div class="eyebrow">Calcula tu caso</div>
+      <h2 id="tools-h2" class="sec-title">¿Cuánto te está costando<br>no automatizar?</h2>
+      <p class="sec-body">Antes de hablar, calcula tú mismo el impacto. Son números reales, no estimaciones de marketing.</p>
+    </div>
+
+    <div class="tools-grid reveal" style="margin-top:2.5rem;">
+
+      <div class="tool-card">
+        <div class="tool-head"><div class="tool-icon">⏱️</div><div class="tool-name">Coste de tareas manuales</div></div>
+        <div class="m-row">
+          <div><label class="field-lbl">Horas/semana</label><input class="m-input" id="atHours" type="number" value="5" oninput="calcAuto()"></div>
+          <div><label class="field-lbl">Coste/hora (€)</label><input class="m-input" id="atRate" type="number" value="18" oninput="calcAuto()"></div>
+        </div>
+        <div class="m-output" id="atOut"></div>
+        <a href="#contacto" class="tool-cta">Quiero reducir este coste →</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-head"><div class="tool-icon">📈</div><div class="tool-name">ROI de automatización</div></div>
+        <div class="m-row">
+          <div><label class="field-lbl">Inversión (€)</label><input class="m-input" id="roiInv" type="number" value="1500" oninput="calcROI()"></div>
+          <div><label class="field-lbl">Ahorro anual (€)</label><input class="m-input" id="roiGain" type="number" value="4500" oninput="calcROI()"></div>
+        </div>
+        <div class="m-output" id="roiOut"></div>
+        <a href="#contacto" class="tool-cta">Quiero este retorno →</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-head"><div class="tool-icon">💸</div><div class="tool-name">Costes operativos anuales</div></div>
+        <div class="m-row">
+          <div><label class="field-lbl">Empleados en la tarea</label><input class="m-input" id="opPeople" type="number" value="1" oninput="calcOp()"></div>
+          <div><label class="field-lbl">Horas/semana c/u</label><input class="m-input" id="opHours" type="number" value="8" oninput="calcOp()"></div>
+        </div>
+        <label class="field-lbl">Coste/hora medio (€)</label>
+        <input class="m-input" id="opRate" type="number" value="16" oninput="calcOp()">
+        <div class="m-output" id="opOut"></div>
+        <a href="#contacto" class="tool-cta">Quiero reducir este gasto →</a>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-head"><div class="tool-icon">✦</div><div class="tool-name">Generador de prompts</div></div>
+        <label class="field-lbl">¿Qué necesitas que haga la IA?</label>
+        <input class="m-input" id="pgTask" placeholder="Ej: responder dudas de envío" oninput="genPrompt()">
+        <div class="m-output" id="pgOut" style="white-space:pre-wrap;font-size:.74rem;max-height:120px;overflow-y:auto;"></div>
+        <a href="#contacto" class="tool-cta">Quiero esto implementado →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRUEBA SOCIAL -->
+<section class="sec sec-alt sec-bt sec-bb" aria-labelledby="proof-h2">
+  <div class="w">
+    <div class="reveal">
+      <div class="eyebrow">Resultados</div>
+      <h2 id="proof-h2" class="sec-title">Ejemplos del tipo de<br>resultado que <span class="ac">buscamos.</span></h2>
+      <p class="sec-body">Los siguientes son casos demostrativos mientras incorporamos los primeros proyectos reales documentados.</p>
+    </div>
+
+    <div class="proof-grid reveal" style="margin-top:2.5rem;">
+      <div class="proof-card">
+        <span class="proof-badge">Caso demostrativo</span>
+        <div class="proof-quote">"Lo que buscamos es justo esto: que un chatbot resuelva las dudas repetitivas y mi equipo solo intervenga cuando aporta valor real."</div>
+        <div class="proof-person"><div class="proof-av">E</div><div><div class="proof-name">Ejemplo · E-commerce de moda</div><div class="proof-role">Caso objetivo, no testimonio real</div></div></div>
+      </div>
+      <div class="proof-card">
+        <span class="proof-badge">Caso demostrativo</span>
+        <div class="proof-quote">"El objetivo en clínicas es simple: que ningún paciente se olvide de su cita y que nadie del equipo tenga que llamar uno por uno."</div>
+        <div class="proof-person"><div class="proof-av">C</div><div><div class="proof-name">Ejemplo · Clínica dental</div><div class="proof-role">Caso objetivo, no testimonio real</div></div></div>
+      </div>
+      <div class="proof-card">
+        <span class="proof-badge">Caso demostrativo</span>
+        <div class="proof-quote">"En inmobiliarias el problema nunca es falta de leads, es no responder a tiempo. Ese es el problema que resolvemos primero."</div>
+        <div class="proof-person"><div class="proof-av">I</div><div><div class="proof-name">Ejemplo · Agencia inmobiliaria</div><div class="proof-role">Caso objetivo, no testimonio real</div></div></div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:.78rem;color:var(--faint);margin-top:1.75rem;" class="reveal">Esta sección se actualizará con casos reales y resultados documentados de clientes a medida que se completen los primeros proyectos.</p>
+  </div>
+</section>
+<!-- CONTACTO — el destino de todo CTA -->
+<section id="contacto" class="sec sec-bt" aria-labelledby="contact-h2">
+  <div class="w">
+    <div class="contact-wrap">
       <div class="reveal">
-        <div class="section-label">Filosofía</div>
-        <h2 class="section-title">Tecnología útil.<br><em>Sin complejidad<br>innecesaria.</em></h2>
-        <p class="section-desc" style="margin-top:1rem;">
-          La innovación no consiste en añadir más funciones. Consiste en eliminar fricción.
-        </p>
-        <p class="section-desc" style="margin-top:1rem;">
-          La simplicidad no es una limitación. Es una ventaja competitiva.
-        </p>
-      </div>
-
-      <div class="philosophy-principles reveal">
-        <div class="principle-item">
-          <div class="principle-num">01</div>
-          <div>
-            <div class="principle-title">Resolver un problema real</div>
-            <div class="principle-desc">Cada herramienta existe porque responde a una necesidad concreta. No se construye por construir.</div>
+        <div class="eyebrow">Diagnóstico gratuito</div>
+        <h2 id="contact-h2" class="sec-title">Cuéntame qué tarea<br>te quita más <span class="ac">tiempo.</span></h2>
+        <div class="contact-form">
+          <form id="contactForm" onsubmit="handleContact(event)" novalidate>
+            <div class="cf-row">
+              <input class="cf-input" id="cfName" type="text" placeholder="Tu nombre" required>
+              <input class="cf-input" id="cfCompany" type="text" placeholder="Empresa (opcional)">
+            </div>
+            <input class="cf-input" id="cfEmail" type="email" placeholder="Tu email" required>
+            <select class="cf-select" id="cfSector">
+              <option value="">Sector de tu negocio (opcional)</option>
+              <option>E-commerce</option><option>Inmobiliaria</option><option>Clínica</option>
+              <option>Restaurante</option><option>Negocio local</option><option>Otro</option>
+            </select>
+            <textarea class="cf-textarea" id="cfMsg" placeholder="¿Qué tarea repetitiva te gustaría automatizar?" required></textarea>
+            <button type="submit" class="cf-submit">Solicitar diagnóstico gratuito →</button>
+          </form>
+          <div class="cf-success" id="cfSuccess">
+            <div class="ic">✓</div>
+            <div style="font-weight:600;margin-bottom:.5rem;">Mensaje enviado</div>
+            <div style="font-size:.85rem;color:var(--muted);">Te responderé a tu email en menos de 24 horas.</div>
           </div>
-        </div>
-        <div class="principle-item">
-          <div class="principle-num">02</div>
-          <div>
-            <div class="principle-title">Ahorrar tiempo al usuario</div>
-            <div class="principle-desc">El tiempo es el recurso más escaso. Cada interacción debe ser más rápida que la alternativa.</div>
-          </div>
-        </div>
-        <div class="principle-item">
-          <div class="principle-num">03</div>
-          <div>
-            <div class="principle-title">Experiencia rápida e intuitiva</div>
-            <div class="principle-desc">Una herramienta que requiere aprendizaje ha fallado antes de ser usada. La curva de adopción debe ser cero.</div>
-          </div>
-        </div>
-        <div class="principle-item">
-          <div class="principle-num">04</div>
-          <div>
-            <div class="principle-title">Arquitectura preparada para escalar</div>
-            <div class="principle-desc">Cada módulo se diseña pensando en cómo encajará con los siguientes. Sin reescrituras, sin migraciones forzadas.</div>
-          </div>
+          <p class="cf-note">Sin compromiso. Sin spam. Respondo personalmente cada mensaje.</p>
         </div>
       </div>
 
+      <div class="contact-info reveal">
+        <h3>¿Prefieres escribir directamente?</h3>
+        <p>También puedes contactarme por email. Leo y respondo cada mensaje personalmente, normalmente en menos de 24 horas.</p>
+        <div class="contact-channels">
+          <a href="mailto:alejandrogarcia12345678910e@gmail.com?subject=Quiero%20un%20diagn%C3%B3stico%20gratuito" class="channel">
+            <div class="channel-icon">✉️</div>
+            <div class="channel-text"><b>Email directo</b><span>alejandrogarcia12345678910e@gmail.com</span></div>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ HERRAMIENTAS ════════════════════════ -->
-<section class="tools-section" id="herramientas">
-  <div class="container">
-
-    <div class="tools-header reveal">
-      <div>
-        <div class="section-label">Herramientas</div>
-        <h2 class="section-title">Diseñadas para<br><em>ser utilizadas.</em></h2>
-        <p class="section-desc" style="margin-top:0.75rem;">
-          Sin registros innecesarios. Sin procesos complejos. Sin distracciones.<br>Solo herramientas que funcionan.
-        </p>
-      </div>
-      <div class="tools-filter">
-        <button class="filter-btn active" data-filter="all">Todas</button>
-        <button class="filter-btn" data-filter="web">Utilidades</button>
-        <button class="filter-btn" data-filter="ia">IA</button>
-        <button class="filter-btn" data-filter="prod">Productividad</button>
-      </div>
-    </div>
-
-    <div class="tools-grid" id="toolsGrid">
-
-      <div class="tool-card reveal" data-cat="web" tabindex="0">
-        <div class="tool-icon">⬛</div>
-        <div class="tool-name">Generador QR</div>
-        <div class="tool-desc">Crea códigos QR personalizados para URLs, textos o contactos. Descarga en PNG o SVG sin marcas de agua.</div>
-        <div class="tool-meta">
-          <span class="tool-tag">Utilidades</span>
-          <span class="tool-arrow">↗</span>
-        </div>
-      </div>
-
-      <div class="tool-card reveal" data-cat="web" tabindex="0">
-        <div class="tool-icon">🕐</div>
-        <div class="tool-name">Hora exacta mundial</div>
-        <div class="tool-desc">Consulta la hora en cualquier ciudad del mundo. Convierte zonas horarias al instante con precisión al segundo.</div>
-        <div class="tool-meta">
-          <span class="tool-tag">Utilidades</span>
-          <span class="tool-arrow">↗</span>
-        </div>
-      </div>
-
-      <div class="tool-card reveal" data-cat="web" tabindex="0">
-        <div class="tool-icon">📐</div>
-        <div class="tool-name">Conversor de unidades</div>
-        <div class="tool-desc">Convierte entre miles de unidades de medida: longitud, peso, temperatura, velocidad, datos y más.</div>
-        <div class="tool-meta">
-          <span class="tool-tag">Utilidades</span>
-          <span class="tool-arrow">↗</span>
-        </div>
-      </div>
-
-      <div class="tool-card reveal" data-cat="ia" tabindex="0">
-        <div class="tool-icon">✦</div>
-        <div class="tool-name">Resumidor con IA</div>
-        <div class="tool-desc">Pega cualquier texto o URL y obtén un resumen estructurado e inteligente en segundos.</div>
-        <div class="tool-meta">
-          <span class="tool-tag ai">IA</span>
-          <span class="tool-arrow">↗</span>
-        </div>
-      </div>
-
-      <div class="tool-card reveal" data-cat="web" tabindex="0">
-        <div class="tool-icon">🎨</div>
-        <div class="tool-name">Generador de paletas</div>
-        <div class="tool-desc">Crea paletas de color armoniosas para proyectos digitales. Exporta en HEX, RGB o variables CSS.</div>
-        <div class="tool-meta">
-          <span class="tool-tag new">Nuevo</span>
-          <span class="tool-arrow">↗</span>
-        </div>
-      </div>
-
-      <div class="tool-card reveal" data-cat="prod" tabindex="0">
-        <div class="tool-icon">📝</div>
-        <div class="tool-name">Utilidades de texto</div>
-        <div class="tool-desc">Mayúsculas, conteo de palabras, eliminación de duplicados, formato JSON, codificación Base64 y más.</div>
-        <div class="tool-meta">
-          <span class="tool-tag">Productividad</span>
-          <span class="tool-arrow">↗</span>
-        </div>
-      </div>
-
-      <div class="tool-card reveal" data-cat="ia" tabindex="0">
-        <div class="tool-icon">◈</div>
-        <div class="tool-name">Generador de prompts</div>
-        <div class="tool-desc">Crea prompts optimizados para ChatGPT, Claude, Midjourney y otros modelos. Estructura profesional garantizada.</div>
-        <div class="tool-meta">
-          <span class="tool-tag ai">IA</span>
-          <span class="tool-tag new">Nuevo</span>
-          <span class="tool-arrow">↗</span>
-        </div>
-      </div>
-
-      <div class="tool-card reveal" data-cat="web" tabindex="0">
-        <div class="tool-icon">💱</div>
-        <div class="tool-name">Conversor de monedas</div>
-        <div class="tool-desc">Tipos de cambio actualizados para más de 150 divisas internacionales con histórico de variación.</div>
-        <div class="tool-meta">
-          <span class="tool-tag">Utilidades</span>
-          <span class="tool-arrow">↗</span>
-        </div>
-      </div>
-
-      <div class="tool-card reveal" data-cat="prod" tabindex="0">
-        <div class="tool-icon">🔐</div>
-        <div class="tool-name">Generador de contraseñas</div>
-        <div class="tool-desc">Contraseñas seguras y únicas generadas localmente. Sin transmisión de datos. Configura longitud y complejidad.</div>
-        <div class="tool-meta">
-          <span class="tool-tag">Productividad</span>
-          <span class="tool-arrow">↗</span>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="tools-note reveal">
-      Nuevas herramientas se incorporan continuamente como parte de la evolución del ecosistema. Cada una diseñada bajo los mismos principios de velocidad, utilidad y simplicidad.
-    </div>
-
-    <div style="text-align:center;margin-top:2.5rem;" class="reveal">
-      <a href="#" class="btn-ghost">Ver todas las herramientas →</a>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══════════════════ INNOVACIÓN ══════════════════════════ -->
-<section class="innovation-section" id="innovacion">
-  <div class="container">
-    <div class="innovation-grid">
-
-      <div class="reveal">
-        <div class="section-label">Innovación</div>
-        <h2 class="section-title">Más allá de las<br><em>herramientas.</em></h2>
-        <div class="innovation-text">
-          <p>
-            El ecosistema Alejandro García está diseñado para expandirse mucho más allá de las utilidades web tradicionales.
-          </p>
-          <p>
-            <strong>Cada avance se desarrolla bajo una misma visión:</strong> crear tecnología accesible, útil y preparada para el futuro. No como tendencia pasajera, sino como infraestructura que genera valor con el tiempo.
-          </p>
-          <p>
-            Las próximas fases no son promesas. Son la consecuencia natural de una arquitectura pensada desde el principio para escalar.
-          </p>
-        </div>
-      </div>
-
-      <div class="innovation-items reveal">
-        <div class="innovation-item">
-          <div class="innovation-item-icon">◈</div>
-          <div class="innovation-item-title">Inteligencia Artificial</div>
-          <div class="innovation-item-desc">Soluciones impulsadas por modelos de lenguaje avanzados integradas en el ecosistema.</div>
-        </div>
-        <div class="innovation-item">
-          <div class="innovation-item-icon">⟳</div>
-          <div class="innovation-item-title">Automatizaciones</div>
-          <div class="innovation-item-desc">Flujos de trabajo autónomos que eliminan tareas repetitivas y liberan tiempo real.</div>
-        </div>
-        <div class="innovation-item">
-          <div class="innovation-item-icon">⬡</div>
-          <div class="innovation-item-title">Aplicaciones SaaS</div>
-          <div class="innovation-item-desc">Productos verticales que nacen dentro del ecosistema y evolucionan de forma independiente.</div>
-        </div>
-        <div class="innovation-item">
-          <div class="innovation-item-icon">▦</div>
-          <div class="innovation-item-title">Análisis de datos</div>
-          <div class="innovation-item-desc">Sistemas que convierten datos en decisiones. Sin complejidad técnica para el usuario final.</div>
-        </div>
-        <div class="innovation-item">
-          <div class="innovation-item-icon">⊞</div>
-          <div class="innovation-item-title">Plataformas especializadas</div>
-          <div class="innovation-item-desc">Soluciones verticales diseñadas para sectores e industrias específicas.</div>
-        </div>
-        <div class="innovation-item">
-          <div class="innovation-item-icon">◎</div>
-          <div class="innovation-item-title">APIs abiertas</div>
-          <div class="innovation-item-desc">Infraestructura accesible para que otros desarrolladores construyan sobre el ecosistema.</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ COMUNIDAD ═══════════════════════════ -->
-<section class="community-section" id="comunidad">
-  <div class="container--sm">
-    <div class="community-box reveal">
-      <h2 class="community-title">
-        Sigue la evolución<br><em>desde dentro.</em>
-      </h2>
-      <p class="community-desc">
-        Los mejores proyectos no se construyen en silencio. Únete para recibir acceso anticipado a nuevas herramientas, actualizaciones estratégicas y avances del ecosistema antes de su publicación oficial.
-      </p>
-      <form class="community-form" onsubmit="handleSubscribe(event)">
-        <input
-          type="email"
-          class="community-input"
-          placeholder="tu@email.com"
-          id="emailInput"
-          required
-          autocomplete="email"
-        >
-        <button type="submit" class="btn-primary">Unirse →</button>
-      </form>
-      <p class="community-note" id="subscribeMsg">Sin ruido. Solo señal. Cancela cuando quieras.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══════════════════ SOBRE MÍ ════════════════════════════ -->
-<section class="about-section" id="sobre-mi">
-  <div class="container">
+<!-- SOBRE MÍ — confianza, breve -->
+<section class="sec sec-alt sec-bt sec-bb" aria-labelledby="about-h2">
+  <div class="w">
     <div class="about-grid">
-
       <div class="about-text reveal">
-        <div class="section-label">Sobre el proyecto</div>
-        <h2 class="section-title">Construyendo el futuro,<br>proyecto a <em>proyecto.</em></h2>
-
+        <div class="eyebrow">Quién hay detrás</div>
+        <h2 id="about-h2" class="sec-title">Una persona, no<br>un departamento de <span class="ac">ventas.</span></h2>
         <p>Soy Alejandro García.</p>
-        <p>
-          Mi objetivo es crear un ecosistema digital capaz de combinar <strong>tecnología, inteligencia artificial, automatización y soluciones prácticas</strong> en una única plataforma coherente.
-        </p>
-        <p class="about-statement">
-          No persigo tendencias pasajeras. Me interesa construir activos digitales sólidos, escalables y útiles que continúen generando valor con el paso del tiempo.
-        </p>
-        <p>
-          Este sitio representa el punto de partida de una visión mucho más amplia que seguirá evolucionando durante los próximos años. Cada herramienta publicada, cada módulo añadido y cada decisión técnica forma parte de una arquitectura diseñada para durar.
-        </p>
-
-        <div class="about-links">
-          <a href="#" class="about-link">
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C3.7 1.5 1.5 3.7 1.5 6.5S3.7 11.5 6.5 11.5c1.4 0 1.9-.5 1.9-.5V9S7 9.5 6 8.5 6 6 6.5 5c.7-.8 2.3-.5 2.8 0V2.5S8.7 1.5 6.5 1.5z" stroke="currentColor" stroke-width="1.2"/></svg>
-            GitHub
-          </a>
-          <a href="#" class="about-link">
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="2" y="2" width="9" height="9" rx="2.5" stroke="currentColor" stroke-width="1.2"/><circle cx="6.5" cy="6.5" r="1.8" stroke="currentColor" stroke-width="1.2"/><circle cx="9.5" cy="3.5" r="0.5" fill="currentColor"/></svg>
-            Instagram
-          </a>
-          <a href="#" class="about-link">
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M1.5 3.5l5 4 5-4M1.5 3.5h10v7h-10z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
-            Newsletter
-          </a>
-          <a href="#" class="about-link">
-            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 10L6 2l4 8M3.5 7.5h5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Blog
-          </a>
-        </div>
+        <p>No vendo IA como concepto de moda. Implemento sistemas concretos que <strong>ahorran horas reales cada semana</strong> y se notan en el resultado del negocio, no solo en la factura.</p>
+        <p>Cada proyecto empieza con un diagnóstico gratuito, sin compromiso. Si no hay un ahorro claro de tiempo o dinero, te lo digo directamente: no tiene sentido automatizar por automatizar.</p>
       </div>
-
-      <div class="about-visual reveal">
+      <div class="reveal">
         <div class="about-card">
-          <div class="about-avatar">A</div>
+          <div class="about-av">AG</div>
           <div class="about-name">Alejandro García</div>
-          <div class="about-role">Desarrollador · Arquitecto de producto · Estratega digital</div>
-          <div class="about-tags">
-            <span class="about-tag">Next.js</span>
-            <span class="about-tag">TypeScript</span>
-            <span class="about-tag">IA / LLMs</span>
-            <span class="about-tag">Producto</span>
-            <span class="about-tag">Automatización</span>
-          </div>
-          <div class="about-quote">
-            "Construyo herramientas que me gustaría tener. Si resuelven un problema real para mí, lo resolverán para más personas."
-          </div>
-        </div>
-        <div class="float-card float-card-1">
-          <div class="float-val">20+</div>
-          <div class="float-lbl">Herramientas activas</div>
-        </div>
-        <div class="float-card float-card-2">
-          <div style="display:flex;align-items:center;gap:0.5rem;">
-            <span style="width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 6px var(--green);flex-shrink:0;"></span>
-            <div class="float-lbl">Ecosistema en evolución</div>
-          </div>
+          <div class="about-role">IA y automatización para empresas</div>
+          <div class="about-quote">"El mejor sistema de IA es el que el cliente deja de notar porque simplemente funciona."</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- ══════════════════ FOOTER ══════════════════════════════ -->
+<!-- FOOTER -->
 <footer>
-  <div class="container">
-    <div class="footer-top">
+  <div class="w">
+    <div class="footer-g">
       <div class="footer-brand">
-        <div class="nav-logo">
-          <div class="nav-logo-mark">A</div>
-          <span>Alejandro García</span>
-        </div>
-        <p>Tecnología, automatización e inteligencia artificial al servicio de soluciones reales.</p>
+        <a class="logo" href="#hero"><div class="logo-mark">AG</div><span>Alejandro García</span></a>
+        <p>Automatización e inteligencia artificial para empresas que quieren ahorrar tiempo y crecer más rápido.</p>
       </div>
       <div>
-        <div class="footer-col-title">Herramientas</div>
+        <div class="footer-h">Servicios</div>
         <ul class="footer-links">
-          <li><a href="#">Generador QR</a></li>
-          <li><a href="#">Conversor de unidades</a></li>
-          <li><a href="#">Hora mundial</a></li>
-          <li><a href="#">Paletas de color</a></li>
-          <li><a href="#">Ver todas →</a></li>
+          <li><a href="#servicios">Automatización</a></li>
+          <li><a href="#servicios">Chatbots IA</a></li>
+          <li><a href="#servicios">Captación de leads</a></li>
+          <li><a href="#servicios">Consultoría IA</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-col-title">Proyecto</div>
+        <div class="footer-h">Contacto</div>
         <ul class="footer-links">
-          <li><a href="#vision">Visión</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Hoja de ruta</a></li>
-        </ul>
-      </div>
-      <div>
-        <div class="footer-col-title">Legal</div>
-        <ul class="footer-links">
-          <li><a href="#">Privacidad</a></li>
-          <li><a href="#">Términos</a></li>
-          <li><a href="#">Cookies</a></li>
-          <li><a href="#">Contacto</a></li>
+          <li><a href="#contacto">Diagnóstico gratuito</a></li>
+          <li><a href="mailto:alejandrogarcia12345678910e@gmail.com">Email directo</a></li>
+          <li><a href="#casos">Casos de uso</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 Alejandro García · Construido con precisión.</span>
-      <div class="footer-social">
-        <a href="#" aria-label="GitHub">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1.5C3.7 1.5 1.5 3.7 1.5 6.5c0 2.2 1.4 4 3.3 4.7.3 0 .3-.1.3-.3V9.7c-1.3.3-1.6-.6-1.6-.6-.2-.6-.6-.7-.6-.7-.5-.3 0-.3 0-.3.5 0 .7.5.7.5.4.8 1.1.5 1.4.4 0-.3.2-.5.3-.6-1.1-.1-2.3-.5-2.3-2.5 0-.5.2-1 .5-1.4 0-.1-.2-.5 0-1.1 0 0 .4-.1 1.3.4.4-.1.8-.1 1.1-.1s.7 0 1.1.1c.9-.5 1.3-.4 1.3-.4.2.6 0 1 0 1.1.3.4.5.9.5 1.4 0 1.9-1.1 2.4-2.3 2.5.2.2.4.5.4.9V11c0 .2.1.3.3.3C10.1 10.5 11.5 8.7 11.5 6.5c0-2.8-2.2-5-5-5z" fill="currentColor"/></svg>
-        </a>
-        <a href="#" aria-label="Twitter / X">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 2h3l5.5 9H7.5L2 2z" stroke="currentColor" stroke-width="1.1" stroke-linejoin="round"/><path d="M2 11l3.5-3.5M11 2L7.5 5.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
-        </a>
-        <a href="#" aria-label="LinkedIn">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><rect x="1.5" y="1.5" width="10" height="10" rx="2" stroke="currentColor" stroke-width="1.1"/><path d="M4 6v3.5M4 4.5v.1M6.5 9.5V7c0-.8.5-1.5 1.5-1.5S9.5 6.2 9.5 7v2.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
-        </a>
-      </div>
-    </div>
+    <div class="footer-bot">© 2025 Alejandro García · IA y automatización para empresas.</div>
   </div>
 </footer>
 
-<!-- ══════════════════ JS ═══════════════════════════════════ -->
+<!-- FLOATING CTA -->
+<a href="#contacto" id="floatCta"><span>💬</span><span>Diagnóstico gratuito</span></a>
 <script>
-// Nav scroll
-const nav = document.getElementById('nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-}, { passive: true });
+'use strict';
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('sc',scrollY>40);
+  const fc=document.getElementById('floatCta');
+  const contactSec=document.getElementById('contacto');
+  const rect=contactSec.getBoundingClientRect();
+  const pastHero=scrollY>window.innerHeight*0.8;
+  const onContact=rect.top<window.innerHeight && rect.bottom>0;
+  fc.classList.toggle('show', pastHero && !onContact);
+},{passive:true});
 
-// Scroll reveal
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 70);
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+function toggleMenu(){
+  const ul=document.querySelector('.nav-links');
+  ul.style.cssText=ul.style.display==='flex'?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:rgba(11,13,15,.98);padding:1.5rem;gap:.35rem;border-bottom:1px solid rgba(237,239,242,.08);backdrop-filter:blur(20px);z-index:299;';
+}
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-links').style.display=''));
 
-// Tool card mouse glow
-document.querySelectorAll('.tool-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const r = card.getBoundingClientRect();
-    card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
-    card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
-  });
-});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*55);obs.unobserve(e.target);}});
+},{threshold:.08,rootMargin:'0px 0px -35px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
-// Filter
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const f = btn.dataset.filter;
-    document.querySelectorAll('.tool-card').forEach(card => {
-      card.style.display = (f === 'all' || card.dataset.cat === f) ? '' : 'none';
-    });
-  });
-});
+/* CALCULATORS */
+function calcAuto(){
+  const h=parseFloat(document.getElementById('atHours').value)||0;
+  const r=parseFloat(document.getElementById('atRate').value)||0;
+  const yearly=h*r*52;
+  document.getElementById('atOut').innerHTML='Coste anual: <strong style="color:var(--indigo);font-size:1rem">'+yearly.toLocaleString('es',{minimumFractionDigits:2})+' €</strong>';
+}
+function calcROI(){
+  const inv=parseFloat(document.getElementById('roiInv').value)||0;
+  const gain=parseFloat(document.getElementById('roiGain').value)||0;
+  const el=document.getElementById('roiOut');
+  if(inv<=0){el.textContent='Introduce una inversión mayor que 0.';return;}
+  const roi=((gain-inv)/inv)*100;
+  el.innerHTML='ROI estimado: <strong style="color:'+(roi>=0?'#10b981':'#ef4444')+';font-size:1rem">'+roi.toFixed(0)+'%</strong>';
+}
+function calcOp(){
+  const people=parseFloat(document.getElementById('opPeople').value)||0;
+  const hours=parseFloat(document.getElementById('opHours').value)||0;
+  const rate=parseFloat(document.getElementById('opRate').value)||0;
+  const yearly=people*hours*rate*52;
+  document.getElementById('opOut').innerHTML='Coste anual total: <strong style="color:var(--indigo);font-size:1rem">'+yearly.toLocaleString('es',{minimumFractionDigits:2})+' €</strong>';
+}
+function genPrompt(){
+  const task=document.getElementById('pgTask').value.trim();
+  const el=document.getElementById('pgOut');
+  if(!task){el.textContent='Describe la tarea arriba para generar el prompt.';return;}
+  el.textContent='Actúa como asistente especializado en '+task+'.\n\n- Responde con tono profesional y claro.\n- Sé concreto, sin relleno.\n- Si falta información, pídela antes de responder.\n- Si la consulta supera tu ámbito, indícalo y deriva a una persona del equipo.';
+}
+calcAuto(); calcROI(); calcOp();
 
-// Newsletter
-function handleSubscribe(e) {
+/* CONTACT FORM (client-side only — no backend yet, opens mail client as fallback) */
+function handleContact(e){
   e.preventDefault();
-  const msg = document.getElementById('subscribeMsg');
-  const input = document.getElementById('emailInput');
-  msg.style.color = '#4ade80';
-  msg.textContent = '✓ Acceso confirmado. Recibirás las novedades antes que nadie.';
-  input.value = '';
-  setTimeout(() => {
-    msg.style.color = '';
-    msg.textContent = 'Sin ruido. Solo señal. Cancela cuando quieras.';
-  }, 5000);
-}
+  const name=document.getElementById('cfName').value.trim();
+  const email=document.getElementById('cfEmail').value.trim();
+  const company=document.getElementById('cfCompany').value.trim();
+  const sector=document.getElementById('cfSector').value;
+  const msg=document.getElementById('cfMsg').value.trim();
+  if(!name||!email||!msg){return;}
 
-// Mobile menu
-function toggleMenu() {
-  const links = document.querySelector('.nav-links');
-  if (links.style.display === 'flex') {
-    links.style.display = '';
-  } else {
-    links.style.cssText = 'display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(10,10,10,0.97);padding:2rem;gap:0.5rem;border-bottom:1px solid rgba(255,255,255,0.07);backdrop-filter:blur(20px);z-index:99;';
-  }
+  const body=encodeURIComponent(
+    'Nombre: '+name+'\n'+
+    (company?'Empresa: '+company+'\n':'')+
+    (sector?'Sector: '+sector+'\n':'')+
+    'Email de contacto: '+email+'\n\n'+
+    'Mensaje:\n'+msg
+  );
+  const mailto='mailto:alejandrogarcia12345678910e@gmail.com?subject='+encodeURIComponent('Diagnóstico gratuito — '+name)+'&body='+body;
+
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('cfSuccess').classList.add('show');
+  window.location.href=mailto;
 }
-document.querySelectorAll('.nav-links a').forEach(a => {
-  a.addEventListener('click', () => { document.querySelector('.nav-links').style.display = ''; });
-});
 </script>
 </body>
 </html>
