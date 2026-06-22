@@ -131,19 +131,15 @@ input,select,textarea{font-family:var(--sans);}
 .usecase-metric .v{font-size:1.3rem;font-weight:700;color:var(--green);letter-spacing:-.02em;}
 .usecase-metric .l{font-size:.7rem;color:var(--faint);text-transform:uppercase;letter-spacing:.03em;}
 
-/* TOOLS — apoyo de venta, no protagonistas */
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.1rem;}
-.tool-card{background:var(--bg);border:1px solid var(--line2);border-radius:var(--r2);padding:1.5rem;display:flex;flex-direction:column;}
-.tool-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1.1rem;}
-.tool-icon{width:38px;height:38px;border-radius:9px;background:var(--bg3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0;}
-.tool-name{font-size:.92rem;font-weight:600;letter-spacing:-.01em;}
-.field-lbl{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.35rem;display:block;}
-.m-input{width:100%;background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r);padding:.58rem .8rem;color:var(--white);font-size:.85rem;outline:none;transition:border-color .18s;margin-bottom:.8rem;}
-.m-input:focus{border-color:rgba(91,95,239,.5);}
-.m-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
-.m-output{background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r);padding:.85rem;font-family:var(--mono);font-size:.82rem;color:var(--indigo);line-height:1.65;min-height:48px;margin-bottom:.6rem;}
-.tool-cta{display:block;text-align:center;background:var(--indigo3);border:1px solid rgba(91,95,239,.3);color:var(--indigo);font-size:.78rem;font-weight:600;padding:.55rem;border-radius:var(--r);margin-top:.4rem;transition:.18s;}
-.tool-cta:hover{background:rgba(91,95,239,.2);}
+/* CHATBOTS — sección breve, sin protagonismo excesivo */
+.chat-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start;}
+.chat-benefits{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;}
+.chat-benefit{background:var(--bg2);padding:1.25rem 1.4rem;display:flex;align-items:flex-start;gap:1rem;transition:background .2s;}
+.chat-benefit:hover{background:var(--bg3);}
+.chat-benefit-icon{width:36px;height:36px;border-radius:var(--r2);background:var(--bg3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform .25s,border-color .25s;}
+.chat-benefit:hover .chat-benefit-icon{transform:translateY(-2px);border-color:rgba(91,95,239,.4);}
+.chat-benefit-title{font-size:.88rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.25rem;}
+.chat-benefit-desc{font-size:.79rem;color:var(--muted);line-height:1.55;}
 
 /* PRUEBA SOCIAL */
 .proof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem;}
@@ -179,11 +175,6 @@ input,select,textarea{font-family:var(--sans);}
 .channel-text b{display:block;font-size:.85rem;font-weight:600;}
 .channel-text span{font-size:.76rem;color:var(--muted);}
 
-/* FLOATING CTA */
-#floatCta{position:fixed;bottom:1.5rem;right:1.5rem;z-index:250;background:var(--indigo);color:white;font-weight:600;font-size:.85rem;padding:.8rem 1.3rem;border-radius:999px;display:flex;align-items:center;gap:.5rem;box-shadow:0 8px 30px rgba(91,95,239,.4);transition:transform .25s,opacity .25s;opacity:0;transform:translateY(20px) scale(.9);pointer-events:none;}
-#floatCta.show{opacity:1;transform:none;pointer-events:all;}
-#floatCta:hover{background:var(--indigo2);}
-
 /* ABOUT (compact, single purpose: build trust) */
 .about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:5rem;align-items:center;}
 .about-text p{font-size:.94rem;color:var(--muted);line-height:1.8;margin-bottom:1.1rem;}
@@ -194,58 +185,6 @@ input,select,textarea{font-family:var(--sans);}
 .about-role{font-size:.78rem;color:var(--muted);margin-bottom:1.2rem;}
 .about-quote{font-size:.8rem;color:var(--muted);line-height:1.6;font-style:italic;padding-top:.9rem;border-top:1px solid var(--line);}
 
-/* ECOSISTEMA — sección premium, minimalista, no distrae de la agencia */
-#ecosistema{position:relative;overflow:hidden;}
-#ecosistema::before{
-  content:'';position:absolute;top:-20%;left:50%;transform:translateX(-50%);
-  width:1000px;height:500px;
-  background:radial-gradient(ellipse at center,rgba(91,95,239,.06) 0%,transparent 70%);
-  pointer-events:none;
-}
-.eco-grid-bg{
-  position:absolute;inset:0;pointer-events:none;
-  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
-  background-size:56px 56px;
-  mask-image:radial-gradient(ellipse 65% 65% at 50% 0%,black 0%,transparent 100%);
-  opacity:.5;
-}
-.eco-header{text-align:center;max-width:600px;margin:0 auto 3rem;position:relative;}
-.eco-header .eyebrow{justify-content:center;}
-.eco-header .sec-title{margin-bottom:.85rem;}
-
-.eco-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.1rem;position:relative;}
-.eco-card{
-  background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r3);
-  padding:1.75rem;display:flex;flex-direction:column;gap:.9rem;
-  position:relative;overflow:hidden;transition:border-color .25s,transform .25s;
-}
-.eco-card::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(circle at 50% 0%,rgba(91,95,239,.07),transparent 65%);
-  opacity:0;transition:opacity .3s;
-}
-.eco-card:hover{border-color:rgba(91,95,239,.28);transform:translateY(-3px);}
-.eco-card:hover::before{opacity:1;}
-.eco-card.eco-featured{border-color:rgba(91,95,239,.3);background:linear-gradient(160deg,var(--bg3),var(--bg2));}
-
-.eco-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.75rem;position:relative;}
-.eco-icon{width:44px;height:44px;border-radius:var(--r2);background:var(--bg3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
-.eco-status{
-  font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
-  padding:.22rem .6rem;border-radius:999px;border:1px solid var(--line2);color:var(--faint);
-  display:flex;align-items:center;gap:.35rem;flex-shrink:0;white-space:nowrap;
-}
-.eco-status .dot{width:5px;height:5px;border-radius:50%;background:var(--faint);}
-.eco-status.eco-soon{color:var(--amber);border-color:rgba(245,158,11,.3);}
-.eco-status.eco-soon .dot{background:var(--amber);animation:ecoblink 2s ease infinite;}
-@keyframes ecoblink{0%,100%{opacity:1}50%{opacity:.3}}
-
-.eco-name{font-size:1rem;font-weight:600;letter-spacing:-.015em;position:relative;}
-.eco-desc{font-size:.82rem;color:var(--muted);line-height:1.6;flex:1;position:relative;}
-.eco-tags{display:flex;flex-wrap:wrap;gap:.35rem;position:relative;}
-.eco-tag{font-size:.68rem;padding:.18rem .55rem;border-radius:999px;border:1px solid var(--line2);color:var(--faint);}
-
-.eco-note{text-align:center;font-size:.78rem;color:var(--faint);max-width:480px;margin:2.25rem auto 0;line-height:1.7;position:relative;}
 .footer-g{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;margin-bottom:2.25rem;}
 .footer-brand p{font-size:.79rem;color:var(--muted);line-height:1.7;margin-top:.85rem;max-width:260px;}
 .footer-h{font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:1rem;}
@@ -256,7 +195,7 @@ input,select,textarea{font-family:var(--sans);}
 
 @media (max-width:980px){
   .nav-links{display:none;} .hamburger{display:block;}
-  .contact-wrap,.about-grid{grid-template-columns:1fr;gap:2.5rem;}
+  .contact-wrap,.about-grid,.chat-layout{grid-template-columns:1fr;gap:2.5rem;}
   .footer-g{grid-template-columns:1fr 1fr;}
 }
 @media (max-width:640px){
@@ -264,9 +203,6 @@ input,select,textarea{font-family:var(--sans);}
   .sec{padding:4rem 0;}
   .cf-row{grid-template-columns:1fr;}
   .footer-g{grid-template-columns:1fr;}
-  #floatCta span{display:none;}
-  #floatCta{padding:.8rem;border-radius:50%;}
-  .eco-card.eco-featured{grid-column:auto;}
 }
 </style>
   <script src="https://asknorela.com/widget.js" data-asknorela-widget="wk_pub_acd2a673-3564-4dae-a48e-87d4fd09a9a5" async></script>
@@ -278,8 +214,7 @@ input,select,textarea{font-family:var(--sans);}
     <ul class="nav-links" role="list">
       <li><a href="#servicios">Servicios</a></li>
       <li><a href="#casos">Casos de uso</a></li>
-      <li><a href="#herramientas">Herramientas</a></li>
-      <li><a href="#ecosistema">Ecosistema</a></li>
+      <li><a href="#chatbots">Chatbots</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <div class="nav-right">
@@ -296,9 +231,9 @@ input,select,textarea{font-family:var(--sans);}
 
   <div class="hero-badge"><div class="d"></div>Plazas limitadas de diagnóstico este mes</div>
 
-  <h1 class="hero-title">Automatizamos procesos, creamos páginas web<br>y construimos <span class="ac">herramientas a medida</span><br>para tu negocio.</h1>
+  <h1 class="hero-title">Automatización de procesos, páginas web<br>y <span class="ac">sistemas a medida</span><br>—incluidos chatbots— para tu negocio.</h1>
 
-  <p class="hero-sub">Ayudamos a negocios a ahorrar tiempo, digitalizar procesos manuales y tener una presencia online profesional. Sin paquetes genéricos: cada proyecto se adapta a lo que tu negocio necesita.</p>
+  <p class="hero-sub">Ayudamos a negocios a ahorrar tiempo, tener una presencia online profesional y resolver necesidades concretas con sistemas personalizados. Sin paquetes genéricos: cada proyecto se adapta a lo que tu negocio necesita.</p>
 
   <div class="hero-ctas">
     <a href="#contacto" class="btn-primary">Solicitar diagnóstico gratuito <span aria-hidden="true">→</span></a>
@@ -396,11 +331,11 @@ input,select,textarea{font-family:var(--sans);}
         <div class="service-name">Sistemas y herramientas personalizadas</div>
         <div class="service-desc">Si no existe una herramienta para lo que necesitas, la construimos.</div>
         <div class="service-list">
-          <span>Paneles internos</span>
-          <span>Calculadoras</span>
-          <span>Formularios avanzados</span>
+          <span>Chatbots</span>
+          <span>Formularios inteligentes</span>
+          <span>Sistemas internos</span>
           <span>Herramientas empresariales</span>
-          <span>Automatizaciones a medida</span>
+          <span>Soluciones personalizadas</span>
         </div>
         <a href="#contacto" class="service-cta">Hablar de mi caso →</a>
       </div>
@@ -480,57 +415,38 @@ input,select,textarea{font-family:var(--sans);}
     </div>
   </div>
 </section>
-<!-- HERRAMIENTAS — apoyan la venta, no son el centro -->
-<section id="herramientas" class="sec sec-bt" aria-labelledby="tools-h2">
+<!-- CHATBOTS — mención breve dentro de sistemas personalizados, sin presentarse como demo -->
+<section id="chatbots" class="sec sec-bt" aria-labelledby="chat-h2">
   <div class="w">
-    <div class="reveal">
-      <div class="eyebrow">Calcula tu caso</div>
-      <h2 id="tools-h2" class="sec-title">¿Cuánto te está costando<br>no automatizar?</h2>
-      <p class="sec-body">Antes de hablar, calcula tú mismo el impacto. Son números reales, no estimaciones de marketing.</p>
-    </div>
-
-    <div class="tools-grid reveal" style="margin-top:2.5rem;">
-
-      <div class="tool-card">
-        <div class="tool-head"><div class="tool-icon">⏱️</div><div class="tool-name">Coste de tareas manuales</div></div>
-        <div class="m-row">
-          <div><label class="field-lbl">Horas/semana</label><input class="m-input" id="atHours" type="number" value="5" oninput="calcAuto()"></div>
-          <div><label class="field-lbl">Coste/hora (€)</label><input class="m-input" id="atRate" type="number" value="18" oninput="calcAuto()"></div>
+    <div class="chat-layout">
+      <div class="reveal">
+        <div class="eyebrow">Sistemas personalizados</div>
+        <h2 id="chat-h2" class="sec-title">Chatbots inteligentes<br>para <span class="ac">empresas.</span></h2>
+        <p class="sec-body">Una de las soluciones que desarrollamos dentro de los sistemas a medida: chatbots que atienden a tus clientes cuando tu equipo no puede.</p>
+        <a href="#contacto" class="btn-primary" style="margin-top:1.5rem;">Quiero un chatbot para mi negocio →</a>
+      </div>
+      <div class="chat-benefits reveal">
+        <div class="chat-benefit">
+          <div class="chat-benefit-icon">⚡</div>
+          <div><div class="chat-benefit-title">Atención automática</div><div class="chat-benefit-desc">Resuelve las preguntas frecuentes sin que nadie tenga que escribir la misma respuesta dos veces.</div></div>
         </div>
-        <div class="m-output" id="atOut"></div>
-        <a href="#contacto" class="tool-cta">Quiero reducir este coste →</a>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-head"><div class="tool-icon">📈</div><div class="tool-name">ROI de automatización</div></div>
-        <div class="m-row">
-          <div><label class="field-lbl">Inversión (€)</label><input class="m-input" id="roiInv" type="number" value="1500" oninput="calcROI()"></div>
-          <div><label class="field-lbl">Ahorro anual (€)</label><input class="m-input" id="roiGain" type="number" value="4500" oninput="calcROI()"></div>
+        <div class="chat-benefit">
+          <div class="chat-benefit-icon">💬</div>
+          <div><div class="chat-benefit-title">Respuestas instantáneas</div><div class="chat-benefit-desc">Sin esperas. El cliente obtiene información al momento, no al día siguiente.</div></div>
         </div>
-        <div class="m-output" id="roiOut"></div>
-        <a href="#contacto" class="tool-cta">Quiero este retorno →</a>
-      </div>
-
-      <div class="tool-card">
-        <div class="tool-head"><div class="tool-icon">💸</div><div class="tool-name">Costes operativos anuales</div></div>
-        <div class="m-row">
-          <div><label class="field-lbl">Empleados en la tarea</label><input class="m-input" id="opPeople" type="number" value="1" oninput="calcOp()"></div>
-          <div><label class="field-lbl">Horas/semana c/u</label><input class="m-input" id="opHours" type="number" value="8" oninput="calcOp()"></div>
+        <div class="chat-benefit">
+          <div class="chat-benefit-icon">🕐</div>
+          <div><div class="chat-benefit-title">Disponibilidad 24/7</div><div class="chat-benefit-desc">Tu negocio sigue atendiendo aunque sea de madrugada o fin de semana.</div></div>
         </div>
-        <label class="field-lbl">Coste/hora medio (€)</label>
-        <input class="m-input" id="opRate" type="number" value="16" oninput="calcOp()">
-        <div class="m-output" id="opOut"></div>
-        <a href="#contacto" class="tool-cta">Quiero reducir este gasto →</a>
+        <div class="chat-benefit">
+          <div class="chat-benefit-icon">📋</div>
+          <div><div class="chat-benefit-title">Captación de información</div><div class="chat-benefit-desc">Recoge los datos que necesitas de cada visitante antes de que hable con tu equipo.</div></div>
+        </div>
+        <div class="chat-benefit">
+          <div class="chat-benefit-icon">⭐</div>
+          <div><div class="chat-benefit-title">Mejor experiencia de cliente</div><div class="chat-benefit-desc">Menos fricción, menos espera, más sensación de marca cuidada.</div></div>
+        </div>
       </div>
-
-      <div class="tool-card">
-        <div class="tool-head"><div class="tool-icon">✦</div><div class="tool-name">Generador de prompts</div></div>
-        <label class="field-lbl">¿Qué necesitas que haga la IA?</label>
-        <input class="m-input" id="pgTask" placeholder="Ej: responder dudas de envío" oninput="genPrompt()">
-        <div class="m-output" id="pgOut" style="white-space:pre-wrap;font-size:.74rem;max-height:120px;overflow-y:auto;"></div>
-        <a href="#contacto" class="tool-cta">Quiero esto implementado →</a>
-      </div>
-
     </div>
   </div>
 </section>
@@ -617,7 +533,7 @@ input,select,textarea{font-family:var(--sans);}
         <div class="eyebrow">Quién hay detrás</div>
         <h2 id="about-h2" class="sec-title">Una persona, no<br>un departamento de <span class="ac">ventas.</span></h2>
         <p>Soy Alejandro García.</p>
-        <p>No vendo IA como concepto de moda. Implemento sistemas concretos que <strong>ahorran horas reales cada semana</strong> y se notan en el resultado del negocio, no solo en la factura.</p>
+        <p>No vendo soluciones genéricas. Implemento sistemas concretos que <strong>ahorran horas reales cada semana</strong> y se notan en el resultado del negocio, no solo en la factura.</p>
         <p>Cada proyecto empieza con un diagnóstico gratuito, sin compromiso. Si no hay un ahorro claro de tiempo o dinero, te lo digo directamente: no tiene sentido automatizar por automatizar.</p>
       </div>
       <div class="reveal">
@@ -625,68 +541,10 @@ input,select,textarea{font-family:var(--sans);}
           <div class="about-av">AG</div>
           <div class="about-name">Alejandro García</div>
           <div class="about-role">Automatización, web y herramientas a medida</div>
-          <div class="about-quote">"El mejor sistema de IA es el que el cliente deja de notar porque simplemente funciona."</div>
+          <div class="about-quote">"El mejor sistema es el que el cliente deja de notar porque simplemente funciona."</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ECOSISTEMA — visión a largo plazo, sin distraer de la agencia -->
-<section id="ecosistema" class="sec sec-alt sec-bt sec-bb">
-  <div class="eco-grid-bg" aria-hidden="true"></div>
-  <div class="w">
-    <div class="eco-header reveal">
-      <div class="eyebrow">El proyecto a largo plazo</div>
-      <h2 class="sec-title">Ecosistema <span class="ac">Alejandro García.</span></h2>
-      <p class="sec-body" style="margin:0 auto;">La agencia es la actividad principal hoy. Pero es el primer proyecto de algo más grande: distintas líneas de negocio bajo la misma marca, construidas con el tiempo.</p>
-    </div>
-
-    <div class="eco-grid reveal">
-
-      <div class="eco-card eco-featured">
-        <div class="eco-top">
-          <div class="eco-icon">🧠</div>
-          <span class="eco-status"><span class="dot"></span>Activo hoy</span>
-        </div>
-        <div class="eco-name">Agencia de automatización y desarrollo</div>
-        <div class="eco-desc">El núcleo del ecosistema. Automatización de procesos, páginas web y herramientas a medida para negocios reales.</div>
-        <div class="eco-tags"><span class="eco-tag">Automatización</span><span class="eco-tag">Desarrollo web</span><span class="eco-tag">Consultoría</span></div>
-      </div>
-
-      <div class="eco-card">
-        <div class="eco-top">
-          <div class="eco-icon">👕</div>
-          <span class="eco-status eco-soon"><span class="dot"></span>En desarrollo</span>
-        </div>
-        <div class="eco-name">Proveedores & Reventa</div>
-        <div class="eco-desc">Una futura plataforma centrada en proveedores, moda, camisetas de fútbol y negocios online de reventa.</div>
-        <div class="eco-tags"><span class="eco-tag">Moda</span><span class="eco-tag">Proveedores</span><span class="eco-tag">E-commerce</span></div>
-      </div>
-
-      <div class="eco-card">
-        <div class="eco-top">
-          <div class="eco-icon">📊</div>
-          <span class="eco-status"><span class="dot"></span>Próximamente</span>
-        </div>
-        <div class="eco-name">Análisis de datos</div>
-        <div class="eco-desc">Herramientas y paneles para convertir datos en decisiones, pensados para pequeños negocios.</div>
-        <div class="eco-tags"><span class="eco-tag">Datos</span><span class="eco-tag">Paneles</span></div>
-      </div>
-
-      <div class="eco-card">
-        <div class="eco-top">
-          <div class="eco-icon">⚡</div>
-          <span class="eco-status"><span class="dot"></span>Próximamente</span>
-        </div>
-        <div class="eco-name">Nuevos experimentos digitales</div>
-        <div class="eco-desc">Espacio reservado para ideas en validación: nuevas herramientas, productos digitales y proyectos propios.</div>
-        <div class="eco-tags"><span class="eco-tag">Experimental</span></div>
-      </div>
-
-    </div>
-
-    <p class="eco-note reveal">Estas líneas de negocio están en fase de desarrollo o validación. No representan servicios disponibles todavía. Se irán activando a medida que estén listas.</p>
   </div>
 </section>
 
@@ -703,7 +561,7 @@ input,select,textarea{font-family:var(--sans);}
         <ul class="footer-links">
           <li><a href="#servicios">Automatización de procesos</a></li>
           <li><a href="#servicios">Páginas web</a></li>
-          <li><a href="#servicios">Herramientas a medida</a></li>
+          <li><a href="#chatbots">Chatbots</a></li>
           <li><a href="#servicios">Consultoría tecnológica</a></li>
         </ul>
       </div>
@@ -716,23 +574,15 @@ input,select,textarea{font-family:var(--sans);}
         </ul>
       </div>
     </div>
-    <div class="footer-bot">© 2025 Alejandro García · IA y automatización para empresas.</div>
+    <div class="footer-bot">© 2025 Alejandro García · Automatización, web y sistemas a medida.</div>
   </div>
 </footer>
 
-<!-- FLOATING CTA -->
-<a href="#contacto" id="floatCta"><span>💬</span><span>Diagnóstico gratuito</span></a>
 <script>
 'use strict';
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{
   nav.classList.toggle('sc',scrollY>40);
-  const fc=document.getElementById('floatCta');
-  const contactSec=document.getElementById('contacto');
-  const rect=contactSec.getBoundingClientRect();
-  const pastHero=scrollY>window.innerHeight*0.8;
-  const onContact=rect.top<window.innerHeight && rect.bottom>0;
-  fc.classList.toggle('show', pastHero && !onContact);
 },{passive:true});
 
 function toggleMenu(){
@@ -754,36 +604,6 @@ document.querySelectorAll('.service-card').forEach(card=>{
     card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
   });
 });
-
-/* CALCULATORS */
-function calcAuto(){
-  const h=parseFloat(document.getElementById('atHours').value)||0;
-  const r=parseFloat(document.getElementById('atRate').value)||0;
-  const yearly=h*r*52;
-  document.getElementById('atOut').innerHTML='Coste anual: <strong style="color:var(--indigo);font-size:1rem">'+yearly.toLocaleString('es',{minimumFractionDigits:2})+' €</strong>';
-}
-function calcROI(){
-  const inv=parseFloat(document.getElementById('roiInv').value)||0;
-  const gain=parseFloat(document.getElementById('roiGain').value)||0;
-  const el=document.getElementById('roiOut');
-  if(inv<=0){el.textContent='Introduce una inversión mayor que 0.';return;}
-  const roi=((gain-inv)/inv)*100;
-  el.innerHTML='ROI estimado: <strong style="color:'+(roi>=0?'#10b981':'#ef4444')+';font-size:1rem">'+roi.toFixed(0)+'%</strong>';
-}
-function calcOp(){
-  const people=parseFloat(document.getElementById('opPeople').value)||0;
-  const hours=parseFloat(document.getElementById('opHours').value)||0;
-  const rate=parseFloat(document.getElementById('opRate').value)||0;
-  const yearly=people*hours*rate*52;
-  document.getElementById('opOut').innerHTML='Coste anual total: <strong style="color:var(--indigo);font-size:1rem">'+yearly.toLocaleString('es',{minimumFractionDigits:2})+' €</strong>';
-}
-function genPrompt(){
-  const task=document.getElementById('pgTask').value.trim();
-  const el=document.getElementById('pgOut');
-  if(!task){el.textContent='Describe la tarea arriba para generar el prompt.';return;}
-  el.textContent='Actúa como asistente especializado en '+task+'.\n\n- Responde con tono profesional y claro.\n- Sé concreto, sin relleno.\n- Si falta información, pídela antes de responder.\n- Si la consulta supera tu ámbito, indícalo y deriva a una persona del equipo.';
-}
-calcAuto(); calcROI(); calcOp();
 
 /* CONTACT FORM (client-side only — no backend yet, opens mail client as fallback) */
 function handleContact(e){
