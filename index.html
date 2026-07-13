@@ -3,422 +3,1207 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Automatización de procesos, páginas web profesionales y herramientas a medida para negocios que quieren ahorrar tiempo y digitalizarse. Diagnóstico gratuito.">
-<meta name="keywords" content="automatización de procesos, diseño de páginas web, herramientas personalizadas, digitalización de negocios, consultoría tecnológica">
+<meta name="description" content="Alejandro García — Estudio tecnológico de desarrollo web, automatizaciones, chatbots e IA para empresas. En desarrollo: AG Business, nuestra futura plataforma SaaS.">
+<meta name="keywords" content="agencia IA, desarrollo web, automatizaciones, chatbots inteligentes, software a medida, consultoría tecnológica, AG Business">
 <meta name="author" content="Alejandro García">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="Alejandro García — Automatización, Web y Herramientas a Medida">
-<meta property="og:description" content="Ayudamos a negocios a ahorrar tiempo automatizando procesos, con páginas web profesionales y herramientas hechas a medida.">
+<meta name="theme-color" content="#0b0d0f">
+<meta property="og:title" content="Alejandro García — Desarrollo web, automatización e IA para empresas">
+<meta property="og:description" content="Servicios tecnológicos a medida: desarrollo web, automatizaciones, chatbots e IA. Y estamos construyendo AG Business, nuestra plataforma SaaS.">
+
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://alejandrogarcia.dev">
-<link rel="canonical" href="https://alejandrogarcia.dev">
-<title>Automatización, Web y Herramientas a Medida — Alejandro García</title>
+<meta property="og:url" content="https://alejandrogarcia.space">
+<link rel="canonical" href="https://alejandrogarcia.space">
+<title>Alejandro García — Automatización, IA y AG Business</title>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"Alejandro García","description":"Automatización de procesos, diseño de páginas web y herramientas personalizadas para negocios.","areaServed":"ES","serviceType":["Automatización de procesos","Creación de páginas web","Sistemas y herramientas personalizadas","Optimización y digitalización","Consultoría tecnológica"]}
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Alejandro García","description":"Estudio tecnológico de automatización, IA y desarrollo de software a medida. Creadores de AG Business.","areaServed":"ES","serviceType":["Automatización","Desarrollo web","Soluciones de IA","Sistemas personalizados","SaaS AG Business"]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
 <style>
+/* ============================================
+   DESIGN TOKENS — evolución de la identidad actual
+   Se conservan: dark bg, indigo #5b5fef, Geist, dot markers
+   Se añaden: gradientes, elevaciones, motion, ring tokens
+   ============================================ */
 :root{
-  --bg:#0b0d0f; --bg2:#111417; --bg3:#1c1f23; --bg4:#26292e; --bg5:#33363b;
-  --line:rgba(237,239,242,.07); --line2:rgba(237,239,242,.12); --line3:rgba(237,239,242,.2);
-  --white:#edeff2; --muted:rgba(237,239,242,.48); --faint:rgba(237,239,242,.2);
-  --indigo:#5b5fef; --indigo2:#4548c9; --indigo3:rgba(91,95,239,.12);
-  --green:#10b981; --red:#ef4444; --amber:#f59e0b;
-  --r:7px; --r2:12px; --r3:18px; --r4:24px;
-  --sans:'Geist',system-ui,sans-serif; --mono:'Geist Mono',monospace;
+  /* Superficies */
+  --bg:#0b0d0f;
+  --bg2:#0f1113;
+  --bg3:#16181c;
+  --bg4:#1c1f23;
+  --bg5:#26292e;
+  --bg6:#33363b;
+
+  /* Líneas */
+  --line:rgba(237,239,242,.06);
+  --line2:rgba(237,239,242,.10);
+  --line3:rgba(237,239,242,.18);
+  --line4:rgba(237,239,242,.28);
+
+  /* Texto */
+  --white:#edeff2;
+  --text:#e6e8ec;
+  --muted:rgba(237,239,242,.56);
+  --faint:rgba(237,239,242,.32);
+  --dim:rgba(237,239,242,.18);
+
+  /* Marca */
+  --indigo:#5b5fef;
+  --indigo-hi:#7b7ff5;
+  --indigo-dk:#4548c9;
+  --indigo-soft:rgba(91,95,239,.14);
+  --indigo-glow:rgba(91,95,239,.35);
+
+  /* Semánticos */
+  --green:#10b981;
+  --green-soft:rgba(16,185,129,.12);
+  --red:#ef4444;
+  --amber:#f59e0b;
+  --cyan:#22d3ee;
+  --violet:#a78bfa;
+
+  /* Gradientes premium */
+  --grad-brand:linear-gradient(135deg,#7b7ff5 0%,#5b5fef 50%,#4548c9 100%);
+  --grad-mesh:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(91,95,239,.18) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 80% 30%,rgba(167,139,250,.10) 0%,transparent 60%),radial-gradient(ellipse 60% 50% at 20% 70%,rgba(34,211,238,.06) 0%,transparent 60%);
+  --grad-card:linear-gradient(180deg,rgba(255,255,255,.02) 0%,rgba(255,255,255,0) 100%);
+  --grad-border:linear-gradient(180deg,rgba(237,239,242,.18) 0%,rgba(237,239,242,.03) 100%);
+
+  /* Sombras */
+  --shadow-sm:0 1px 2px rgba(0,0,0,.4);
+  --shadow-md:0 8px 24px rgba(0,0,0,.4),0 2px 6px rgba(0,0,0,.3);
+  --shadow-lg:0 24px 60px rgba(0,0,0,.5),0 8px 20px rgba(0,0,0,.35);
+  --shadow-brand:0 20px 60px -20px rgba(91,95,239,.5),0 8px 24px -8px rgba(91,95,239,.3);
+
+  /* Radios */
+  --r-xs:6px; --r:8px; --r2:12px; --r3:16px; --r4:20px; --r5:24px;
+
+  /* Fuentes */
+  --sans:'Geist',ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'Geist Mono',ui-monospace,'JetBrains Mono',monospace;
+
+  /* Motion */
+  --ease:cubic-bezier(.2,.8,.2,1);
+  --ease-in:cubic-bezier(.4,0,1,1);
+  --dur-fast:.15s; --dur:.25s; --dur-slow:.45s;
 }
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{font-family:var(--sans);background:var(--bg);color:var(--white);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-feature-settings:'ss01','cv11';
+}
 a{color:inherit;text-decoration:none;}
-button{cursor:pointer;font-family:var(--sans);}
-input,select,textarea{font-family:var(--sans);}
-::-webkit-scrollbar{width:3px;}
+button{cursor:pointer;font-family:var(--sans);border:none;background:none;color:inherit;}
+input,select,textarea{font-family:var(--sans);color:inherit;}
+img,svg{display:block;max-width:100%;}
+::-webkit-scrollbar{width:6px;height:6px;}
 ::-webkit-scrollbar-track{background:var(--bg);}
-::-webkit-scrollbar-thumb{background:var(--bg5);border-radius:2px;}
-::selection{background:rgba(91,95,239,.3);}
-:focus-visible{outline:2px solid rgba(91,95,239,.6);outline-offset:2px;}
+::-webkit-scrollbar-thumb{background:var(--bg6);border-radius:3px;}
+::-webkit-scrollbar-thumb:hover{background:var(--line4);}
+::selection{background:rgba(91,95,239,.35);color:var(--white);}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:2px;border-radius:4px;}
 
-.w{max-width:1180px;margin:0 auto;padding:0 1.75rem;}
-.w-sm{max-width:740px;margin:0 auto;padding:0 1.75rem;}
-.w-md{max-width:980px;margin:0 auto;padding:0 1.75rem;}
+/* ============================================
+   LAYOUT
+   ============================================ */
+.w{max-width:1200px;margin:0 auto;padding:0 1.75rem;}
+.w-sm{max-width:760px;margin:0 auto;padding:0 1.75rem;}
+.w-md{max-width:1000px;margin:0 auto;padding:0 1.75rem;}
+.w-lg{max-width:1320px;margin:0 auto;padding:0 1.75rem;}
 
-/* NAV */
-#nav{position:fixed;top:0;left:0;right:0;z-index:300;height:60px;display:flex;align-items:center;background:rgba(11,13,15,.82);backdrop-filter:blur(20px) saturate(150%);border-bottom:1px solid var(--line);transition:.3s;}
-#nav.sc{background:rgba(11,13,15,.97);border-color:var(--line2);}
-.nav-w{width:100%;max-width:1180px;margin:0 auto;padding:0 1.75rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
-.logo{display:flex;align-items:center;gap:.55rem;font-size:.92rem;font-weight:600;letter-spacing:-.01em;white-space:nowrap;}
-.logo-mark{width:27px;height:27px;background:var(--indigo);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:white;font-weight:700;}
-.nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
-.nav-links a{font-size:.82rem;color:var(--muted);padding:.4rem .75rem;border-radius:var(--r);transition:.18s;}
-.nav-links a:hover{color:var(--white);background:var(--bg3);}
-.nav-right{display:flex;align-items:center;gap:.6rem;flex-shrink:0;}
-.btn-nav{font-size:.8rem;font-weight:600;padding:.42rem 1rem;border-radius:var(--r);border:none;cursor:pointer;transition:.18s;white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem;}
-.btn-nav.fill{background:var(--indigo);color:white;}
-.btn-nav.fill:hover{background:var(--indigo2);}
-.hamburger{display:none;background:none;border:1px solid var(--line2);color:var(--white);padding:.32rem .58rem;border-radius:var(--r);font-size:1rem;}
-
-/* HERO */
-#hero{min-height:96vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 1.75rem 4rem;position:relative;overflow:hidden;}
-.hero-grid{position:absolute;inset:0;pointer-events:none;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 70% at 50% 40%,black 0%,transparent 100%);}
-.hero-glow{position:absolute;top:5%;left:50%;transform:translateX(-50%);width:900px;height:560px;background:radial-gradient(ellipse at 50% 30%,rgba(91,95,239,.11) 0%,transparent 65%);pointer-events:none;}
-.hero-badge{display:inline-flex;align-items:center;gap:.5rem;padding:.32rem .9rem;background:var(--bg3);border:1px solid var(--line2);border-radius:999px;font-size:.74rem;color:var(--muted);margin-bottom:2rem;}
-.hero-badge .d{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(16,185,129,.5);animation:ping 2s ease infinite;}
-@keyframes ping{0%{box-shadow:0 0 0 0 rgba(16,185,129,.5);}70%{box-shadow:0 0 0 7px rgba(16,185,129,0);}100%{box-shadow:0 0 0 0 rgba(16,185,129,0);}}
-.hero-title{font-size:clamp(2.3rem,5.4vw,4.3rem);font-weight:600;line-height:1.12;letter-spacing:-.03em;max-width:780px;margin-bottom:1.5rem;}
-.hero-title .ac{color:var(--indigo);}
-.hero-sub{max-width:540px;font-size:1.03rem;color:var(--muted);line-height:1.7;margin:0 auto 1rem;}
-.hero-ctas{display:flex;align-items:center;gap:.85rem;flex-wrap:wrap;justify-content:center;margin-bottom:3.5rem;}
-.btn-primary{background:var(--indigo);color:white;font-weight:600;font-size:.9rem;padding:.8rem 1.75rem;border-radius:var(--r);border:none;cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:.18s;}
-.btn-primary:hover{background:var(--indigo2);transform:translateY(-1px);}
-.btn-secondary{background:transparent;color:var(--muted);font-size:.9rem;padding:.8rem 1.55rem;border-radius:var(--r);border:1px solid var(--line2);cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;transition:.18s;}
-.btn-secondary:hover{color:var(--white);background:var(--bg3);}
-.hero-note{font-size:.72rem;color:var(--faint);margin-top:-2.5rem;margin-bottom:3rem;}
-
-.flow-wrap{width:100%;max-width:880px;}
-.flow-svg{width:100%;height:auto;display:block;}
-.flow-caption{font-family:var(--mono);font-size:.68rem;color:var(--faint);letter-spacing:.04em;text-transform:uppercase;margin-top:1.1rem;}
-
-/* MARQUEE */
-.marquee{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative;padding:1.3rem 0;background:var(--bg2);}
-.marquee::before,.marquee::after{content:'';position:absolute;top:0;bottom:0;width:90px;z-index:2;}
-.marquee::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent);}
-.marquee::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent);}
-.marquee-track{display:flex;gap:2.5rem;width:max-content;animation:mq 36s linear infinite;}
-.marquee-track:hover{animation-play-state:paused;}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.mq-item{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--faint);white-space:nowrap;}
-.mq-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--indigo);opacity:.6;}
-
-.sec{padding:6rem 0;}
+.sec{padding:7rem 0;position:relative;}
 .sec-alt{background:var(--bg2);}
 .sec-bt{border-top:1px solid var(--line);}
 .sec-bb{border-bottom:1px solid var(--line);}
-.eyebrow{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--indigo);margin-bottom:1.1rem;}
-.eyebrow::before{content:'';width:14px;height:1px;background:var(--indigo);}
-.sec-title{font-size:clamp(1.85rem,3.4vw,2.85rem);font-weight:600;line-height:1.12;letter-spacing:-.03em;margin-bottom:1rem;}
-.sec-title .ac{color:var(--indigo);}
-.sec-body{font-size:.95rem;color:var(--muted);line-height:1.8;max-width:520px;}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease;}
-.reveal.in{opacity:1;transform:none;}
-</style>
-<style>
-/* SERVICES - each with CTA */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;}
-.service-card{background:var(--bg);padding:1.85rem;display:flex;flex-direction:column;gap:.9rem;transition:background .2s;position:relative;overflow:hidden;}
-.service-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),var(--indigo3),transparent 60%);opacity:0;transition:opacity .35s;pointer-events:none;}
-.service-card:hover::before{opacity:1;}
-.service-card:hover{background:var(--bg2);}
-.service-icon{width:42px;height:42px;border-radius:var(--r2);background:var(--bg3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;}
-.service-name{font-size:1rem;font-weight:600;letter-spacing:-.015em;}
-.service-desc{font-size:.84rem;color:var(--muted);line-height:1.6;flex:1;}
-.service-list{display:flex;flex-direction:column;gap:.4rem;margin:.25rem 0 .5rem;}
-.service-list span{font-size:.78rem;color:var(--faint);display:flex;align-items:center;gap:.5rem;}
-.service-list span::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--indigo);flex-shrink:0;}
-.service-cta{font-size:.78rem;color:var(--indigo);font-weight:600;display:inline-flex;align-items:center;gap:.35rem;transition:.18s;}
-.service-cta:hover{gap:.55rem;}
 
-/* CASOS DE USO — resultado, no tecnología */
-.usecase-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem;}
-.usecase-card{background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r2);padding:1.6rem;display:flex;flex-direction:column;gap:.7rem;transition:.2s;}
-.usecase-card:hover{border-color:rgba(91,95,239,.25);background:var(--bg3);}
-.usecase-sector{font-family:var(--mono);font-size:.68rem;color:var(--indigo);letter-spacing:.07em;text-transform:uppercase;}
-.usecase-result{font-size:1.02rem;font-weight:600;letter-spacing:-.015em;line-height:1.35;}
-.usecase-detail{font-size:.81rem;color:var(--muted);line-height:1.6;flex:1;}
-.usecase-metric{display:flex;align-items:baseline;gap:.4rem;margin-top:.25rem;}
-.usecase-metric .v{font-size:1.3rem;font-weight:700;color:var(--green);letter-spacing:-.02em;}
-.usecase-metric .l{font-size:.7rem;color:var(--faint);text-transform:uppercase;letter-spacing:.03em;}
+/* ============================================
+   TYPOGRAPHY PRIMITIVES
+   ============================================ */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--mono);font-size:.7rem;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--indigo);
+  padding:.28rem .7rem;
+  background:var(--indigo-soft);
+  border:1px solid rgba(91,95,239,.22);
+  border-radius:999px;
+  margin-bottom:1.25rem;
+}
+.eyebrow.plain{background:transparent;border:none;padding:0;margin-bottom:1rem;}
+.eyebrow.plain::before{content:'';width:16px;height:1px;background:var(--indigo);}
 
-/* CHATBOTS — sección breve, sin protagonismo excesivo */
-.chat-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:4rem;align-items:start;}
-.chat-benefits{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;}
-.chat-benefit{background:var(--bg2);padding:1.25rem 1.4rem;display:flex;align-items:flex-start;gap:1rem;transition:background .2s;}
-.chat-benefit:hover{background:var(--bg3);}
-.chat-benefit-icon{width:36px;height:36px;border-radius:var(--r2);background:var(--bg3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;transition:transform .25s,border-color .25s;}
-.chat-benefit:hover .chat-benefit-icon{transform:translateY(-2px);border-color:rgba(91,95,239,.4);}
-.chat-benefit-title{font-size:.88rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.25rem;}
-.chat-benefit-desc{font-size:.79rem;color:var(--muted);line-height:1.55;}
+.sec-title{
+  font-size:clamp(2rem,3.8vw,3.15rem);
+  font-weight:600;line-height:1.08;letter-spacing:-.035em;
+  margin-bottom:1.1rem;color:var(--white);
+}
+.sec-title .ac{
+  background:linear-gradient(135deg,#7b7ff5,#5b5fef);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+.sec-body{font-size:1rem;color:var(--muted);line-height:1.75;max-width:560px;}
 
-/* PRUEBA SOCIAL */
-.proof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.1rem;}
-.proof-card{background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r2);padding:1.6rem;display:flex;flex-direction:column;gap:.9rem;position:relative;}
-.proof-badge{position:absolute;top:1rem;right:1rem;font-family:var(--mono);font-size:.6rem;color:var(--faint);letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line2);padding:.12rem .45rem;border-radius:999px;}
-.proof-quote{font-size:.88rem;color:var(--white);line-height:1.6;font-style:italic;}
-.proof-person{display:flex;align-items:center;gap:.65rem;margin-top:.25rem;}
-.proof-av{width:34px;height:34px;border-radius:50%;background:var(--bg4);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:600;color:var(--muted);flex-shrink:0;}
-.proof-name{font-size:.8rem;font-weight:600;}
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-weight:600;font-size:.88rem;
+  padding:.75rem 1.4rem;border-radius:var(--r);
+  transition:transform var(--dur) var(--ease),background var(--dur) var(--ease),color var(--dur) var(--ease),box-shadow var(--dur) var(--ease),border-color var(--dur) var(--ease);
+  white-space:nowrap;position:relative;
+  will-change:transform;
+}
+.btn-primary{
+  background:var(--indigo);color:#fff;
+  box-shadow:0 1px 0 rgba(255,255,255,.15) inset,0 8px 20px -8px rgba(91,95,239,.5);
+}
+.btn-primary:hover{background:var(--indigo-hi);transform:translateY(-1px);box-shadow:0 1px 0 rgba(255,255,255,.15) inset,0 14px 28px -10px rgba(91,95,239,.6);}
+.btn-primary:active{transform:translateY(0);}
+.btn-primary .arrow{transition:transform var(--dur) var(--ease);}
+.btn-primary:hover .arrow{transform:translateX(3px);}
+
+.btn-secondary{
+  background:rgba(237,239,242,.04);color:var(--text);
+  border:1px solid var(--line2);
+}
+.btn-secondary:hover{background:rgba(237,239,242,.07);border-color:var(--line3);color:var(--white);}
+
+.btn-ghost{color:var(--muted);padding:.55rem .9rem;}
+.btn-ghost:hover{color:var(--white);background:var(--bg3);}
+
+.btn-lg{padding:.9rem 1.7rem;font-size:.92rem;}
+.btn-sm{padding:.5rem 1rem;font-size:.8rem;}
+
+/* ============================================
+   NAV
+   ============================================ */
+#nav{
+  position:fixed;top:0;left:0;right:0;z-index:300;height:64px;
+  display:flex;align-items:center;
+  background:rgba(11,13,15,.72);
+  backdrop-filter:blur(24px) saturate(160%);
+  -webkit-backdrop-filter:blur(24px) saturate(160%);
+  border-bottom:1px solid transparent;
+  transition:border-color var(--dur) var(--ease),background var(--dur) var(--ease);
+}
+#nav.sc{background:rgba(11,13,15,.9);border-bottom-color:var(--line);}
+.nav-w{width:100%;max-width:1200px;margin:0 auto;padding:0 1.75rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+
+.logo{display:flex;align-items:center;gap:.6rem;font-size:.94rem;font-weight:600;letter-spacing:-.015em;white-space:nowrap;color:var(--white);}
+.logo-mark{
+  width:28px;height:28px;
+  background:var(--grad-brand);
+  border-radius:7px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.72rem;color:#fff;font-weight:700;letter-spacing:-.02em;
+  box-shadow:0 4px 12px -2px rgba(91,95,239,.5),0 1px 0 rgba(255,255,255,.2) inset;
+  position:relative;overflow:hidden;
+}
+.logo-mark::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(255,255,255,.25),transparent 50%);
+  border-radius:inherit;pointer-events:none;
+}
+
+.nav-links{display:flex;align-items:center;gap:.1rem;list-style:none;}
+.nav-links a{
+  font-size:.83rem;font-weight:500;color:var(--muted);
+  padding:.45rem .8rem;border-radius:var(--r-xs);
+  transition:color var(--dur) var(--ease),background var(--dur) var(--ease);
+  position:relative;display:inline-flex;align-items:center;gap:.4rem;
+}
+.nav-links a:hover{color:var(--white);}
+.nav-links a[aria-current="page"]{color:var(--white);}
+.nav-badge{
+  font-family:var(--mono);font-size:.58rem;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:var(--indigo);
+  background:var(--indigo-soft);
+  border:1px solid rgba(91,95,239,.3);
+  padding:.05rem .35rem;border-radius:4px;
+}
+
+.nav-right{display:flex;align-items:center;gap:.5rem;flex-shrink:0;}
+.btn-nav{font-size:.82rem;font-weight:600;padding:.5rem 1rem;border-radius:var(--r-xs);transition:all var(--dur) var(--ease);white-space:nowrap;display:inline-flex;align-items:center;gap:.4rem;}
+.btn-nav.ghost{color:var(--muted);}
+.btn-nav.ghost:hover{color:var(--white);background:var(--bg3);}
+.btn-nav.fill{background:var(--white);color:#0b0d0f;}
+.btn-nav.fill:hover{background:#fff;transform:translateY(-1px);}
+.hamburger{display:none;border:1px solid var(--line2);color:var(--white);padding:.4rem .55rem;border-radius:var(--r-xs);}
+
+/* ============================================
+   HERO
+   ============================================ */
+#hero{
+  min-height:100vh;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;padding:9rem 1.75rem 5rem;
+  position:relative;overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,black 0%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,black 0%,transparent 100%);
+}
+.hero-mesh{position:absolute;inset:0;pointer-events:none;background:var(--grad-mesh);}
+.hero-orb{
+  position:absolute;pointer-events:none;filter:blur(80px);opacity:.6;
+  border-radius:50%;
+  animation:orb 18s ease-in-out infinite;
+}
+.hero-orb.a{width:520px;height:520px;top:-140px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(91,95,239,.4),transparent 70%);}
+.hero-orb.b{width:340px;height:340px;top:20%;left:12%;background:radial-gradient(circle,rgba(167,139,250,.25),transparent 70%);animation-delay:-6s;}
+.hero-orb.c{width:380px;height:380px;top:30%;right:8%;background:radial-gradient(circle,rgba(34,211,238,.15),transparent 70%);animation-delay:-12s;}
+@keyframes orb{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(20px,-15px) scale(1.05);}}
+
+.hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%;}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:.55rem;
+  padding:.35rem .85rem .35rem .55rem;
+  background:rgba(237,239,242,.04);
+  border:1px solid var(--line2);
+  border-radius:999px;
+  font-size:.75rem;font-weight:500;color:var(--text);
+  margin-bottom:2rem;
+  backdrop-filter:blur(10px);
+}
+.hero-badge .pill{
+  font-family:var(--mono);font-size:.6rem;font-weight:600;letter-spacing:.06em;
+  color:var(--indigo);background:var(--indigo-soft);
+  padding:.15rem .5rem;border-radius:999px;
+  border:1px solid rgba(91,95,239,.25);
+  text-transform:uppercase;
+}
+.hero-badge .d{width:6px;height:6px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(16,185,129,.5);animation:ping 2.4s ease infinite;}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(16,185,129,.5);}70%{box-shadow:0 0 0 8px rgba(16,185,129,0);}100%{box-shadow:0 0 0 0 rgba(16,185,129,0);}}
+
+.hero-title{
+  font-size:clamp(2.5rem,6vw,4.9rem);
+  font-weight:600;line-height:1.02;letter-spacing:-.045em;
+  max-width:920px;margin-bottom:1.5rem;color:var(--white);
+}
+.hero-title .ac{
+  background:linear-gradient(135deg,#a5a8ff 0%,#7b7ff5 40%,#5b5fef 100%);
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  display:inline-block;
+}
+.hero-sub{max-width:600px;font-size:1.08rem;color:var(--muted);line-height:1.65;margin:0 auto 2.25rem;}
+.hero-ctas{display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.25rem;}
+.hero-note{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-size:.76rem;color:var(--faint);margin-bottom:4rem;
+}
+.hero-note .dot{width:3px;height:3px;border-radius:50%;background:var(--faint);}
+
+/* Trust row */
+.trust-row{
+  display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:center;align-items:center;
+  margin-bottom:4rem;padding:1rem 0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  width:100%;max-width:900px;
+}
+.trust-item{display:flex;align-items:center;gap:.55rem;font-size:.78rem;color:var(--muted);}
+.trust-item svg{color:var(--indigo);flex-shrink:0;}
+
+/* Hero product card — mockup del sistema */
+.hero-product{
+  width:100%;max-width:1080px;position:relative;
+  border-radius:var(--r4);
+  padding:8px;
+  background:linear-gradient(180deg,rgba(91,95,239,.35),rgba(91,95,239,.05) 30%,var(--line) 100%);
+  box-shadow:0 40px 100px -30px rgba(0,0,0,.7),0 20px 60px -20px rgba(91,95,239,.25);
+}
+.hero-product-inner{
+  background:linear-gradient(180deg,#0f1216,#0a0c0e);
+  border-radius:calc(var(--r4) - 6px);
+  overflow:hidden;
+  position:relative;
+}
+.hero-product-bar{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.7rem 1rem;border-bottom:1px solid var(--line);
+  background:rgba(237,239,242,.02);
+}
+.hero-product-bar .dots{display:flex;gap:.35rem;}
+.hero-product-bar .dot-d{width:11px;height:11px;border-radius:50%;background:var(--bg5);}
+.hero-product-bar .dot-d:nth-child(1){background:#ff5f57;}
+.hero-product-bar .dot-d:nth-child(2){background:#febc2e;}
+.hero-product-bar .dot-d:nth-child(3){background:#28c840;}
+.hero-product-bar .url{
+  margin-left:1rem;font-family:var(--mono);font-size:.7rem;color:var(--faint);
+  background:var(--bg3);border:1px solid var(--line);border-radius:6px;padding:.2rem .7rem;
+}
+.hero-product-svg{width:100%;height:auto;display:block;}
+
+/* ============================================
+   MARQUEE
+   ============================================ */
+.marquee{
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  overflow:hidden;position:relative;padding:1.4rem 0;
+  background:var(--bg2);
+}
+.marquee::before,.marquee::after{content:'';position:absolute;top:0;bottom:0;width:120px;z-index:2;pointer-events:none;}
+.marquee::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent);}
+.marquee::after{right:0;background:linear-gradient(-90deg,var(--bg2),transparent);}
+.marquee-track{display:flex;gap:2.5rem;width:max-content;animation:mq 42s linear infinite;}
+.marquee-track:hover{animation-play-state:paused;}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.mq-item{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--mono);font-size:.76rem;color:var(--faint);
+  white-space:nowrap;letter-spacing:.02em;
+}
+.mq-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--indigo);opacity:.55;}
+
+/* ============================================
+   STATS
+   ============================================ */
+.stats-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--r3);overflow:hidden;
+  margin-top:2.5rem;
+}
+.stat{background:var(--bg);padding:1.75rem 1.5rem;display:flex;flex-direction:column;gap:.35rem;transition:background var(--dur) var(--ease);position:relative;}
+.stat:hover{background:var(--bg2);}
+.stat-v{font-size:2.2rem;font-weight:600;letter-spacing:-.035em;line-height:1;color:var(--white);}
+.stat-v.brand{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.stat-l{font-size:.8rem;color:var(--muted);line-height:1.4;}
+.stat-tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-top:.35rem;}
+
+/* ============================================
+   SERVICES — bento upgrade
+   ============================================ */
+.services-bento{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:1rem;margin-top:3rem;
+}
+.svc{
+  position:relative;
+  background:var(--bg2);
+  border:1px solid var(--line2);
+  border-radius:var(--r3);
+  padding:1.75rem;
+  display:flex;flex-direction:column;gap:1rem;
+  transition:border-color var(--dur) var(--ease),transform var(--dur) var(--ease),background var(--dur) var(--ease);
+  overflow:hidden;
+  min-height:280px;
+}
+.svc::before{
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),var(--indigo-soft),transparent 50%);
+  opacity:0;transition:opacity var(--dur-slow) var(--ease);
+}
+.svc:hover::before{opacity:1;}
+.svc:hover{border-color:var(--line3);transform:translateY(-2px);}
+.svc-lg{grid-column:span 3;}
+.svc-md{grid-column:span 3;}
+.svc-sm{grid-column:span 2;}
+.svc-icon{
+  width:44px;height:44px;border-radius:var(--r);
+  background:linear-gradient(180deg,var(--bg4),var(--bg3));
+  border:1px solid var(--line2);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--indigo-hi);
+  box-shadow:0 1px 0 rgba(255,255,255,.05) inset;
+  flex-shrink:0;
+  transition:transform var(--dur) var(--ease),border-color var(--dur) var(--ease);
+}
+.svc:hover .svc-icon{transform:translateY(-2px);border-color:rgba(91,95,239,.35);}
+.svc-name{font-size:1.1rem;font-weight:600;letter-spacing:-.02em;color:var(--white);}
+.svc-desc{font-size:.88rem;color:var(--muted);line-height:1.65;flex:1;}
+.svc-list{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.25rem;}
+.svc-chip{
+  font-size:.72rem;color:var(--muted);
+  background:rgba(237,239,242,.04);
+  border:1px solid var(--line2);
+  padding:.25rem .6rem;border-radius:999px;
+}
+.svc-cta{
+  font-size:.82rem;color:var(--indigo-hi);font-weight:600;
+  display:inline-flex;align-items:center;gap:.4rem;margin-top:.25rem;
+  transition:gap var(--dur) var(--ease),color var(--dur) var(--ease);
+}
+.svc-cta:hover{gap:.65rem;color:#fff;}
+
+/* ============================================
+   PROCESS TIMELINE
+   ============================================ */
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3rem;position:relative;}
+.process-grid::before{
+  content:'';position:absolute;top:22px;left:5%;right:5%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--line3),var(--line3),transparent);
+}
+.step{padding:0 1rem;position:relative;}
+.step-n{
+  width:44px;height:44px;border-radius:50%;
+  background:var(--bg2);border:1px solid var(--line3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:.85rem;font-weight:600;color:var(--indigo-hi);
+  margin-bottom:1.25rem;position:relative;z-index:1;
+  transition:all var(--dur) var(--ease);
+}
+.step:hover .step-n{background:var(--indigo);color:#fff;border-color:var(--indigo);box-shadow:0 0 0 6px var(--indigo-soft);}
+.step-title{font-size:1rem;font-weight:600;letter-spacing:-.015em;margin-bottom:.5rem;color:var(--white);}
+.step-desc{font-size:.85rem;color:var(--muted);line-height:1.6;}
+.step-time{font-family:var(--mono);font-size:.65rem;color:var(--faint);letter-spacing:.08em;text-transform:uppercase;margin-top:.65rem;}
+
+/* ============================================
+   USE CASES — mejora del original
+   ============================================ */
+.usecase-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-top:2.5rem;}
+.usecase-card{
+  background:var(--bg);
+  border:1px solid var(--line2);
+  border-radius:var(--r3);
+  padding:1.75rem;
+  display:flex;flex-direction:column;gap:.75rem;
+  transition:border-color var(--dur) var(--ease),transform var(--dur) var(--ease),background var(--dur) var(--ease);
+}
+.usecase-card:hover{border-color:rgba(91,95,239,.35);transform:translateY(-2px);background:var(--bg2);}
+.usecase-sector{font-family:var(--mono);font-size:.68rem;color:var(--indigo);letter-spacing:.09em;text-transform:uppercase;font-weight:500;}
+.usecase-result{font-size:1.05rem;font-weight:600;letter-spacing:-.02em;line-height:1.35;color:var(--white);}
+.usecase-detail{font-size:.84rem;color:var(--muted);line-height:1.65;flex:1;}
+.usecase-metric{display:flex;align-items:baseline;gap:.5rem;padding-top:.75rem;border-top:1px solid var(--line);}
+.usecase-metric .v{font-size:1.5rem;font-weight:700;color:var(--green);letter-spacing:-.025em;}
+.usecase-metric .l{font-size:.72rem;color:var(--faint);text-transform:uppercase;letter-spacing:.04em;}
+
+/* ============================================
+   CHATBOTS — chat mockup
+   ============================================ */
+.chat-layout{display:grid;grid-template-columns:1fr 1.05fr;gap:4rem;align-items:center;margin-top:2rem;}
+.chat-benefits{display:flex;flex-direction:column;gap:.6rem;}
+.chat-benefit{
+  background:var(--bg2);
+  border:1px solid var(--line2);
+  border-radius:var(--r2);
+  padding:1.1rem 1.25rem;
+  display:flex;align-items:flex-start;gap:.9rem;
+  transition:border-color var(--dur) var(--ease),transform var(--dur) var(--ease);
+}
+.chat-benefit:hover{border-color:var(--line3);transform:translateX(2px);}
+.chat-benefit-icon{
+  width:34px;height:34px;border-radius:var(--r);
+  background:var(--bg4);border:1px solid var(--line2);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--indigo-hi);flex-shrink:0;
+}
+.chat-benefit-title{font-size:.88rem;font-weight:600;letter-spacing:-.01em;margin-bottom:.2rem;color:var(--white);}
+.chat-benefit-desc{font-size:.8rem;color:var(--muted);line-height:1.55;}
+
+/* Chat mockup */
+.chat-mock{
+  background:linear-gradient(180deg,var(--bg2),var(--bg));
+  border:1px solid var(--line2);
+  border-radius:var(--r3);
+  padding:1.25rem;
+  box-shadow:var(--shadow-lg);
+}
+.chat-mock-head{display:flex;align-items:center;gap:.65rem;padding-bottom:.85rem;border-bottom:1px solid var(--line);}
+.chat-mock-av{
+  width:34px;height:34px;border-radius:50%;
+  background:var(--grad-brand);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.75rem;font-weight:700;color:#fff;
+}
+.chat-mock-name{font-size:.85rem;font-weight:600;color:var(--white);}
+.chat-mock-status{font-size:.7rem;color:var(--green);display:flex;align-items:center;gap:.35rem;}
+.chat-mock-status::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--green);}
+.chat-mock-body{padding:1rem 0;display:flex;flex-direction:column;gap:.65rem;min-height:240px;}
+.msg{max-width:78%;padding:.6rem .85rem;border-radius:12px;font-size:.82rem;line-height:1.5;opacity:0;animation:msgIn .5s var(--ease) forwards;}
+.msg.user{background:var(--indigo);color:#fff;align-self:flex-end;border-bottom-right-radius:4px;animation-delay:.3s;}
+.msg.bot{background:var(--bg3);color:var(--text);border:1px solid var(--line);border-bottom-left-radius:4px;animation-delay:.8s;}
+.msg.bot2{animation-delay:1.6s;}
+@keyframes msgIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+.typing{display:inline-flex;gap:3px;padding:.7rem .9rem;background:var(--bg3);border:1px solid var(--line);border-radius:12px;border-bottom-left-radius:4px;width:fit-content;animation:msgIn .4s var(--ease) 1.2s both;}
+.typing span{width:5px;height:5px;border-radius:50%;background:var(--muted);animation:blink 1.4s infinite;}
+.typing span:nth-child(2){animation-delay:.2s;}
+.typing span:nth-child(3){animation-delay:.4s;}
+@keyframes blink{0%,60%,100%{opacity:.3;}30%{opacity:1;}}
+
+/* ============================================
+   AG BUSINESS — landing SaaS completa
+   ============================================ */
+#agbusiness{
+  position:relative;overflow:hidden;
+  background:radial-gradient(ellipse 90% 60% at 50% 0%,rgba(91,95,239,.10) 0%,transparent 60%),var(--bg);
+  padding:8rem 0;
+  border-top:1px solid var(--line);
+}
+.ag-hero{text-align:center;max-width:820px;margin:0 auto 4rem;}
+.ag-badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.4rem .95rem;
+  background:linear-gradient(180deg,rgba(91,95,239,.18),rgba(91,95,239,.05));
+  border:1px solid rgba(91,95,239,.3);
+  border-radius:999px;font-size:.78rem;font-weight:500;color:var(--white);
+  margin-bottom:1.5rem;
+}
+.ag-badge .tag{font-family:var(--mono);font-size:.6rem;letter-spacing:.09em;text-transform:uppercase;color:var(--indigo-hi);}
+.ag-title{
+  font-size:clamp(2.2rem,4.5vw,3.6rem);
+  font-weight:600;line-height:1.05;letter-spacing:-.04em;
+  color:var(--white);margin-bottom:1.25rem;
+}
+.ag-title .ac{background:var(--grad-brand);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.ag-sub{font-size:1.05rem;color:var(--muted);line-height:1.65;max-width:600px;margin:0 auto 2rem;}
+
+.ag-cta-row{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap;margin-bottom:.75rem;}
+
+/* AG dashboard mockup */
+.ag-dashboard{
+  max-width:1100px;margin:0 auto;position:relative;
+  border-radius:var(--r4);
+  padding:8px;
+  background:linear-gradient(180deg,rgba(91,95,239,.4),rgba(91,95,239,.05) 30%,var(--line) 100%);
+  box-shadow:0 60px 120px -30px rgba(0,0,0,.7),0 30px 80px -30px rgba(91,95,239,.35);
+}
+.ag-dashboard-inner{
+  background:linear-gradient(180deg,#0f1216,#0a0c0e);
+  border-radius:calc(var(--r4) - 6px);
+  overflow:hidden;
+}
+
+/* AG features */
+.ag-features{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line2);
+  border-radius:var(--r3);overflow:hidden;
+  margin-top:5rem;
+}
+.ag-feat{
+  background:var(--bg2);padding:1.75rem;
+  display:flex;flex-direction:column;gap:.75rem;
+  transition:background var(--dur) var(--ease);
+}
+.ag-feat:hover{background:var(--bg3);}
+.ag-feat-icon{
+  width:36px;height:36px;border-radius:var(--r);
+  background:var(--indigo-soft);
+  border:1px solid rgba(91,95,239,.25);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--indigo-hi);
+}
+.ag-feat-title{font-size:.98rem;font-weight:600;letter-spacing:-.015em;color:var(--white);}
+.ag-feat-desc{font-size:.83rem;color:var(--muted);line-height:1.6;}
+
+/* ============================================
+   PRICING
+   ============================================ */
+.pricing-head{text-align:center;max-width:640px;margin:0 auto 3.5rem;}
+.pricing-toggle{
+  display:inline-flex;background:var(--bg2);border:1px solid var(--line2);
+  border-radius:999px;padding:4px;gap:2px;margin-top:1.25rem;
+}
+.pricing-toggle button{
+  font-size:.78rem;font-weight:500;padding:.45rem 1rem;border-radius:999px;
+  color:var(--muted);transition:all var(--dur) var(--ease);
+}
+.pricing-toggle button.active{background:var(--white);color:#0b0d0f;}
+.pricing-toggle .save{font-family:var(--mono);font-size:.6rem;color:var(--green);margin-left:.35rem;letter-spacing:.06em;}
+
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;max-width:1120px;margin:0 auto;}
+.plan{
+  position:relative;
+  background:var(--bg2);
+  border:1px solid var(--line2);
+  border-radius:var(--r4);
+  padding:2rem 1.85rem;
+  display:flex;flex-direction:column;gap:1.25rem;
+  transition:border-color var(--dur) var(--ease),transform var(--dur) var(--ease);
+}
+.plan:hover{border-color:var(--line3);transform:translateY(-2px);}
+.plan.featured{
+  background:linear-gradient(180deg,rgba(91,95,239,.08),var(--bg2) 40%);
+  border-color:rgba(91,95,239,.4);
+  box-shadow:0 30px 80px -30px rgba(91,95,239,.4),0 0 0 1px rgba(91,95,239,.25);
+}
+.plan.featured::before{
+  content:'';position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(180deg,rgba(91,95,239,.5),transparent 40%);
+  z-index:-1;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  padding:1px;
+}
+.plan-badge{
+  position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+  display:inline-flex;align-items:center;gap:.35rem;
+  font-family:var(--mono);font-size:.62rem;font-weight:600;letter-spacing:.09em;text-transform:uppercase;
+  color:#fff;background:var(--grad-brand);
+  padding:.35rem .8rem;border-radius:999px;
+  box-shadow:0 8px 20px -4px rgba(91,95,239,.5);
+}
+.plan-name{font-size:.85rem;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--indigo-hi);}
+.plan-price{display:flex;align-items:baseline;gap:.35rem;margin-top:-.25rem;}
+.plan-price .num{font-size:2.7rem;font-weight:600;letter-spacing:-.04em;line-height:1;color:var(--white);}
+.plan-price .per{font-size:.85rem;color:var(--muted);}
+.plan-desc{font-size:.85rem;color:var(--muted);line-height:1.55;min-height:2.6em;}
+.plan-cta{
+  width:100%;padding:.75rem 1rem;border-radius:var(--r);
+  font-size:.88rem;font-weight:600;text-align:center;
+  transition:all var(--dur) var(--ease);
+}
+.plan-cta.primary{background:var(--indigo);color:#fff;box-shadow:0 8px 20px -8px rgba(91,95,239,.5);}
+.plan-cta.primary:hover{background:var(--indigo-hi);transform:translateY(-1px);}
+.plan-cta.ghost{background:rgba(237,239,242,.04);color:var(--white);border:1px solid var(--line2);}
+.plan-cta.ghost:hover{background:rgba(237,239,242,.08);border-color:var(--line3);}
+.plan-divider{height:1px;background:var(--line);margin:.25rem 0;}
+.plan-features{display:flex;flex-direction:column;gap:.6rem;list-style:none;}
+.plan-features li{display:flex;align-items:flex-start;gap:.55rem;font-size:.85rem;color:var(--text);line-height:1.5;}
+.plan-features li svg{color:var(--indigo-hi);flex-shrink:0;margin-top:2px;}
+.plan-features li.muted{color:var(--faint);}
+.plan-features li.muted svg{color:var(--dim);}
+
+/* ============================================
+   PROOF (kept but polished)
+   ============================================ */
+.proof-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-top:2.5rem;}
+.proof-card{
+  background:var(--bg);
+  border:1px solid var(--line2);
+  border-radius:var(--r3);
+  padding:1.75rem;
+  display:flex;flex-direction:column;gap:1rem;position:relative;
+  transition:border-color var(--dur) var(--ease);
+}
+.proof-card:hover{border-color:var(--line3);}
+.proof-badge{
+  position:absolute;top:1rem;right:1rem;
+  font-family:var(--mono);font-size:.58rem;color:var(--faint);
+  letter-spacing:.05em;text-transform:uppercase;
+  border:1px solid var(--line2);padding:.15rem .5rem;border-radius:999px;
+}
+.proof-quote{font-size:.9rem;color:var(--white);line-height:1.6;font-style:italic;}
+.proof-person{display:flex;align-items:center;gap:.7rem;padding-top:.75rem;border-top:1px solid var(--line);}
+.proof-av{
+  width:36px;height:36px;border-radius:50%;
+  background:linear-gradient(135deg,var(--bg5),var(--bg4));
+  border:1px solid var(--line2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.8rem;font-weight:600;color:var(--muted);flex-shrink:0;
+}
+.proof-name{font-size:.82rem;font-weight:600;color:var(--white);}
 .proof-role{font-size:.72rem;color:var(--muted);}
 
-/* CONTACT FORM */
-.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;}
-.contact-form{background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r3);padding:2rem;}
-.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;}
-.cf-input,.cf-textarea,.cf-select{width:100%;background:var(--bg);border:1px solid var(--line2);border-radius:var(--r);padding:.7rem .9rem;color:var(--white);font-size:.88rem;outline:none;transition:border-color .18s;margin-bottom:.9rem;font-family:var(--sans);}
-.cf-input:focus,.cf-textarea:focus,.cf-select:focus{border-color:rgba(91,95,239,.5);}
-.cf-textarea{resize:vertical;min-height:90px;}
-.cf-select{-webkit-appearance:none;cursor:pointer;}
-.cf-submit{width:100%;background:var(--indigo);color:white;font-weight:600;font-size:.9rem;padding:.8rem;border-radius:var(--r);border:none;cursor:pointer;transition:.18s;}
-.cf-submit:hover{background:var(--indigo2);}
-.cf-note{font-size:.72rem;color:var(--faint);margin-top:.85rem;text-align:center;}
-.cf-success{display:none;text-align:center;padding:2rem 1rem;}
-.cf-success.show{display:block;}
-.cf-success .ic{font-size:2rem;margin-bottom:.75rem;}
+/* ============================================
+   TECHNOLOGIES
+   ============================================ */
+.tech-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+  gap:.75rem;margin-top:2.5rem;
+}
+.tech{
+  display:flex;align-items:center;gap:.6rem;
+  padding:.85rem 1rem;
+  background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r);
+  font-size:.82rem;color:var(--text);font-weight:500;
+  transition:all var(--dur) var(--ease);
+}
+.tech:hover{border-color:rgba(91,95,239,.35);background:var(--bg3);transform:translateY(-2px);}
+.tech-dot{width:8px;height:8px;border-radius:2px;background:var(--indigo);flex-shrink:0;}
 
-.contact-info h3{font-size:1.3rem;font-weight:600;letter-spacing:-.02em;margin-bottom:1rem;line-height:1.25;}
-.contact-info p{font-size:.92rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;}
-.contact-channels{display:flex;flex-direction:column;gap:.75rem;}
-.channel{display:flex;align-items:center;gap:.85rem;padding:.85rem 1rem;background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r2);transition:.18s;}
-.channel:hover{border-color:rgba(91,95,239,.3);background:var(--bg3);}
-.channel-icon{width:36px;height:36px;border-radius:var(--r);background:var(--bg3);border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
-.channel-text b{display:block;font-size:.85rem;font-weight:600;}
-.channel-text span{font-size:.76rem;color:var(--muted);}
+/* ============================================
+   FAQ
+   ============================================ */
+.faq-list{display:flex;flex-direction:column;gap:.6rem;margin-top:2.5rem;max-width:820px;}
+.faq{
+  background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r2);
+  overflow:hidden;transition:border-color var(--dur) var(--ease);
+}
+.faq:hover,.faq[open]{border-color:var(--line3);}
+.faq summary{
+  list-style:none;cursor:pointer;
+  padding:1.15rem 1.4rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  font-size:.95rem;font-weight:500;color:var(--white);
+}
+.faq summary::-webkit-details-marker{display:none;}
+.faq summary::after{
+  content:'+';font-size:1.25rem;color:var(--muted);
+  transition:transform var(--dur) var(--ease),color var(--dur) var(--ease);
+  font-weight:300;
+}
+.faq[open] summary::after{transform:rotate(45deg);color:var(--indigo-hi);}
+.faq-body{padding:0 1.4rem 1.25rem;font-size:.88rem;color:var(--muted);line-height:1.7;}
 
-/* ABOUT (compact, single purpose: build trust) */
-.about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:5rem;align-items:center;}
-.about-text p{font-size:.94rem;color:var(--muted);line-height:1.8;margin-bottom:1.1rem;}
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:2rem;}
+.contact-form{
+  background:var(--bg2);border:1px solid var(--line2);
+  border-radius:var(--r3);padding:2rem;
+  box-shadow:var(--shadow-md);
+}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.cf-label{display:block;font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);margin-bottom:.4rem;}
+.cf-input,.cf-textarea,.cf-select{
+  width:100%;background:var(--bg);
+  border:1px solid var(--line2);
+  border-radius:var(--r);padding:.75rem .9rem;
+  color:var(--white);font-size:.9rem;outline:none;
+  transition:border-color var(--dur) var(--ease),background var(--dur) var(--ease);
+  margin-bottom:1rem;
+}
+.cf-input::placeholder,.cf-textarea::placeholder{color:var(--faint);}
+.cf-input:focus,.cf-textarea:focus,.cf-select:focus{border-color:var(--indigo);background:var(--bg2);box-shadow:0 0 0 3px var(--indigo-soft);}
+.cf-textarea{resize:vertical;min-height:100px;}
+.cf-select{-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'%3e%3cpath d='M1 1L6 6L11 1' stroke='%23808080' stroke-width='1.5' stroke-linecap='round'/%3e%3c/svg%3e");background-repeat:no-repeat;background-position:right 1rem center;}
+.cf-submit{
+  width:100%;background:var(--indigo);color:#fff;
+  font-weight:600;font-size:.92rem;padding:.85rem;
+  border-radius:var(--r);transition:all var(--dur) var(--ease);
+  box-shadow:0 8px 20px -8px rgba(91,95,239,.5);
+}
+.cf-submit:hover{background:var(--indigo-hi);transform:translateY(-1px);}
+.cf-note{font-size:.72rem;color:var(--faint);margin-top:.9rem;text-align:center;}
+.cf-success{display:none;text-align:center;padding:2.5rem 1rem;}
+.cf-success.show{display:block;animation:msgIn .5s var(--ease);}
+.cf-success .ic{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--green-soft);border:1px solid rgba(16,185,129,.3);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--green);font-size:1.5rem;margin:0 auto 1rem;
+}
+
+.contact-info h3{font-size:1.35rem;font-weight:600;letter-spacing:-.02em;margin-bottom:1rem;line-height:1.25;color:var(--white);}
+.contact-info p{font-size:.94rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;}
+.contact-channels{display:flex;flex-direction:column;gap:.6rem;}
+.channel{
+  display:flex;align-items:center;gap:.9rem;
+  padding:.95rem 1.1rem;background:var(--bg2);
+  border:1px solid var(--line2);border-radius:var(--r2);
+  transition:all var(--dur) var(--ease);
+}
+.channel:hover{border-color:rgba(91,95,239,.3);background:var(--bg3);transform:translateX(2px);}
+.channel-icon{
+  width:38px;height:38px;border-radius:var(--r);
+  background:var(--bg4);border:1px solid var(--line2);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--indigo-hi);flex-shrink:0;
+}
+.channel-text b{display:block;font-size:.88rem;font-weight:600;color:var(--white);}
+.channel-text span{font-size:.78rem;color:var(--muted);}
+
+/* ============================================
+   ABOUT
+   ============================================ */
+.about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:5rem;align-items:center;margin-top:2rem;}
+.about-text p{font-size:.96rem;color:var(--muted);line-height:1.8;margin-bottom:1.15rem;}
 .about-text p strong{color:var(--white);font-weight:500;}
-.about-card{background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r3);padding:1.85rem;}
-.about-av{width:56px;height:56px;border-radius:var(--r2);background:linear-gradient(135deg,var(--indigo),var(--indigo2));display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:700;color:white;margin-bottom:1.2rem;}
-.about-name{font-size:1.02rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.2rem;}
-.about-role{font-size:.78rem;color:var(--muted);margin-bottom:1.2rem;}
-.about-quote{font-size:.8rem;color:var(--muted);line-height:1.6;font-style:italic;padding-top:.9rem;border-top:1px solid var(--line);}
+.about-card{
+  background:linear-gradient(180deg,var(--bg2),var(--bg));
+  border:1px solid var(--line2);
+  border-radius:var(--r4);padding:2rem;
+  box-shadow:var(--shadow-md);
+}
+.about-av{
+  width:60px;height:60px;border-radius:var(--r2);
+  background:var(--grad-brand);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.35rem;font-weight:700;color:#fff;
+  margin-bottom:1.25rem;
+  box-shadow:0 8px 20px -6px rgba(91,95,239,.4);
+}
+.about-name{font-size:1.05rem;font-weight:600;letter-spacing:-.02em;margin-bottom:.25rem;color:var(--white);}
+.about-role{font-size:.8rem;color:var(--muted);margin-bottom:1.3rem;}
+.about-quote{font-size:.85rem;color:var(--muted);line-height:1.65;font-style:italic;padding-top:1rem;border-top:1px solid var(--line);}
 
-.footer-g{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2.5rem;margin-bottom:2.25rem;}
-.footer-brand p{font-size:.79rem;color:var(--muted);line-height:1.7;margin-top:.85rem;max-width:260px;}
-.footer-h{font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:1rem;}
-.footer-links{list-style:none;display:flex;flex-direction:column;gap:.55rem;}
-.footer-links a{font-size:.79rem;color:var(--muted);transition:.18s;}
+/* ============================================
+   FOOTER
+   ============================================ */
+footer{padding:5rem 0 3rem;border-top:1px solid var(--line);background:var(--bg2);}
+.footer-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem;}
+.footer-brand p{font-size:.83rem;color:var(--muted);line-height:1.7;margin-top:.9rem;max-width:280px;}
+.footer-h{font-family:var(--mono);font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:var(--faint);margin-bottom:1.1rem;}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:.6rem;}
+.footer-links a{font-size:.82rem;color:var(--muted);transition:color var(--dur) var(--ease);display:inline-flex;align-items:center;gap:.4rem;}
 .footer-links a:hover{color:var(--white);}
-.footer-bot{padding-top:1.5rem;border-top:1px solid var(--line);font-size:.72rem;color:var(--faint);text-align:center;}
+.footer-links .soon{font-family:var(--mono);font-size:.55rem;color:var(--faint);border:1px solid var(--line2);padding:.05rem .35rem;border-radius:4px;letter-spacing:.06em;text-transform:uppercase;}
+.footer-bot{padding-top:2rem;border-top:1px solid var(--line);font-size:.75rem;color:var(--faint);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+.footer-legal{display:flex;gap:1.5rem;}
+.footer-legal a{color:var(--faint);transition:color var(--dur) var(--ease);}
+.footer-legal a:hover{color:var(--muted);}
 
-@media (max-width:980px){
-  .nav-links{display:none;} .hamburger{display:block;}
-  .contact-wrap,.about-grid,.chat-layout{grid-template-columns:1fr;gap:2.5rem;}
+/* ============================================
+   REVEAL ANIMATIONS
+   ============================================ */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.reveal.in{opacity:1;transform:none;}
+.reveal-delay-1{transition-delay:.08s;}
+.reveal-delay-2{transition-delay:.16s;}
+.reveal-delay-3{transition-delay:.24s;}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;animation-iteration-count:1 !important;transition-duration:.01ms !important;scroll-behavior:auto !important;}
+  .hero-orb{animation:none;}
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width:1024px){
+  .services-bento{grid-template-columns:repeat(4,1fr);}
+  .svc-lg,.svc-md{grid-column:span 2;}
+  .svc-sm{grid-column:span 2;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .ag-features{grid-template-columns:repeat(2,1fr);}
+  .process-grid{grid-template-columns:repeat(2,1fr);gap:2rem 0;}
+  .process-grid::before{display:none;}
+  .pricing-grid{grid-template-columns:1fr;max-width:480px;}
   .footer-g{grid-template-columns:1fr 1fr;}
 }
-@media (max-width:640px){
-  .w,.w-sm,.w-md{padding:0 1.25rem;}
-  .sec{padding:4rem 0;}
+@media (max-width:820px){
+  .nav-links{display:none;}
+  .hamburger{display:inline-flex;}
+  .contact-wrap,.about-grid,.chat-layout{grid-template-columns:1fr;gap:2.5rem;}
+  .services-bento{grid-template-columns:1fr;}
+  .svc-lg,.svc-md,.svc-sm{grid-column:auto;}
+  .ag-features{grid-template-columns:1fr;}
+  .sec{padding:5rem 0;}
+  #hero{padding-top:7rem;}
+  #agbusiness{padding:6rem 0;}
+  .hero-note{margin-bottom:2.5rem;}
+  .trust-row{gap:1.25rem;margin-bottom:3rem;}
+  .btn-nav.ghost{display:none;}
+}
+@media (max-width:560px){
+  .w,.w-sm,.w-md,.w-lg{padding:0 1.25rem;}
   .cf-row{grid-template-columns:1fr;}
-  .footer-g{grid-template-columns:1fr;}
+  .footer-g{grid-template-columns:1fr;gap:2rem;}
+  .stats-grid{grid-template-columns:1fr;}
+  .footer-bot{flex-direction:column;text-align:center;}
 }
 </style>
-<script src="https://asknorela.com/widget.js" data-asknorela-widget="wk_pub_acd2a673-3564-4dae-a48e-87d4fd09a9a5" async></script>
+  <script src="https://asknorela.com/widget.js" data-asknorela-widget="wk_pub_acd2a673-3564-4dae-a48e-87d4fd09a9a5" async></script>
 </head>
-  <head>
-    <link rel="icon" type="image/jpeg" Resized-ag logo.jpg>
-</head>
+  <link rel="icon" type="image/jpeg" Resized-ag logo.jpg>
 <body>
-<nav id="nav">
+
+<!-- ============================================
+     NAV
+     ============================================ -->
+<nav id="nav" aria-label="Navegación principal">
   <div class="nav-w">
-    <a class="logo" href="#hero"><div class="logo-mark">AG</div><span>Alejandro García</span></a>
+    <a class="logo" href="#hero" aria-label="Alejandro García — Inicio">
+      <div class="logo-mark">AG</div>
+      <span>Alejandro García</span>
+    </a>
     <ul class="nav-links" role="list">
       <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#casos">Casos de uso</a></li>
-      <li><a href="#chatbots">Chatbots</a></li>
-      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="#proceso">Proceso</a></li>
+      <li><a href="#casos">Casos</a></li>
+      <li><a href="#agbusiness">AG Business <span class="nav-badge">Próximamente</span></a></li>
+      <li><a href="#precios">Precios</a></li>
+      <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-right">
-      <a href="#contacto" class="btn-nav fill">Cuéntanos tu proyecto</a>
-      <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">☰</button>
+      <a href="#login" class="btn-nav ghost" aria-label="Acceso clientes (próximamente)">Iniciar sesión</a>
+      <a href="#contacto" class="btn-nav fill">Empezar<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menú">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- ============================================
+     HERO
+     ============================================ -->
 <section id="hero">
   <div class="hero-grid" aria-hidden="true"></div>
-  <div class="hero-glow" aria-hidden="true"></div>
+  <div class="hero-mesh" aria-hidden="true"></div>
+  <div class="hero-orb a" aria-hidden="true"></div>
+  <div class="hero-orb b" aria-hidden="true"></div>
+  <div class="hero-orb c" aria-hidden="true"></div>
 
-  <div class="hero-badge"><div class="d"></div>Respuesta personal en menos de 24 horas</div>
+  <div class="hero-inner">
+    <div class="hero-badge reveal">
+      <span class="pill">En desarrollo</span>
+      Construyendo AG Business — nuestra futura plataforma SaaS
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </div>
 
-  <h1 class="hero-title">Deja de perder horas en tareas<br>que <span class="ac">un sistema puede hacer por ti.</span></h1>
+    <h1 class="hero-title reveal">
+      Software, IA y automatización<br>
+      para negocios <span class="ac">que quieren crecer.</span>
+    </h1>
 
-  <p class="hero-sub">Automatizamos lo repetitivo, te damos una presencia online que genera confianza desde el primer segundo y construimos las herramientas que tu negocio necesita para crecer sin contratar más gente.</p>
+    <p class="hero-sub reveal reveal-delay-1">
+      Somos un estudio tecnológico especializado en desarrollo web, automatizaciones, chatbots inteligentes y soluciones de IA a medida para empresas. En paralelo, estamos construyendo AG Business, nuestra propia plataforma SaaS.
+    </p>
 
-  <div class="hero-ctas">
-    <a href="#contacto" class="btn-primary">Cuéntanos tu proyecto <span aria-hidden="true">→</span></a>
-    <a href="#servicios" class="btn-secondary">Ver cómo podemos ayudarte</a>
-  </div>
-  <p class="hero-note">Sin compromiso · Hablamos de tu caso, no de un guion de ventas</p>
+    <div class="hero-ctas reveal reveal-delay-2">
+      <a href="#contacto" class="btn btn-primary btn-lg">
+        Reservar diagnóstico gratuito
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#servicios" class="btn btn-secondary btn-lg">Ver servicios</a>
+    </div>
+    <p class="hero-note reveal reveal-delay-3">
+      <span class="dot"></span> Respuesta personal en menos de 24 h
+      <span class="dot"></span> Sin compromiso
+      <span class="dot"></span> Diagnóstico incluido
+    </p>
 
-  <div class="flow-wrap">
-    <svg class="flow-svg" viewBox="0 0 920 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagrama: de proceso manual a sistema automatizado con resultado medible">
-      <defs>
-        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-          <path d="M1 1L8 5L1 9" fill="none" stroke="rgba(237,239,242,0.3)" stroke-width="1.5" stroke-linecap="round"/>
-        </marker>
-      </defs>
-      <g>
-        <rect x="20" y="60" width="220" height="80" rx="12" fill="#1c1f23" stroke="rgba(237,239,242,0.12)" stroke-width="1"/>
-        <text x="40" y="86" fill="rgba(237,239,242,0.45)" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1">ANTES</text>
-        <text x="40" y="110" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="500">Tareas manuales,</text>
-        <text x="40" y="128" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="500">tiempo perdido</text>
-      </g>
-      <line x1="240" y1="100" x2="335" y2="100" stroke="rgba(237,239,242,0.3)" stroke-width="1.5" marker-end="url(#arrow)"/>
-      <g>
-        <rect x="350" y="50" width="220" height="100" rx="12" fill="#1c1f23" stroke="#5b5fef" stroke-width="1.5"/>
-        <circle cx="370" cy="70" r="4" fill="#5b5fef"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
-        <text x="384" y="74" fill="#5b5fef" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1">SOLUCIÓN A MEDIDA</text>
-        <text x="370" y="100" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="600">Automatización,</text>
-        <text x="370" y="120" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="600">web o herramienta</text>
-        <text x="370" y="139" fill="rgba(237,239,242,0.45)" font-family="Geist Mono, monospace" font-size="10">según lo que necesites</text>
-      </g>
-      <line x1="570" y1="100" x2="665" y2="100" stroke="rgba(237,239,242,0.3)" stroke-width="1.5" marker-end="url(#arrow)"/>
-      <g>
-        <rect x="680" y="60" width="220" height="80" rx="12" fill="#1c1f23" stroke="rgba(16,185,129,0.35)" stroke-width="1"/>
-        <text x="700" y="86" fill="#10b981" font-family="Geist Mono, monospace" font-size="11" letter-spacing="1">DESPUÉS</text>
-        <text x="700" y="110" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="500">Más tiempo,</text>
-        <text x="700" y="128" fill="#edeff2" font-family="Geist, sans-serif" font-size="14" font-weight="500">más ingresos</text>
-      </g>
-    </svg>
-    <div class="flow-caption">Diagnóstico → Implementación → Resultado medible</div>
+    <!-- Trust row -->
+    <div class="trust-row reveal reveal-delay-3">
+      <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>Automatización</div>
+      <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6v6H9z"/></svg>Inteligencia artificial</div>
+      <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>Software a medida</div>
+      <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Consultoría</div>
+    </div>
+
+    <!-- Hero product mockup -->
+    <div class="hero-product reveal reveal-delay-3">
+      <div class="hero-product-inner">
+        <div class="hero-product-bar">
+          <div class="dots"><span class="dot-d"></span><span class="dot-d"></span><span class="dot-d"></span></div>
+          <div class="url">agbusiness.app/panel</div>
+        </div>
+        <svg class="hero-product-svg" viewBox="0 0 1080 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mockup del panel de control AG Business">
+          <defs>
+            <linearGradient id="ch1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#5b5fef" stop-opacity=".7"/><stop offset="1" stop-color="#5b5fef" stop-opacity="0"/></linearGradient>
+            <linearGradient id="ch2" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#5b5fef"/><stop offset="1" stop-color="#a78bfa"/></linearGradient>
+          </defs>
+          <!-- Sidebar -->
+          <rect x="0" y="0" width="220" height="480" fill="#0d1013"/>
+          <rect x="0" y="0" width="220" height="480" fill="none" stroke="rgba(237,239,242,.06)" stroke-width="1"/>
+          <rect x="20" y="24" width="28" height="28" rx="7" fill="#5b5fef"/>
+          <text x="56" y="43" fill="#edeff2" font-family="Geist,sans-serif" font-size="13" font-weight="600">AG Business</text>
+          <text x="20" y="90" fill="rgba(237,239,242,.35)" font-family="Geist Mono,monospace" font-size="9" letter-spacing="1">MENÚ</text>
+          <rect x="12" y="102" width="196" height="30" rx="6" fill="rgba(91,95,239,.15)"/>
+          <rect x="24" y="112" width="10" height="10" rx="2" fill="#5b5fef"/>
+          <text x="44" y="121" fill="#edeff2" font-family="Geist,sans-serif" font-size="11" font-weight="500">Dashboard</text>
+          <g fill="rgba(237,239,242,.5)" font-family="Geist,sans-serif" font-size="11">
+            <text x="44" y="152">Clientes</text><text x="44" y="182">Automatizaciones</text><text x="44" y="212">Chatbots</text><text x="44" y="242">Facturación</text><text x="44" y="272">Integraciones</text><text x="44" y="302">Ajustes</text>
+          </g>
+          <g fill="rgba(237,239,242,.15)"><rect x="24" y="143" width="10" height="10" rx="2"/><rect x="24" y="173" width="10" height="10" rx="2"/><rect x="24" y="203" width="10" height="10" rx="2"/><rect x="24" y="233" width="10" height="10" rx="2"/><rect x="24" y="263" width="10" height="10" rx="2"/><rect x="24" y="293" width="10" height="10" rx="2"/></g>
+          <!-- Main -->
+          <text x="248" y="46" fill="#edeff2" font-family="Geist,sans-serif" font-size="17" font-weight="600">Buenas tardes, Alejandro</text>
+          <text x="248" y="66" fill="rgba(237,239,242,.5)" font-family="Geist,sans-serif" font-size="11">Resumen de tu negocio · Últimos 30 días</text>
+          <!-- KPI cards -->
+          <g>
+            <rect x="248" y="90" width="188" height="88" rx="10" fill="#14171b" stroke="rgba(237,239,242,.08)"/>
+            <text x="264" y="112" fill="rgba(237,239,242,.5)" font-family="Geist Mono,monospace" font-size="9" letter-spacing="1">HORAS AHORRADAS</text>
+            <text x="264" y="146" fill="#edeff2" font-family="Geist,sans-serif" font-size="26" font-weight="600" letter-spacing="-1">142h</text>
+            <text x="264" y="164" fill="#10b981" font-family="Geist Mono,monospace" font-size="10">+ 23% vs mes ant.</text>
+
+            <rect x="446" y="90" width="188" height="88" rx="10" fill="#14171b" stroke="rgba(237,239,242,.08)"/>
+            <text x="462" y="112" fill="rgba(237,239,242,.5)" font-family="Geist Mono,monospace" font-size="9" letter-spacing="1">LEADS RESPONDIDOS</text>
+            <text x="462" y="146" fill="#edeff2" font-family="Geist,sans-serif" font-size="26" font-weight="600" letter-spacing="-1">1.284</text>
+            <text x="462" y="164" fill="#10b981" font-family="Geist Mono,monospace" font-size="10">+ 41%</text>
+
+            <rect x="644" y="90" width="188" height="88" rx="10" fill="#14171b" stroke="rgba(237,239,242,.08)"/>
+            <text x="660" y="112" fill="rgba(237,239,242,.5)" font-family="Geist Mono,monospace" font-size="9" letter-spacing="1">FLUJOS ACTIVOS</text>
+            <text x="660" y="146" fill="#edeff2" font-family="Geist,sans-serif" font-size="26" font-weight="600" letter-spacing="-1">18</text>
+            <text x="660" y="164" fill="rgba(237,239,242,.5)" font-family="Geist Mono,monospace" font-size="10">3 nuevos esta semana</text>
+
+            <rect x="842" y="90" width="216" height="88" rx="10" fill="url(#ch1)" stroke="rgba(91,95,239,.3)"/>
+            <text x="858" y="112" fill="rgba(255,255,255,.7)" font-family="Geist Mono,monospace" font-size="9" letter-spacing="1">AHORRO ESTIMADO</text>
+            <text x="858" y="146" fill="#fff" font-family="Geist,sans-serif" font-size="26" font-weight="600" letter-spacing="-1">3.240 €</text>
+            <text x="858" y="164" fill="rgba(255,255,255,.7)" font-family="Geist Mono,monospace" font-size="10">este mes</text>
+          </g>
+          <!-- Chart -->
+          <rect x="248" y="198" width="584" height="240" rx="10" fill="#14171b" stroke="rgba(237,239,242,.08)"/>
+          <text x="264" y="222" fill="#edeff2" font-family="Geist,sans-serif" font-size="12" font-weight="600">Actividad de automatizaciones</text>
+          <text x="264" y="238" fill="rgba(237,239,242,.4)" font-family="Geist,sans-serif" font-size="10">Ejecuciones por día</text>
+          <!-- axis -->
+          <g stroke="rgba(237,239,242,.05)" stroke-width="1">
+            <line x1="264" y1="280" x2="816" y2="280"/><line x1="264" y1="330" x2="816" y2="330"/><line x1="264" y1="380" x2="816" y2="380"/>
+          </g>
+          <!-- area -->
+          <path d="M264 380 L 320 360 L 376 340 L 432 320 L 488 305 L 544 320 L 600 290 L 656 270 L 712 260 L 768 240 L 816 220 L 816 410 L 264 410 Z" fill="url(#ch1)" opacity=".5"/>
+          <path d="M264 380 L 320 360 L 376 340 L 432 320 L 488 305 L 544 320 L 600 290 L 656 270 L 712 260 L 768 240 L 816 220" stroke="url(#ch2)" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="768" cy="240" r="4" fill="#5b5fef"><animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite"/></circle>
+          <circle cx="768" cy="240" r="3" fill="#fff"/>
+          <!-- Right panel -->
+          <rect x="842" y="198" width="216" height="240" rx="10" fill="#14171b" stroke="rgba(237,239,242,.08)"/>
+          <text x="858" y="222" fill="#edeff2" font-family="Geist,sans-serif" font-size="12" font-weight="600">Últimas ejecuciones</text>
+          <g font-family="Geist,sans-serif" font-size="10">
+            <circle cx="866" cy="256" r="4" fill="#10b981"/><text x="880" y="260" fill="#edeff2">Nuevo lead → CRM</text><text x="880" y="273" fill="rgba(237,239,242,.4)" font-size="9">hace 2 min</text>
+            <circle cx="866" cy="296" r="4" fill="#10b981"/><text x="880" y="300" fill="#edeff2">Factura enviada</text><text x="880" y="313" fill="rgba(237,239,242,.4)" font-size="9">hace 12 min</text>
+            <circle cx="866" cy="336" r="4" fill="#10b981"/><text x="880" y="340" fill="#edeff2">Recordatorio cita</text><text x="880" y="353" fill="rgba(237,239,242,.4)" font-size="9">hace 34 min</text>
+            <circle cx="866" cy="376" r="4" fill="#f59e0b"/><text x="880" y="380" fill="#edeff2">Bot respondió</text><text x="880" y="393" fill="rgba(237,239,242,.4)" font-size="9">hace 1 h</text>
+          </g>
+        </svg>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- ============================================
+     MARQUEE
+     ============================================ -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <span class="mq-item">Automatización de procesos</span><span class="mq-item">Páginas web profesionales</span>
-    <span class="mq-item">Herramientas a medida</span><span class="mq-item">Digitalización de negocios</span>
-    <span class="mq-item">Consultoría tecnológica</span><span class="mq-item">Paneles internos</span>
-    <span class="mq-item">Formularios avanzados</span><span class="mq-item">Optimización de procesos</span>
-    <span class="mq-item">Automatización de procesos</span><span class="mq-item">Páginas web profesionales</span>
-    <span class="mq-item">Herramientas a medida</span><span class="mq-item">Digitalización de negocios</span>
-    <span class="mq-item">Consultoría tecnológica</span><span class="mq-item">Paneles internos</span>
-    <span class="mq-item">Formularios avanzados</span><span class="mq-item">Optimización de procesos</span>
+    <span class="mq-item">Automatización de procesos</span><span class="mq-item">Inteligencia artificial</span>
+    <span class="mq-item">Chatbots a medida</span><span class="mq-item">Sitios web profesionales</span>
+    <span class="mq-item">Paneles internos</span><span class="mq-item">Integraciones API</span>
+    <span class="mq-item">CRM personalizados</span><span class="mq-item">Digitalización de negocios</span>
+    <span class="mq-item">Software SaaS</span><span class="mq-item">Consultoría tecnológica</span>
+    <span class="mq-item">Automatización de procesos</span><span class="mq-item">Inteligencia artificial</span>
+    <span class="mq-item">Chatbots a medida</span><span class="mq-item">Sitios web profesionales</span>
+    <span class="mq-item">Paneles internos</span><span class="mq-item">Integraciones API</span>
+    <span class="mq-item">CRM personalizados</span><span class="mq-item">Digitalización de negocios</span>
+    <span class="mq-item">Software SaaS</span><span class="mq-item">Consultoría tecnológica</span>
   </div>
 </div>
-<!-- SERVICIOS — cada uno con CTA propio -->
-<section id="servicios" class="sec sec-bt" aria-labelledby="serv-h2">
+
+<!-- ============================================
+     STATS
+     ============================================ -->
+<section class="sec sec-bt" aria-labelledby="stats-h2">
   <div class="w">
-    <div class="reveal">
-      <div class="eyebrow">Cómo te ayudamos</div>
-      <h2 id="serv-h2" class="sec-title">Menos trabajo manual,<br>más tiempo para <span class="ac">hacer crecer tu negocio.</span></h2>
-      <p class="sec-body">Cada negocio pierde tiempo y dinero de forma distinta. Empezamos por identificar dónde está la fuga en el tuyo.</p>
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto;">
+      <div class="eyebrow">Impacto real</div>
+      <h2 id="stats-h2" class="sec-title">Números que <span class="ac">se miden en horas y euros.</span></h2>
+      <p class="sec-body" style="margin:0 auto;">Estos son los rangos de impacto que buscamos en cada implementación, no promesas genéricas.</p>
     </div>
-
-    <div class="services-grid reveal" style="margin-top:2.5rem;">
-
-      <div class="service-card">
-        <div class="service-icon">⚙️</div>
-        <div class="service-name">Automatización de procesos</div>
-        <div class="service-desc">Reduce las horas de trabajo manual y dedica ese tiempo a lo que realmente hace crecer tu negocio.</div>
-        <div class="service-list">
-          <span>Gestión de datos</span>
-          <span>Formularios</span>
-          <span>Correos automáticos</span>
-          <span>Seguimiento de clientes</span>
-          <span>Flujos internos</span>
-        </div>
-        <a href="#contacto" class="service-cta">Quiero automatizar esto →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🌐</div>
-        <div class="service-name">Creación de páginas web</div>
-        <div class="service-desc">Consigue una presencia profesional que genere confianza desde el primer segundo y convierta visitas en clientes.</div>
-        <div class="service-list">
-          <span>Diseño profesional</span>
-          <span>Velocidad de carga</span>
-          <span>Adaptación móvil</span>
-          <span>SEO básico</span>
-          <span>Enfoque en conversión</span>
-        </div>
-        <a href="#contacto" class="service-cta">Quiero esta página web →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🧩</div>
-        <div class="service-name">Sistemas y herramientas personalizadas</div>
-        <div class="service-desc">Si una herramienta no existe para lo que necesitas, te la construimos a tu medida, no al revés.</div>
-        <div class="service-list">
-          <span>Chatbots</span>
-          <span>Formularios inteligentes</span>
-          <span>Sistemas internos</span>
-          <span>Herramientas empresariales</span>
-          <span>Soluciones personalizadas</span>
-        </div>
-        <a href="#contacto" class="service-cta">Cuéntanos qué necesitas →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">📊</div>
-        <div class="service-name">Optimización y digitalización</div>
-        <div class="service-desc">Cambia procesos lentos y propensos a errores por sistemas que funcionan solos, todos los días.</div>
-        <div class="service-list">
-          <span>Ahorro de tiempo</span>
-          <span>Reducción de errores</span>
-          <span>Mejora de productividad</span>
-        </div>
-        <a href="#contacto" class="service-cta">Quiero optimizar mi negocio →</a>
-      </div>
-
-      <div class="service-card">
-        <div class="service-icon">🧭</div>
-        <div class="service-name">Consultoría tecnológica</div>
-        <div class="service-desc">Si no sabes por dónde empezar, te decimos exactamente dónde está el mayor ahorro antes de invertir un euro.</div>
-        <div class="service-list">
-          <span>Análisis de procesos actuales</span>
-          <span>Propuestas de mejora</span>
-          <span>Acompañamiento en la implementación</span>
-        </div>
-        <a href="#contacto" class="service-cta">Obtener asesoramiento →</a>
-      </div>
-
+    <div class="stats-grid reveal">
+      <div class="stat"><div class="stat-v brand">-70%</div><div class="stat-l">Tiempo dedicado a tareas repetitivas</div><div class="stat-tag">Objetivo mensual</div></div>
+      <div class="stat"><div class="stat-v">24/7</div><div class="stat-l">Atención automatizada sin intervención humana</div><div class="stat-tag">Uptime del sistema</div></div>
+      <div class="stat"><div class="stat-v">&lt; 24h</div><div class="stat-l">Respuesta personal a cada consulta</div><div class="stat-tag">Compromiso</div></div>
+      <div class="stat"><div class="stat-v brand">+30%</div><div class="stat-l">Aumento en leads gestionados por cliente</div><div class="stat-tag">Media 90 días</div></div>
     </div>
   </div>
 </section>
 
-<!-- CASOS DE USO — resultado, no tecnología -->
+<!-- ============================================
+     SERVICIOS
+     ============================================ -->
+<section id="servicios" class="sec sec-alt sec-bt sec-bb" aria-labelledby="serv-h2">
+  <div class="w">
+    <div class="reveal" style="max-width:720px;">
+      <div class="eyebrow">Cómo te ayudamos</div>
+      <h2 id="serv-h2" class="sec-title">Menos trabajo manual,<br>más tiempo para <span class="ac">hacer crecer tu negocio.</span></h2>
+      <p class="sec-body">Cinco disciplinas conectadas: cada proyecto empieza identificando dónde pierde tiempo tu equipo y termina con un sistema que corre solo.</p>
+    </div>
+
+    <div class="services-bento reveal">
+      <!-- Automatización — LG -->
+      <div class="svc svc-lg">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0-8-8"/><path d="M12 4v4M20 12h-4"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
+        <div class="svc-name">Automatización de procesos</div>
+        <div class="svc-desc">Cambiamos las tareas manuales que consumen horas por flujos que corren solos, todos los días, sin errores ni olvidos.</div>
+        <div class="svc-list">
+          <span class="svc-chip">CRM</span><span class="svc-chip">Emails</span><span class="svc-chip">Formularios</span><span class="svc-chip">WhatsApp</span><span class="svc-chip">Facturación</span><span class="svc-chip">Integraciones</span>
+        </div>
+        <a href="#contacto" class="svc-cta">Automatizar mi negocio <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <!-- IA — MD -->
+      <div class="svc svc-md">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/><path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
+        </div>
+        <div class="svc-name">Soluciones de IA</div>
+        <div class="svc-desc">Chatbots inteligentes, asistentes internos y agentes que trabajan con tus propios datos, no con respuestas genéricas.</div>
+        <div class="svc-list"><span class="svc-chip">Chatbots</span><span class="svc-chip">Agentes IA</span><span class="svc-chip">Voz</span><span class="svc-chip">RAG</span></div>
+        <a href="#contacto" class="svc-cta">Explorar posibilidades <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <!-- Web — SM -->
+      <div class="svc svc-sm">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+        </div>
+        <div class="svc-name">Desarrollo web</div>
+        <div class="svc-desc">Sitios profesionales que convierten, no folletos digitales.</div>
+        <a href="#contacto" class="svc-cta">Ver enfoque <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="svc svc-sm">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <div class="svc-name">Software a medida</div>
+        <div class="svc-desc">Sistemas internos y herramientas cuando la solución no existe.</div>
+        <a href="#contacto" class="svc-cta">Contarnos el caso <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="svc svc-sm">
+        <div class="svc-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24,7.76 14.12,14.12 7.76,16.24 9.88,9.88"/></svg>
+        </div>
+        <div class="svc-name">Consultoría</div>
+        <div class="svc-desc">Te decimos dónde está el ahorro antes de invertir un euro.</div>
+        <a href="#contacto" class="svc-cta">Reservar sesión <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PROCESS
+     ============================================ -->
+<section id="proceso" class="sec sec-bt" aria-labelledby="proc-h2">
+  <div class="w">
+    <div class="reveal" style="max-width:720px;">
+      <div class="eyebrow">Cómo trabajamos</div>
+      <h2 id="proc-h2" class="sec-title">Un proceso ordenado,<br>sin sorpresas ni <span class="ac">semanas en el aire.</span></h2>
+      <p class="sec-body">De la primera llamada al sistema funcionando en producción. Cada fase tiene un entregable claro y un plazo comprometido.</p>
+    </div>
+    <div class="process-grid reveal">
+      <div class="step"><div class="step-n">01</div><div class="step-title">Diagnóstico</div><div class="step-desc">Analizamos qué tareas te quitan más tiempo y dónde está el ahorro real.</div><div class="step-time">Día 1–3</div></div>
+      <div class="step"><div class="step-n">02</div><div class="step-title">Diseño</div><div class="step-desc">Propuesta con alcance, precio cerrado y flujo técnico. Sin letra pequeña.</div><div class="step-time">Semana 1</div></div>
+      <div class="step"><div class="step-n">03</div><div class="step-title">Implementación</div><div class="step-desc">Construimos, integramos con tus herramientas y probamos en tu entorno.</div><div class="step-time">Semanas 2–4</div></div>
+      <div class="step"><div class="step-n">04</div><div class="step-title">Iteración</div><div class="step-desc">Medimos resultado, ajustamos y te dejamos documentación para que sea tuyo.</div><div class="step-time">Continuo</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CASOS
+     ============================================ -->
 <section id="casos" class="sec sec-alt sec-bt sec-bb" aria-labelledby="casos-h2">
   <div class="w">
-    <div class="reveal">
+    <div class="reveal" style="max-width:720px;">
       <div class="eyebrow">Lo que cambia de verdad</div>
       <h2 id="casos-h2" class="sec-title">Esto es lo que ganan los negocios<br>que <span class="ac">trabajan con nosotros.</span></h2>
       <p class="sec-body">No vendemos automatización. Vendemos el tiempo y el dinero que recuperas cuando deja de hacerse a mano.</p>
     </div>
 
-    <div class="usecase-grid reveal" style="margin-top:2.5rem;">
-      <div class="usecase-card">
-        <div class="usecase-sector">Clínicas</div>
-        <div class="usecase-result">Citas y recordatorios sin llamadas perdidas</div>
-        <div class="usecase-detail">El sistema confirma, recuerda y reprograma citas automáticamente por SMS o WhatsApp.</div>
-        <div class="usecase-metric"><span class="v">-40%</span><span class="l">ausencias sin avisar</span></div>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-sector">Inmobiliarias</div>
-        <div class="usecase-result">Ningún lead se enfría por falta de respuesta</div>
-        <div class="usecase-detail">Cada contacto recibe seguimiento automático desde el primer minuto, sin esperar a que un agente esté libre.</div>
-        <div class="usecase-metric"><span class="v">24/7</span><span class="l">respuesta inmediata</span></div>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-sector">Restaurantes</div>
-        <div class="usecase-result">Reservas gestionadas solas, incluso de madrugada</div>
-        <div class="usecase-detail">Los clientes reservan por WhatsApp o web sin que nadie del equipo tenga que contestar al teléfono.</div>
-        <div class="usecase-metric"><span class="v">+0</span><span class="l">llamadas perdidas</span></div>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-sector">E-commerce</div>
-        <div class="usecase-result">Atención al cliente que no descansa</div>
-        <div class="usecase-detail">Dudas de envío, devoluciones y estado de pedido resueltas al instante, sin esperar a que abra soporte.</div>
-        <div class="usecase-metric"><span class="v">90%</span><span class="l">consultas sin intervención humana</span></div>
-      </div>
-      <div class="usecase-card">
-        <div class="usecase-sector">Negocios locales</div>
-        <div class="usecase-result">Menos papeleo, más tiempo para el negocio</div>
-        <div class="usecase-detail">Facturas, informes y tareas administrativas que antes ocupaban horas, ahora se generan solas.</div>
-        <div class="usecase-metric"><span class="v">+5h</span><span class="l">libres a la semana</span></div>
-      </div>
+    <div class="usecase-grid reveal">
+      <div class="usecase-card"><div class="usecase-sector">Clínicas</div><div class="usecase-result">Citas y recordatorios sin llamadas perdidas</div><div class="usecase-detail">El sistema confirma, recuerda y reprograma automáticamente por SMS o WhatsApp.</div><div class="usecase-metric"><span class="v">-40%</span><span class="l">ausencias sin avisar</span></div></div>
+      <div class="usecase-card"><div class="usecase-sector">Inmobiliarias</div><div class="usecase-result">Ningún lead se enfría por falta de respuesta</div><div class="usecase-detail">Cada contacto recibe seguimiento automático desde el primer minuto, sin esperar a que un agente esté libre.</div><div class="usecase-metric"><span class="v">24/7</span><span class="l">respuesta inmediata</span></div></div>
+      <div class="usecase-card"><div class="usecase-sector">Restaurantes</div><div class="usecase-result">Reservas gestionadas solas, incluso de madrugada</div><div class="usecase-detail">Los clientes reservan por WhatsApp o web sin que nadie del equipo tenga que contestar al teléfono.</div><div class="usecase-metric"><span class="v">+0</span><span class="l">llamadas perdidas</span></div></div>
+      <div class="usecase-card"><div class="usecase-sector">E-commerce</div><div class="usecase-result">Atención al cliente que no descansa</div><div class="usecase-detail">Dudas de envío, devoluciones y estado de pedido resueltas al instante, sin esperar a que abra soporte.</div><div class="usecase-metric"><span class="v">90%</span><span class="l">consultas sin humano</span></div></div>
+      <div class="usecase-card"><div class="usecase-sector">Negocios locales</div><div class="usecase-result">Menos papeleo, más tiempo para el negocio</div><div class="usecase-detail">Facturas, informes y tareas administrativas que antes ocupaban horas, ahora se generan solas.</div><div class="usecase-metric"><span class="v">+5h</span><span class="l">libres a la semana</span></div></div>
+      <div class="usecase-card"><div class="usecase-sector">Servicios profesionales</div><div class="usecase-result">Propuestas y contratos en un clic</div><div class="usecase-detail">Documentos generados desde plantillas, firmados digitalmente y archivados sin intervención manual.</div><div class="usecase-metric"><span class="v">-80%</span><span class="l">tiempo administrativo</span></div></div>
     </div>
 
-    <div style="text-align:center;margin-top:2rem;" class="reveal">
-      <a href="#contacto" class="btn-primary">Quiero esto en mi negocio →</a>
+    <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+      <a href="#contacto" class="btn btn-primary">
+        Quiero esto en mi negocio
+        <svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
 </section>
-<!-- CHATBOTS — mención breve dentro de sistemas personalizados, sin presentarse como demo -->
+
+<!-- ============================================
+     CHATBOTS
+     ============================================ -->
 <section id="chatbots" class="sec sec-bt" aria-labelledby="chat-h2">
   <div class="w">
     <div class="chat-layout">
@@ -426,48 +1211,259 @@ input,select,textarea{font-family:var(--sans);}
         <div class="eyebrow">Atención que nunca duerme</div>
         <h2 id="chat-h2" class="sec-title">Responde a tus clientes<br>incluso cuando <span class="ac">estás durmiendo.</span></h2>
         <p class="sec-body">Un chatbot a medida contesta las preguntas de siempre al instante, recoge la información que necesitas y solo pasa a tu equipo lo que realmente importa.</p>
-        <a href="#contacto" class="btn-primary" style="margin-top:1.5rem;">Quiero esto en mi negocio →</a>
+        <div class="chat-benefits" style="margin-top:2rem;">
+          <div class="chat-benefit"><div class="chat-benefit-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div><div><div class="chat-benefit-title">Respuestas instantáneas</div><div class="chat-benefit-desc">Sin esperas. El cliente obtiene información al momento.</div></div></div>
+          <div class="chat-benefit"><div class="chat-benefit-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="chat-benefit-title">Disponibilidad 24/7</div><div class="chat-benefit-desc">Sigue atendiendo aunque sea de madrugada o fin de semana.</div></div></div>
+          <div class="chat-benefit"><div class="chat-benefit-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div><div class="chat-benefit-title">Captación de información</div><div class="chat-benefit-desc">Recoge datos del visitante antes de que hable con tu equipo.</div></div></div>
+          <div class="chat-benefit"><div class="chat-benefit-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><div><div class="chat-benefit-title">Marca cuidada</div><div class="chat-benefit-desc">Menos fricción, mejor primera impresión.</div></div></div>
+        </div>
       </div>
-      <div class="chat-benefits reveal">
-        <div class="chat-benefit">
-          <div class="chat-benefit-icon">⚡</div>
-          <div><div class="chat-benefit-title">Nadie repite la misma respuesta</div><div class="chat-benefit-desc">Las preguntas de siempre se resuelven solas, sin que tu equipo tenga que escribirlas una vez más.</div></div>
-        </div>
-        <div class="chat-benefit">
-          <div class="chat-benefit-icon">💬</div>
-          <div><div class="chat-benefit-title">Respuestas instantáneas</div><div class="chat-benefit-desc">Sin esperas. El cliente obtiene información al momento, no al día siguiente.</div></div>
-        </div>
-        <div class="chat-benefit">
-          <div class="chat-benefit-icon">🕐</div>
-          <div><div class="chat-benefit-title">Disponibilidad 24/7</div><div class="chat-benefit-desc">Tu negocio sigue atendiendo aunque sea de madrugada o fin de semana.</div></div>
-        </div>
-        <div class="chat-benefit">
-          <div class="chat-benefit-icon">📋</div>
-          <div><div class="chat-benefit-title">Captación de información</div><div class="chat-benefit-desc">Recoge los datos que necesitas de cada visitante antes de que hable con tu equipo.</div></div>
-        </div>
-        <div class="chat-benefit">
-          <div class="chat-benefit-icon">⭐</div>
-          <div><div class="chat-benefit-title">Una marca que se nota cuidada</div><div class="chat-benefit-desc">Menos espera y menos fricción dejan una primera impresión que genera confianza.</div></div>
+      <div class="reveal">
+        <div class="chat-mock">
+          <div class="chat-mock-head">
+            <div class="chat-mock-av">AG</div>
+            <div style="flex:1;"><div class="chat-mock-name">Asistente virtual</div><div class="chat-mock-status">En línea · responde al instante</div></div>
+          </div>
+          <div class="chat-mock-body">
+            <div class="msg user">Hola, ¿tenéis cita libre para mañana por la tarde?</div>
+            <div class="typing"><span></span><span></span><span></span></div>
+            <div class="msg bot">¡Claro! Tengo dos huecos disponibles: <b>16:30</b> y <b>18:00</b>. ¿Cuál prefieres?</div>
+            <div class="msg bot bot2">Puedo confirmártela por WhatsApp en cuanto me digas tu nombre.</div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRUEBA SOCIAL -->
+<!-- ============================================
+     AG BUSINESS — Landing SaaS
+     ============================================ -->
+<section id="agbusiness" aria-labelledby="ag-h2">
+  <div class="w">
+    <div class="ag-hero reveal">
+      <div class="ag-badge">
+        <span class="tag">Próximamente</span> En desarrollo · Lanzamiento previsto Q2 2026
+      </div>
+      <h2 id="ag-h2" class="ag-title">Estamos construyendo <span class="ac">AG Business</span>.<br>La plataforma que reunirá todo lo que hoy hacemos a medida.</h2>
+      <p class="ag-sub">El siguiente paso de nuestra empresa: reunir en un solo producto las automatizaciones, chatbots, CRM, facturación e IA que ahora desarrollamos proyecto a proyecto. Todavía no está disponible — puedes conocerlo hoy y ser de los primeros en probarlo cuando abramos el acceso.</p>
+      <div class="ag-cta-row">
+        <a href="#contacto" class="btn btn-primary btn-lg">Quiero enterarme cuando esté disponible<svg class="arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <a href="#precios" class="btn btn-secondary btn-lg">Ver planes previstos</a>
+      </div>
+      <p style="font-size:.76rem;color:var(--faint);margin-top:.5rem;">AG Business aún no está a la venta. Estamos preparando el lanzamiento.</p>
+    </div>
+
+    <!-- Dashboard mockup -->
+    <div class="ag-dashboard reveal reveal-delay-1">
+      <div class="ag-dashboard-inner">
+        <svg viewBox="0 0 1080 560" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;" role="img" aria-label="Vista previa de AG Business">
+          <defs>
+            <linearGradient id="agc1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7b7ff5" stop-opacity=".6"/><stop offset="1" stop-color="#7b7ff5" stop-opacity="0"/></linearGradient>
+            <linearGradient id="agc2" x1="0" x2="1"><stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#5b5fef"/></linearGradient>
+          </defs>
+          <!-- Top bar -->
+          <rect x="0" y="0" width="1080" height="52" fill="#0d1013"/>
+          <rect x="0" y="51" width="1080" height="1" fill="rgba(237,239,242,.08)"/>
+          <rect x="24" y="16" width="20" height="20" rx="5" fill="#5b5fef"/>
+          <text x="52" y="31" fill="#edeff2" font-family="Geist,sans-serif" font-size="12" font-weight="600">AG Business</text>
+          <g font-family="Geist,sans-serif" font-size="11" fill="rgba(237,239,242,.55)"><text x="180" y="31">Dashboard</text><text x="252" y="31">Clientes</text><text x="316" y="31">Flujos</text><text x="376" y="31">IA</text><text x="418" y="31">Facturación</text></g>
+          <circle cx="1020" cy="26" r="12" fill="#26292e"/><text x="1015" y="30" fill="#edeff2" font-family="Geist,sans-serif" font-size="10" font-weight="600">A</text>
+          <!-- Body -->
+          <text x="30" y="90" fill="#edeff2" font-family="Geist,sans-serif" font-size="20" font-weight="600" letter-spacing="-.5">Panel principal</text>
+          <text x="30" y="112" fill="rgba(237,239,242,.5)" font-family="Geist,sans-serif" font-size="11">Todo tu negocio en un vistazo</text>
+          <!-- KPI row -->
+          <g>
+            <rect x="24" y="140" width="252" height="102" rx="12" fill="#14171b" stroke="rgba(237,239,242,.08)"/>
+            <text x="42" y="164" fill="rgba(237,239,242,.5)" font-family="Geist Mono,monospace" font-size="9" letter-spacing="1">INGRESOS MES</text>
+            <text x="42" y="200" fill="#edeff2" font-family="Geist,sans-serif" font-size="30" font-weight="600" letter-spacing="-1">18.420 €</text>
+            <text x="42" y="222" fill="#10b981" font-family="Geist Mono,monospace" font-size="10">↑ 24% vs mes ant.</text>
+            <path d="M180 220 L 195 210 L 210 215 L 225 200 L 240 195 L 255 185" stroke="#10b981" stroke-width="2" fill="none"/>
+
+            <rect x="286" y="140" width="252" height="102" rx="12" fill="#14171b" stroke="rgba(237,239,242,.08)"/>
+            <text x="304" y="164" fill="rgba(237,239,242,.5)" font-family="Geist Mono,monospace" font-size="9" letter-spacing="1">CLIENTES ACTIVOS</text>
+            <text x="304" y="200" fill="#edeff2" font-family="Geist,sans-serif" font-size="30" font-weight="600" letter-spacing="-1">248</text>
+            <text x="304" y="222" fill="#10b981" font-family="Geist Mono,monospace" font-size="10">↑ 12 nuevos esta semana</text>
+            <g fill="#5b5fef" opacity=".8"><rect x="450" y="212" width="4" height="8" rx="1"/><rect x="458" y="205" width="4" height="15" rx="1"/><rect x="466" y="200" width="4" height="20" rx="1"/><rect x="474" y="192" width="4" height="28" rx="1"/><rect x="482" y="196" width="4" height="24" rx="1"/><rect x="490" y="188" width="4" height="32" rx="1"/><rect x="498" y="182" width="4" height="38" rx="1"/><rect x="506" y="185" width="4" height="35" rx="1"/><rect x="514" y="178" width="4" height="42" rx="1"/><rect x="522" y="170" width="4" height="50" rx="1"/></g>
+
+            <rect x="548" y="140" width="252" height="102" rx="12" fill="#14171b" stroke="rgba(237,239,242,.08)"/>
+            <text x="566" y="164" fill="rgba(237,239,242,.5)" font-family="Geist Mono,monospace" font-size="9" letter-spacing="1">FLUJOS EJECUTADOS</text>
+            <text x="566" y="200" fill="#edeff2" font-family="Geist,sans-serif" font-size="30" font-weight="600" letter-spacing="-1">4.892</text>
+            <text x="566" y="222" fill="#10b981" font-family="Geist Mono,monospace" font-size="10">99.8% completados</text>
+
+            <rect x="810" y="140" width="246" height="102" rx="12" fill="url(#agc1)" stroke="rgba(91,95,239,.35)"/>
+            <text x="828" y="164" fill="rgba(255,255,255,.75)" font-family="Geist Mono,monospace" font-size="9" letter-spacing="1">HORAS AHORRADAS</text>
+            <text x="828" y="200" fill="#fff" font-family="Geist,sans-serif" font-size="30" font-weight="600" letter-spacing="-1">312h</text>
+            <text x="828" y="222" fill="rgba(255,255,255,.75)" font-family="Geist Mono,monospace" font-size="10">en los últimos 30 días</text>
+          </g>
+          <!-- Big chart -->
+          <rect x="24" y="256" width="644" height="280" rx="12" fill="#14171b" stroke="rgba(237,239,242,.08)"/>
+          <text x="42" y="282" fill="#edeff2" font-family="Geist,sans-serif" font-size="14" font-weight="600">Ingresos vs. flujos automatizados</text>
+          <text x="42" y="300" fill="rgba(237,239,242,.4)" font-family="Geist,sans-serif" font-size="10">Últimos 12 meses</text>
+          <g stroke="rgba(237,239,242,.05)"><line x1="42" y1="380" x2="650" y2="380"/><line x1="42" y1="440" x2="650" y2="440"/><line x1="42" y1="500" x2="650" y2="500"/></g>
+          <path d="M42 500 L 92 490 L 142 475 L 192 465 L 242 445 L 292 430 L 342 425 L 392 400 L 442 385 L 492 370 L 542 355 L 592 340 L 650 320 L 650 520 L 42 520 Z" fill="url(#agc1)" opacity=".4"/>
+          <path d="M42 500 L 92 490 L 142 475 L 192 465 L 242 445 L 292 430 L 342 425 L 392 400 L 442 385 L 492 370 L 542 355 L 592 340 L 650 320" stroke="url(#agc2)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M42 505 L 92 500 L 142 495 L 192 490 L 242 480 L 292 470 L 342 465 L 392 455 L 442 445 L 492 435 L 542 425 L 592 415 L 650 400" stroke="#5b5fef" stroke-width="2" stroke-dasharray="3,3" fill="none" opacity=".5"/>
+          <circle cx="650" cy="320" r="5" fill="#22d3ee"><animate attributeName="r" values="5;8;5" dur="2s" repeatCount="indefinite"/></circle>
+          <circle cx="650" cy="320" r="3" fill="#fff"/>
+          <!-- Right column -->
+          <rect x="680" y="256" width="376" height="134" rx="12" fill="#14171b" stroke="rgba(237,239,242,.08)"/>
+          <text x="698" y="282" fill="#edeff2" font-family="Geist,sans-serif" font-size="13" font-weight="600">Automatizaciones activas</text>
+          <g font-family="Geist,sans-serif" font-size="11">
+            <rect x="698" y="298" width="8" height="8" rx="2" fill="#10b981"/><text x="712" y="306" fill="#edeff2">Onboarding de nuevo cliente</text><text x="1000" y="306" fill="rgba(237,239,242,.4)" font-size="10" text-anchor="end">142 ✓</text>
+            <rect x="698" y="322" width="8" height="8" rx="2" fill="#10b981"/><text x="712" y="330" fill="#edeff2">Recordatorio de pago</text><text x="1000" y="330" fill="rgba(237,239,242,.4)" font-size="10" text-anchor="end">88 ✓</text>
+            <rect x="698" y="346" width="8" height="8" rx="2" fill="#f59e0b"/><text x="712" y="354" fill="#edeff2">Seguimiento post-venta</text><text x="1000" y="354" fill="rgba(237,239,242,.4)" font-size="10" text-anchor="end">54 ⚠</text>
+            <rect x="698" y="370" width="8" height="8" rx="2" fill="#10b981"/><text x="712" y="378" fill="#edeff2">Bot atención WhatsApp</text><text x="1000" y="378" fill="rgba(237,239,242,.4)" font-size="10" text-anchor="end">1284 ✓</text>
+          </g>
+          <rect x="680" y="402" width="376" height="134" rx="12" fill="#14171b" stroke="rgba(237,239,242,.08)"/>
+          <text x="698" y="428" fill="#edeff2" font-family="Geist,sans-serif" font-size="13" font-weight="600">Sugerencias de la IA</text>
+          <rect x="698" y="442" width="342" height="34" rx="6" fill="rgba(91,95,239,.1)" stroke="rgba(91,95,239,.25)"/>
+          <text x="710" y="463" fill="#edeff2" font-family="Geist,sans-serif" font-size="10">💡 Podrías ahorrar 4h/semana automatizando facturas</text>
+          <rect x="698" y="484" width="342" height="34" rx="6" fill="#0f1216" stroke="rgba(237,239,242,.06)"/>
+          <text x="710" y="505" fill="rgba(237,239,242,.65)" font-family="Geist,sans-serif" font-size="10">📈 3 clientes están listos para upgrade</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- AG features -->
+    <div class="ag-features reveal">
+      <div class="ag-feat"><div class="ag-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div class="ag-feat-title">Flujos sin código</div><div class="ag-feat-desc">Automatiza cualquier proceso arrastrando bloques. Nada de esperar a un desarrollador.</div></div>
+      <div class="ag-feat"><div class="ag-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></div><div class="ag-feat-title">IA integrada</div><div class="ag-feat-desc">Chatbots, asistentes internos y agentes que trabajan con tus propios datos.</div></div>
+      <div class="ag-feat"><div class="ag-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="ag-feat-title">CRM inteligente</div><div class="ag-feat-desc">Todos tus clientes, conversaciones y oportunidades en un solo lugar.</div></div>
+      <div class="ag-feat"><div class="ag-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></div><div class="ag-feat-title">Facturación automática</div><div class="ag-feat-desc">Genera, envía y cobra facturas con Stripe integrado. Cero papeleo.</div></div>
+      <div class="ag-feat"><div class="ag-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20"/></svg></div><div class="ag-feat-title">Integraciones</div><div class="ag-feat-desc">Conecta con WhatsApp, Gmail, Google Calendar, Shopify y decenas más.</div></div>
+      <div class="ag-feat"><div class="ag-feat-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="ag-feat-title">Datos siempre tuyos</div><div class="ag-feat-desc">Servidores en Europa, exportación en un clic, RGPD por diseño.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PRICING
+     ============================================ -->
+<section id="precios" class="sec sec-alt sec-bt sec-bb" aria-labelledby="price-h2">
+  <div class="w-lg">
+    <div class="pricing-head reveal">
+      <div class="eyebrow">Planes previstos · Próximamente</div>
+      <h2 id="price-h2" class="sec-title">Un plan para cada<br>etapa de tu <span class="ac">negocio.</span></h2>
+      <p class="sec-body" style="margin:0 auto;">Estos son los planes previstos para AG Business cuando abramos el acceso. Todavía no están disponibles — si te interesan, solicita tu diagnóstico y te avisaremos personalmente en cuanto lo lancemos.</p>
+      <div class="pricing-toggle">
+        <button class="active" type="button">Mensual</button>
+        <button type="button">Anual <span class="save">-20%</span></button>
+      </div>
+    </div>
+
+    <div class="pricing-grid reveal">
+      <!-- BUSINESS -->
+      <div class="plan">
+        <div class="plan-name">AG Business</div>
+        <div class="plan-price"><span class="num">39€</span><span class="per">/ mes</span></div>
+        <div class="plan-desc">Para negocios que dan el primer paso hacia la automatización.</div>
+        <a href="#contacto" class="plan-cta ghost">Avísame cuando esté disponible</a>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Hasta 5 flujos automatizados</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>1 chatbot con IA</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>CRM básico (100 contactos)</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Integraciones esenciales</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Soporte por email</li>
+          <li class="muted"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>Facturación automática</li>
+          <li class="muted"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/></svg>Agentes IA avanzados</li>
+        </ul>
+      </div>
+
+      <!-- PRO — featured -->
+      <div class="plan featured">
+        <div class="plan-badge">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Más popular
+        </div>
+        <div class="plan-name" style="color:#fff;">AG Business Pro</div>
+        <div class="plan-price"><span class="num">79€</span><span class="per">/ mes</span></div>
+        <div class="plan-desc">Para empresas que ya funcionan y quieren escalar sin contratar más.</div>
+        <a href="#contacto" class="plan-cta primary">Avísame cuando esté disponible<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="margin-left:.35rem;"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>Todo lo de Business, y además:</b></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Flujos ilimitados</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>5 chatbots + agentes IA</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>CRM completo (2.500 contactos)</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Facturación automática + Stripe</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Integraciones ilimitadas</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Soporte prioritario</li>
+        </ul>
+      </div>
+
+      <!-- ELITE -->
+      <div class="plan">
+        <div class="plan-name">AG Business Elite</div>
+        <div class="plan-price"><span class="num">149€</span><span class="per">/ mes</span></div>
+        <div class="plan-desc">Para empresas que necesitan personalización real y acompañamiento cercano.</div>
+        <a href="#contacto" class="plan-cta ghost">Hablemos de tu caso</a>
+        <div class="plan-divider"></div>
+        <ul class="plan-features">
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><b>Todo lo de Pro, y además:</b></li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Automatizaciones a medida</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Agentes IA personalizados</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>CRM ilimitado + subusuarios</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Onboarding personalizado</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Consultoría mensual 1:1</li>
+          <li><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>SLA garantizado</li>
+        </ul>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:.78rem;color:var(--faint);margin-top:2rem;" class="reveal">
+      AG Business todavía no está disponible. Mientras tanto, seguimos desarrollando estas mismas capacidades como proyectos a medida para nuestros clientes.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================
+     TECHNOLOGIES
+     ============================================ -->
+<section class="sec sec-bt" aria-labelledby="tech-h2">
+  <div class="w">
+    <div class="reveal" style="max-width:720px;">
+      <div class="eyebrow">Stack tecnológico</div>
+      <h2 id="tech-h2" class="sec-title">Las tecnologías con las que <span class="ac">construimos.</span></h2>
+      <p class="sec-body">No usamos herramientas por moda. Elegimos lo que mejor encaja con tu caso — desde el prototipo hasta producción a escala.</p>
+    </div>
+    <div class="tech-grid reveal">
+      <div class="tech"><span class="tech-dot"></span>React</div>
+      <div class="tech"><span class="tech-dot"></span>Next.js</div>
+      <div class="tech"><span class="tech-dot"></span>TypeScript</div>
+      <div class="tech"><span class="tech-dot"></span>Node.js</div>
+      <div class="tech"><span class="tech-dot"></span>Python</div>
+      <div class="tech"><span class="tech-dot"></span>PostgreSQL</div>
+      <div class="tech"><span class="tech-dot"></span>Supabase</div>
+      <div class="tech"><span class="tech-dot"></span>OpenAI</div>
+      <div class="tech"><span class="tech-dot"></span>Anthropic</div>
+      <div class="tech"><span class="tech-dot"></span>n8n</div>
+      <div class="tech"><span class="tech-dot"></span>Make</div>
+      <div class="tech"><span class="tech-dot"></span>Zapier</div>
+      <div class="tech"><span class="tech-dot"></span>Stripe</div>
+      <div class="tech"><span class="tech-dot"></span>WhatsApp API</div>
+      <div class="tech"><span class="tech-dot"></span>Twilio</div>
+      <div class="tech"><span class="tech-dot"></span>Cloudflare</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     PROOF
+     ============================================ -->
 <section class="sec sec-alt sec-bt sec-bb" aria-labelledby="proof-h2">
   <div class="w">
-    <div class="reveal">
+    <div class="reveal" style="max-width:720px;">
       <div class="eyebrow">Lo que buscamos para ti</div>
       <h2 id="proof-h2" class="sec-title">El tipo de resultado que<br>queremos para <span class="ac">tu negocio.</span></h2>
       <p class="sec-body">Estos casos son ejemplos demostrativos del problema que resolvemos en cada sector, mientras documentamos los primeros proyectos reales.</p>
     </div>
-
-    <div class="proof-grid reveal" style="margin-top:2.5rem;">
+    <div class="proof-grid reveal">
       <div class="proof-card">
         <span class="proof-badge">Caso demostrativo</span>
         <div class="proof-quote">"Lo que buscamos es justo esto: que un chatbot resuelva las dudas repetitivas y mi equipo solo intervenga cuando aporta valor real."</div>
-        <div class="proof-person"><div class="proof-av">E</div><div><div class="proof-name">Ejemplo · E-commerce de moda</div><div class="proof-role">Caso objetivo, no testimonio real</div></div></div>
+        <div class="proof-person"><div class="proof-av">E</div><div><div class="proof-name">Ejemplo · E-commerce</div><div class="proof-role">Caso objetivo, no testimonio real</div></div></div>
       </div>
       <div class="proof-card">
         <span class="proof-badge">Caso demostrativo</span>
@@ -476,74 +1472,149 @@ input,select,textarea{font-family:var(--sans);}
       </div>
       <div class="proof-card">
         <span class="proof-badge">Caso demostrativo</span>
-        <div class="proof-quote">"En inmobiliarias el problema nunca es falta de leads, es no responder a tiempo. Ese es el problema que resolvemos primero."</div>
-        <div class="proof-person"><div class="proof-av">I</div><div><div class="proof-name">Ejemplo · Agencia inmobiliaria</div><div class="proof-role">Caso objetivo, no testimonio real</div></div></div>
+        <div class="proof-quote">"En inmobiliarias el problema no es la falta de leads, es no responder a tiempo. Ese es el problema que resolvemos primero."</div>
+        <div class="proof-person"><div class="proof-av">I</div><div><div class="proof-name">Ejemplo · Inmobiliaria</div><div class="proof-role">Caso objetivo, no testimonio real</div></div></div>
       </div>
     </div>
-    <p style="text-align:center;font-size:.78rem;color:var(--faint);margin-top:1.75rem;" class="reveal">Esta sección se actualizará con casos reales y resultados documentados de clientes a medida que se completen los primeros proyectos.</p>
+    <p style="text-align:center;font-size:.78rem;color:var(--faint);margin-top:2rem;" class="reveal">Esta sección se actualizará con casos reales y resultados documentados a medida que se completen los primeros proyectos.</p>
   </div>
 </section>
-<!-- CONTACTO — el destino de todo CTA -->
-<section id="contacto" class="sec sec-bt" aria-labelledby="contact-h2">
+
+<!-- ============================================
+     FAQ
+     ============================================ -->
+<section id="faq" class="sec sec-bt" aria-labelledby="faq-h2">
   <div class="w">
+    <div class="reveal" style="max-width:720px;">
+      <div class="eyebrow">Preguntas frecuentes</div>
+      <h2 id="faq-h2" class="sec-title">Todo lo que quieres<br>saber antes de <span class="ac">escribirnos.</span></h2>
+    </div>
+    <div class="faq-list reveal" style="margin-left:auto;margin-right:auto;">
+      <details class="faq">
+        <summary>¿Cuánto cuesta un proyecto a medida?</summary>
+        <div class="faq-body">Depende del alcance. Los proyectos típicos van desde 800 € (una automatización concreta o web sencilla) hasta 8.000 € o más para sistemas completos. Siempre damos presupuesto cerrado antes de empezar, sin sorpresas.</div>
+      </details>
+      <details class="faq">
+        <summary>¿Cuánto tarda en estar listo?</summary>
+        <div class="faq-body">Una automatización sencilla, entre 1 y 2 semanas. Una web profesional, entre 2 y 4 semanas. Sistemas más grandes o AG Business a medida, entre 4 y 10 semanas. En el diagnóstico te damos plazo exacto.</div>
+      </details>
+      <details class="faq">
+        <summary>¿En qué se diferencia AG Business de tus servicios a medida?</summary>
+        <div class="faq-body">Los servicios a medida se construyen desde cero para tu caso concreto. AG Business es la plataforma SaaS que reúne los patrones que hemos visto funcionar en decenas de proyectos, en un producto de suscripción listo para usar. Los clientes de servicios pueden migrar a AG Business cuando esté disponible con condiciones preferentes.</div>
+      </details>
+      <details class="faq">
+        <summary>¿Cuándo se lanza AG Business?</summary>
+        <div class="faq-body">AG Business todavía está en desarrollo. Prevemos lanzamiento público a lo largo de 2026. Si quieres que te avisemos personalmente cuando abramos el acceso, indícalo en tu solicitud de diagnóstico y te escribiremos en cuanto esté disponible.</div>
+      </details>
+      <details class="faq">
+        <summary>¿Trabajáis con empresas fuera de España?</summary>
+        <div class="faq-body">Sí. Trabajamos con clientes en toda la zona euro y Latinoamérica. Todo el proceso es remoto y quedamos por videollamada cuando hace falta.</div>
+      </details>
+      <details class="faq">
+        <summary>¿Qué pasa con mis datos?</summary>
+        <div class="faq-body">Tus datos son tuyos. Trabajamos con servidores en Europa, cumplimos RGPD por diseño y siempre te entregamos exportación completa de todo lo que construimos. Si dejas de trabajar con nosotros, no te llevas nada roto.</div>
+      </details>
+      <details class="faq">
+        <summary>¿Ofrecéis mantenimiento después del proyecto?</summary>
+        <div class="faq-body">Sí. Todos los proyectos incluyen un periodo de garantía y ofrecemos planes de soporte mensual opcionales. También puedes migrar a AG Business cuando esté disponible para seguir teniendo mejoras continuas sin coste de desarrollo.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================
+     CONTACT
+     ============================================ -->
+<section id="contacto" class="sec sec-alt sec-bt sec-bb" aria-labelledby="contact-h2">
+  <div class="w">
+    <div class="reveal" style="max-width:720px;">
+      <div class="eyebrow">Hablemos de tu caso</div>
+      <h2 id="contact-h2" class="sec-title">Cuéntanos qué tarea<br>te quita más <span class="ac">tiempo.</span></h2>
+      <p class="sec-body">Lee y responde Alejandro personalmente. Sin guiones de ventas, sin promesas imposibles. En menos de 24 horas te decimos si podemos ayudarte y cómo.<br><br><b style="color:var(--text);">¿Interesado en AG Business?</b> Si quieres ser una de las primeras empresas en conocer AG Business cuando esté disponible, indícalo en tu solicitud de diagnóstico y te avisaremos personalmente en cuanto abramos el acceso.</p>
+    </div>
     <div class="contact-wrap">
       <div class="reveal">
-        <div class="eyebrow">Hablemos de tu caso</div>
-        <h2 id="contact-h2" class="sec-title">Cuéntanos qué tarea<br>te quita más <span class="ac">tiempo.</span></h2>
         <div class="contact-form">
           <form id="contactForm" onsubmit="handleContact(event)" novalidate>
             <div class="cf-row">
-              <input class="cf-input" id="cfName" type="text" placeholder="Tu nombre" required>
-              <input class="cf-input" id="cfCompany" type="text" placeholder="Empresa (opcional)">
+              <div>
+                <label class="cf-label" for="cfName">Nombre</label>
+                <input class="cf-input" id="cfName" type="text" placeholder="Tu nombre" required style="margin-bottom:0;">
+              </div>
+              <div>
+                <label class="cf-label" for="cfCompany">Empresa</label>
+                <input class="cf-input" id="cfCompany" type="text" placeholder="Opcional" style="margin-bottom:0;">
+              </div>
             </div>
-            <input class="cf-input" id="cfEmail" type="email" placeholder="Tu email" required>
+            <div style="height:1rem;"></div>
+            <label class="cf-label" for="cfEmail">Email</label>
+            <input class="cf-input" id="cfEmail" type="email" placeholder="tu@empresa.com" required>
+            <label class="cf-label" for="cfSector">Sector</label>
             <select class="cf-select" id="cfSector">
-              <option value="">Sector de tu negocio (opcional)</option>
+              <option value="">Selecciona sector (opcional)</option>
               <option>E-commerce</option><option>Inmobiliaria</option><option>Clínica</option>
-              <option>Restaurante</option><option>Negocio local</option><option>Otro</option>
+              <option>Restaurante / Hostelería</option><option>Servicios profesionales</option>
+              <option>Negocio local</option><option>SaaS / Tech</option><option>Otro</option>
             </select>
-            <textarea class="cf-textarea" id="cfMsg" placeholder="¿Qué tarea repetitiva te gustaría quitarte de encima?" required></textarea>
-            <button type="submit" class="cf-submit">Solicitar propuesta →</button>
+            <label class="cf-label" for="cfMsg">Cuéntanos</label>
+            <textarea class="cf-textarea" id="cfMsg" placeholder="¿Qué tarea repetitiva te gustaría quitarte de encima? (Puedes indicar aquí si además quieres que te avisemos del lanzamiento de AG Business)" required></textarea>
+            <button type="submit" class="cf-submit">
+              Solicitar diagnóstico gratuito
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="margin-left:.35rem;vertical-align:middle;"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </button>
           </form>
           <div class="cf-success" id="cfSuccess">
-            <div class="ic">✓</div>
-            <div style="font-weight:600;margin-bottom:.5rem;">Mensaje enviado</div>
-            <div style="font-size:.85rem;color:var(--muted);">Te responderé a tu email en menos de 24 horas.</div>
+            <div class="ic">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div style="font-weight:600;margin-bottom:.5rem;color:var(--white);">Mensaje enviado</div>
+            <div style="font-size:.85rem;color:var(--muted);">Te responderemos en menos de 24 horas.</div>
           </div>
-          <p class="cf-note">Sin compromiso. Sin spam. Respondo personalmente cada mensaje.</p>
+          <p class="cf-note">Sin compromiso · Sin spam · Respondemos personalmente cada mensaje</p>
         </div>
       </div>
 
-      <div class="contact-info reveal">
+      <div class="contact-info reveal reveal-delay-1">
         <h3>¿Prefieres escribir directamente?</h3>
-        <p>También puedes contactarme por email. Leo y respondo cada mensaje personalmente, normalmente en menos de 24 horas.</p>
+        <p>También puedes contactarnos por email o por WhatsApp. Leemos y respondemos cada mensaje personalmente, normalmente en menos de 24 horas.</p>
         <div class="contact-channels">
           <a href="mailto:alejandrogarcia12345678910e@gmail.com?subject=Quiero%20una%20propuesta" class="channel">
-            <div class="channel-icon">✉️</div>
+            <div class="channel-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
             <div class="channel-text"><b>Email directo</b><span>alejandrogarcia12345678910e@gmail.com</span></div>
           </a>
+          <a href="#contactForm" class="channel" id="lista-espera">
+            <div class="channel-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
+            <div class="channel-text"><b>Interesado en AG Business</b><span>Indícalo en tu diagnóstico y te avisamos al lanzamiento</span></div>
+          </a>
+        </div>
+
+        <div style="margin-top:2rem;padding:1.25rem;background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r2);">
+          <div style="font-family:var(--mono);font-size:.65rem;letter-spacing:.09em;text-transform:uppercase;color:var(--indigo-hi);margin-bottom:.5rem;">Nuestra promesa</div>
+          <div style="font-size:.85rem;color:var(--text);line-height:1.6;">Si después de hablar contigo vemos que automatizar no te va a ahorrar tiempo ni dinero, te lo decimos directamente. Preferimos ganarnos tu confianza a venderte algo que no necesitas.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SOBRE MÍ — confianza, breve -->
-<section class="sec sec-alt sec-bt sec-bb" aria-labelledby="about-h2">
+<!-- ============================================
+     ABOUT
+     ============================================ -->
+<section class="sec sec-bt sec-bb" aria-labelledby="about-h2">
   <div class="w">
     <div class="about-grid">
       <div class="about-text reveal">
-        <div class="eyebrow">Por qué confiar en nosotros</div>
+        <div class="eyebrow">Quiénes somos</div>
         <h2 id="about-h2" class="sec-title">Hablas con la persona<br>que hace el <span class="ac">trabajo, no con ventas.</span></h2>
-        <p>Soy Alejandro García.</p>
+        <p>Soy <strong>Alejandro García</strong>. Fundé este estudio con una idea sencilla: la tecnología solo tiene sentido cuando le devuelve tiempo real al negocio.</p>
         <p>Cuando me escribes, hablas conmigo directamente: la persona que va a entender tu problema y a construir la solución. <strong>Sin intermediarios, sin departamentos comerciales.</strong></p>
-        <p>Si después de hablar contigo veo que automatizar no te va a ahorrar tiempo ni dinero, te lo digo de forma directa. Prefiero ganarme tu confianza a venderte algo que no necesitas.</p>
+        <p>Estamos construyendo <strong>AG Business</strong> con esa misma filosofía: convertir años de proyectos a medida en un producto que cualquier empresa pueda usar desde el primer día.</p>
       </div>
-      <div class="reveal">
+      <div class="reveal reveal-delay-1">
         <div class="about-card">
           <div class="about-av">AG</div>
           <div class="about-name">Alejandro García</div>
-          <div class="about-role">Automatización, web y herramientas a medida</div>
+          <div class="about-role">Fundador · Automatización, IA y AG Business</div>
           <div class="about-quote">"El mejor sistema es el que el cliente deja de notar porque simplemente funciona."</div>
         </div>
       </div>
@@ -551,86 +1622,180 @@ input,select,textarea{font-family:var(--sans);}
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- ============================================
+     FOOTER
+     ============================================ -->
 <footer>
   <div class="w">
     <div class="footer-g">
       <div class="footer-brand">
         <a class="logo" href="#hero"><div class="logo-mark">AG</div><span>Alejandro García</span></a>
-        <p>Automatización, páginas web y herramientas a medida para negocios que quieren ahorrar tiempo y crecer.</p>
+        <p>Estudio tecnológico de automatización, IA y desarrollo a medida. Creadores de AG Business, la plataforma SaaS que digitaliza tu empresa.</p>
+      </div>
+      <div>
+        <div class="footer-h">Producto</div>
+        <ul class="footer-links">
+          <li><a href="#agbusiness">AG Business</a></li>
+          <li><a href="#precios">Precios</a></li>
+          <li><a href="#contacto">Avísame del lanzamiento</a></li>
+          <li><a href="#login">Iniciar sesión <span class="soon">pronto</span></a></li>
+          <li><a href="#register">Crear cuenta <span class="soon">pronto</span></a></li>
+        </ul>
       </div>
       <div>
         <div class="footer-h">Servicios</div>
         <ul class="footer-links">
-          <li><a href="#servicios">Automatización de procesos</a></li>
-          <li><a href="#servicios">Páginas web</a></li>
-          <li><a href="#chatbots">Chatbots</a></li>
-          <li><a href="#servicios">Consultoría tecnológica</a></li>
+          <li><a href="#servicios">Automatización</a></li>
+          <li><a href="#servicios">Inteligencia artificial</a></li>
+          <li><a href="#servicios">Desarrollo web</a></li>
+          <li><a href="#servicios">Software a medida</a></li>
+          <li><a href="#servicios">Consultoría</a></li>
         </ul>
       </div>
       <div>
-        <div class="footer-h">Contacto</div>
+        <div class="footer-h">Empresa</div>
         <ul class="footer-links">
-          <li><a href="#contacto">Cuéntanos tu proyecto</a></li>
-          <li><a href="mailto:alejandrogarcia12345678910e@gmail.com">Email directo</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
           <li><a href="#casos">Casos de uso</a></li>
+          <li><a href="#faq">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="mailto:alejandrogarcia12345678910e@gmail.com">Email</a></li>
         </ul>
       </div>
     </div>
-    <div class="footer-bot">© 2025 Alejandro García · Automatización, web y sistemas a medida.</div>
+    <div class="footer-bot">
+      <div>© 2025 Alejandro García · Estudio tecnológico</div>
+      <div class="footer-legal">
+        <a href="#privacidad">Privacidad</a>
+        <a href="#terminos">Términos</a>
+        <a href="#cookies">Cookies</a>
+      </div>
+    </div>
   </div>
 </footer>
 
 <script>
 'use strict';
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{
-  nav.classList.toggle('sc',scrollY>40);
-},{passive:true});
 
-function toggleMenu(){
-  const ul=document.querySelector('.nav-links');
-  ul.style.cssText=ul.style.display==='flex'?'':'display:flex;flex-direction:column;position:fixed;top:60px;left:0;right:0;background:rgba(11,13,15,.98);padding:1.5rem;gap:.35rem;border-bottom:1px solid rgba(237,239,242,.08);backdrop-filter:blur(20px);z-index:299;';
+/* ============================================
+   NAV — sticky + scroll state
+   ============================================ */
+const nav = document.getElementById('nav');
+let lastY = 0;
+window.addEventListener('scroll', () => {
+  const y = window.scrollY;
+  nav.classList.toggle('sc', y > 20);
+  lastY = y;
+}, { passive: true });
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+function toggleMenu() {
+  const ul = document.querySelector('.nav-links');
+  const open = ul.style.display === 'flex';
+  ul.style.cssText = open ? '' : 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:rgba(11,13,15,.97);padding:1.5rem;gap:.35rem;border-bottom:1px solid rgba(237,239,242,.08);backdrop-filter:blur(20px);z-index:299;align-items:stretch;';
 }
-document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.nav-links').style.display=''));
+document.querySelectorAll('.nav-links a').forEach(a => a.addEventListener('click', () => {
+  document.querySelector('.nav-links').style.display = '';
+}));
 
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),i*55);obs.unobserve(e.target);}});
-},{threshold:.08,rootMargin:'0px 0px -35px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+/* ============================================
+   REVEAL ON SCROLL
+   ============================================ */
+const io = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('in'), i * 50);
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-/* Cursor glow micro-interaction on service cards */
-document.querySelectorAll('.service-card').forEach(card=>{
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect();
-    card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
-    card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+/* ============================================
+   CURSOR GLOW en tarjetas de servicio
+   ============================================ */
+document.querySelectorAll('.svc').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+    card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
   });
 });
 
-/* CONTACT FORM (client-side only — no backend yet, opens mail client as fallback) */
-function handleContact(e){
+/* ============================================
+   PRICING TOGGLE (mensual / anual)
+   Aplica -20% en las tarjetas cuando toggle=anual
+   ============================================ */
+const toggleBtns = document.querySelectorAll('.pricing-toggle button');
+const prices = { monthly: [39, 79, 149], yearly: [31, 63, 119] };
+toggleBtns.forEach((btn, idx) => {
+  btn.addEventListener('click', () => {
+    toggleBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const set = idx === 0 ? prices.monthly : prices.yearly;
+    const per = idx === 0 ? '/ mes' : '/ mes · anual';
+    document.querySelectorAll('.plan .plan-price').forEach((el, i) => {
+      const numEl = el.querySelector('.num');
+      const perEl = el.querySelector('.per');
+      // Anim numérica sutil
+      numEl.style.opacity = '0';
+      numEl.style.transform = 'translateY(-4px)';
+      setTimeout(() => {
+        numEl.textContent = set[i] + '€';
+        perEl.textContent = per;
+        numEl.style.transition = 'opacity .25s ease, transform .25s ease';
+        numEl.style.opacity = '1';
+        numEl.style.transform = 'none';
+      }, 140);
+    });
+  });
+});
+
+/* ============================================
+   CONTACT FORM — client-side, mailto fallback
+   Preparado para conectar con backend futuro
+   ============================================ */
+function handleContact(e) {
   e.preventDefault();
-  const name=document.getElementById('cfName').value.trim();
-  const email=document.getElementById('cfEmail').value.trim();
-  const company=document.getElementById('cfCompany').value.trim();
-  const sector=document.getElementById('cfSector').value;
-  const msg=document.getElementById('cfMsg').value.trim();
-  if(!name||!email||!msg){return;}
+  const name = document.getElementById('cfName').value.trim();
+  const email = document.getElementById('cfEmail').value.trim();
+  const company = document.getElementById('cfCompany').value.trim();
+  const sector = document.getElementById('cfSector').value;
+  const msg = document.getElementById('cfMsg').value.trim();
+  if (!name || !email || !msg) return;
 
-  const body=encodeURIComponent(
-    'Nombre: '+name+'\n'+
-    (company?'Empresa: '+company+'\n':'')+
-    (sector?'Sector: '+sector+'\n':'')+
-    'Email de contacto: '+email+'\n\n'+
-    'Mensaje:\n'+msg
+  const body = encodeURIComponent(
+    'Nombre: ' + name + '\n' +
+    (company ? 'Empresa: ' + company + '\n' : '') +
+    (sector ? 'Sector: ' + sector + '\n' : '') +
+    'Email: ' + email + '\n\n' +
+    'Mensaje:\n' + msg
   );
-  const mailto='mailto:alejandrogarcia12345678910e@gmail.com?subject='+encodeURIComponent('Solicitud de propuesta — '+name)+'&body='+body;
+  const mailto = 'mailto:alejandrogarcia12345678910e@gmail.com?subject=' + encodeURIComponent('Diagnóstico gratuito — ' + name) + '&body=' + body;
 
-  document.getElementById('contactForm').style.display='none';
+  document.getElementById('contactForm').style.display = 'none';
   document.getElementById('cfSuccess').classList.add('show');
-  window.location.href=mailto;
+  window.location.href = mailto;
 }
+
+/* ============================================
+   PREPARACIÓN FUTURA — placeholders para:
+   - Auth (login / registro): #login #register
+   - Dashboard: /app o /panel
+   - Stripe: integración precios AG Business
+   - CRM: panel interno para clientes
+   Los enlaces con hash placeholders se pueden
+   sustituir por rutas reales cuando llegue el
+   momento sin tocar el resto del código.
+   ============================================ */
+document.querySelectorAll('a[href="#login"], a[href="#register"], a[href="#privacidad"], a[href="#terminos"], a[href="#cookies"]').forEach(a => {
+  a.addEventListener('click', ev => {
+    ev.preventDefault();
+    // TODO: conectar con rutas reales cuando existan
+  });
+});
 </script>
 </body>
 </html>
