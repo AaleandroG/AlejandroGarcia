@@ -753,6 +753,52 @@ img,svg{display:block;max-width:100%;}
   color:var(--green);font-size:1.5rem;margin:0 auto 1rem;
 }
 
+/* Cabecera del formulario */
+.cf-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.5rem;}
+.cf-head-title{font-size:1.05rem;font-weight:600;color:var(--white);letter-spacing:-.01em;}
+.cf-head-badge{
+  display:inline-flex;align-items:center;gap:.4rem;flex-shrink:0;
+  font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;
+  color:var(--indigo-hi);background:var(--indigo-soft);
+  border:1px solid rgba(91,95,239,.22);
+  padding:.32rem .65rem;border-radius:999px;white-space:nowrap;
+}
+.cf-req{color:var(--indigo-hi);}
+.cf-opt{color:var(--faint);font-weight:400;text-transform:none;letter-spacing:0;}
+
+/* Estado de error */
+.cf-error{
+  display:none;background:rgba(239,68,68,.08);
+  border:1px solid rgba(239,68,68,.3);color:#fca5a5;
+  font-size:.82rem;padding:.75rem .95rem;border-radius:var(--r);
+  margin-bottom:1.1rem;line-height:1.5;
+}
+.cf-error.show{display:block;animation:msgIn .35s var(--ease);}
+
+/* Botón: estado de carga */
+.cf-submit{display:flex;align-items:center;justify-content:center;gap:.5rem;position:relative;}
+.cf-submit:disabled{opacity:.78;cursor:not-allowed;transform:none !important;}
+.cf-spinner{
+  display:none;width:15px;height:15px;border-radius:50%;
+  border:2px solid rgba(255,255,255,.35);border-top-color:#fff;
+  animation:cfSpin .7s linear infinite;flex-shrink:0;
+}
+.cf-submit.loading .cf-btn-arrow{display:none;}
+.cf-submit.loading .cf-spinner{display:inline-block;}
+@keyframes cfSpin{to{transform:rotate(360deg);}}
+
+/* Bloque de confianza */
+.cf-trust{
+  margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--line);
+  display:grid;grid-template-columns:1fr 1fr;gap:.65rem .9rem;
+}
+.cf-trust-item{display:flex;align-items:flex-start;gap:.55rem;font-size:.78rem;color:var(--muted);line-height:1.5;}
+.cf-trust-item .tick{
+  flex-shrink:0;width:16px;height:16px;border-radius:50%;
+  background:var(--green-soft);border:1px solid rgba(16,185,129,.3);
+  color:var(--green);display:flex;align-items:center;justify-content:center;margin-top:1px;
+}
+
 .contact-info h3{font-size:1.35rem;font-weight:600;letter-spacing:-.02em;margin-bottom:1rem;line-height:1.25;color:var(--white);}
 .contact-info p{font-size:.94rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;}
 .contact-channels{display:flex;flex-direction:column;gap:.6rem;}
@@ -857,6 +903,7 @@ footer{padding:5rem 0 3rem;border-top:1px solid var(--line);background:var(--bg2
 @media (max-width:560px){
   .w,.w-sm,.w-md,.w-lg{padding:0 1.25rem;}
   .cf-row{grid-template-columns:1fr;}
+  .cf-trust{grid-template-columns:1fr;}
   .footer-g{grid-template-columns:1fr;gap:2rem;}
   .stats-grid{grid-template-columns:1fr;}
   .footer-bot{flex-direction:column;text-align:center;}
@@ -1421,49 +1468,77 @@ footer{padding:5rem 0 3rem;border-top:1px solid var(--line);background:var(--bg2
 <section id="contacto" class="sec sec-alt sec-bt sec-bb" aria-labelledby="contact-h2">
   <div class="w">
     <div class="reveal" style="max-width:720px;">
-      <div class="eyebrow">Hablemos de tu caso</div>
-      <h2 id="contact-h2" class="sec-title">Cuéntanos qué tarea<br>te quita más <span class="ac">tiempo.</span></h2>
-      <p class="sec-body">Lee y responde Alejandro personalmente. Sin guiones de ventas, sin promesas imposibles. En menos de 24 horas te decimos si podemos ayudarte y cómo.<br><br><b style="color:var(--text);">¿Interesado en AG Business?</b> Si quieres ser una de las primeras empresas en conocer AG Business cuando esté disponible, indícalo en tu solicitud de diagnóstico y te avisaremos personalmente en cuanto abramos el acceso.</p>
+      <div class="eyebrow">Diagnóstico gratuito · Sin compromiso</div>
+      <h2 id="contact-h2" class="sec-title">Descubre cuánto tiempo<br>puedes <span class="ac">ahorrar</span> en tu empresa.</h2>
+      <p class="sec-body" style="max-width:620px;">Analizamos tu negocio, detectamos oportunidades de automatización y te mostramos cómo la IA puede ayudarte a ahorrar tiempo y mejorar tus procesos. Sin promesas garantizadas: un diagnóstico honesto, hecho por Alejandro personalmente, en menos de 24 horas.<br><br><b style="color:var(--text);">¿Interesado en AG Business?</b> Si quieres ser una de las primeras empresas en conocerlo cuando esté disponible, indícalo en tu solicitud y te avisaremos personalmente en cuanto abramos el acceso.</p>
     </div>
     <div class="contact-wrap">
       <div class="reveal">
         <div class="contact-form">
+          <div class="cf-head">
+            <div class="cf-head-title">Solicita tu diagnóstico</div>
+            <div class="cf-head-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              Menos de 2 minutos
+            </div>
+          </div>
           <form id="contactForm" onsubmit="handleContact(event)" novalidate>
+            <input type="hidden" name="_subject" value="Nueva solicitud de diagnóstico gratuito">
             <div class="cf-row">
               <div>
-                <label class="cf-label" for="cfName">Nombre</label>
-                <input class="cf-input" id="cfName" type="text" placeholder="Tu nombre" required style="margin-bottom:0;">
+                <label class="cf-label" for="cfName">Nombre completo <span class="cf-req">*</span></label>
+                <input class="cf-input" id="cfName" name="name" type="text" placeholder="Tu nombre y apellidos" required style="margin-bottom:0;">
               </div>
               <div>
-                <label class="cf-label" for="cfCompany">Empresa</label>
-                <input class="cf-input" id="cfCompany" type="text" placeholder="Opcional" style="margin-bottom:0;">
+                <label class="cf-label" for="cfCompany">Empresa <span class="cf-req">*</span></label>
+                <input class="cf-input" id="cfCompany" name="company" type="text" placeholder="Nombre de tu empresa" required style="margin-bottom:0;">
               </div>
             </div>
             <div style="height:1rem;"></div>
-            <label class="cf-label" for="cfEmail">Email</label>
-            <input class="cf-input" id="cfEmail" type="email" placeholder="tu@empresa.com" required>
-            <label class="cf-label" for="cfSector">Sector</label>
-            <select class="cf-select" id="cfSector">
-              <option value="">Selecciona sector (opcional)</option>
+            <div class="cf-row">
+              <div>
+                <label class="cf-label" for="cfEmail">Correo electrónico <span class="cf-req">*</span></label>
+                <input class="cf-input" id="cfEmail" name="email" type="email" placeholder="tu@empresa.com" required style="margin-bottom:0;">
+              </div>
+              <div>
+                <label class="cf-label" for="cfPhone">Teléfono <span class="cf-opt">(opcional)</span></label>
+                <input class="cf-input" id="cfPhone" name="phone" type="tel" placeholder="+34 600 000 000" style="margin-bottom:0;">
+              </div>
+            </div>
+            <div style="height:1rem;"></div>
+            <label class="cf-label" for="cfSector">Sector <span class="cf-req">*</span></label>
+            <select class="cf-select" id="cfSector" name="sector" required>
+              <option value="">Selecciona tu sector</option>
               <option>E-commerce</option><option>Inmobiliaria</option><option>Clínica</option>
               <option>Restaurante / Hostelería</option><option>Servicios profesionales</option>
               <option>Negocio local</option><option>SaaS / Tech</option><option>Otro</option>
             </select>
-            <label class="cf-label" for="cfMsg">Cuéntanos</label>
-            <textarea class="cf-textarea" id="cfMsg" placeholder="¿Qué tarea repetitiva te gustaría quitarte de encima? (Puedes indicar aquí si además quieres que te avisemos del lanzamiento de AG Business)" required></textarea>
-            <button type="submit" class="cf-submit">
-              Solicitar diagnóstico gratuito
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" style="margin-left:.35rem;vertical-align:middle;"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            <label class="cf-label" for="cfMsg">Cuéntanos brevemente qué necesitas <span class="cf-req">*</span></label>
+            <textarea class="cf-textarea" id="cfMsg" name="message" placeholder="¿Qué te gustaría mejorar o automatizar en tu empresa? (Puedes indicar aquí si además quieres que te avisemos del lanzamiento de AG Business)" required></textarea>
+
+            <div class="cf-error" id="cfError" role="alert"></div>
+
+            <button type="submit" class="cf-submit" id="cfSubmitBtn">
+              <span class="cf-btn-text">Solicitar diagnóstico gratuito</span>
+              <svg class="cf-btn-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+              <span class="cf-spinner"></span>
             </button>
           </form>
           <div class="cf-success" id="cfSuccess">
             <div class="ic">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
             </div>
-            <div style="font-weight:600;margin-bottom:.5rem;color:var(--white);">Mensaje enviado</div>
-            <div style="font-size:.85rem;color:var(--muted);">Te responderemos en menos de 24 horas.</div>
+            <div style="font-weight:600;margin-bottom:.5rem;color:var(--white);">Solicitud enviada</div>
+            <div style="font-size:.85rem;color:var(--muted);">Gracias, hemos recibido tu solicitud. Te responderemos personalmente en menos de 24 horas.</div>
           </div>
           <p class="cf-note">Sin compromiso · Sin spam · Respondemos personalmente cada mensaje</p>
+
+          <div class="cf-trust">
+            <div class="cf-trust-item"><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Diagnóstico gratuito y sin compromiso</div>
+            <div class="cf-trust-item"><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Respuesta personalizada</div>
+            <div class="cf-trust-item"><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Analizamos las necesidades de tu empresa</div>
+            <div class="cf-trust-item"><span class="tick"><svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Te contactamos lo antes posible</div>
+          </div>
         </div>
       </div>
 
@@ -1647,30 +1722,61 @@ toggleBtns.forEach((btn, idx) => {
 });
 
 /* ============================================
-   CONTACT FORM — client-side, mailto fallback
-   Preparado para conectar con backend futuro
+   CONTACT FORM — envío directo a Formspree (AJAX)
+   Sin mailto: el formulario se envía sin salir
+   de la página. Estados: carga, éxito y error.
    ============================================ */
-function handleContact(e) {
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnjenyep';
+
+async function handleContact(e) {
   e.preventDefault();
+
+  const form = document.getElementById('contactForm');
+  const btn = document.getElementById('cfSubmitBtn');
+  const btnText = btn.querySelector('.cf-btn-text');
+  const errorBox = document.getElementById('cfError');
+
+  errorBox.classList.remove('show');
+  errorBox.textContent = '';
+
   const name = document.getElementById('cfName').value.trim();
-  const email = document.getElementById('cfEmail').value.trim();
   const company = document.getElementById('cfCompany').value.trim();
-  const sector = document.getElementById('cfSector').value;
+  const email = document.getElementById('cfEmail').value.trim();
+  const sector = document.getElementById('cfSector').value.trim();
   const msg = document.getElementById('cfMsg').value.trim();
-  if (!name || !email || !msg) return;
 
-  const body = encodeURIComponent(
-    'Nombre: ' + name + '\n' +
-    (company ? 'Empresa: ' + company + '\n' : '') +
-    (sector ? 'Sector: ' + sector + '\n' : '') +
-    'Email: ' + email + '\n\n' +
-    'Mensaje:\n' + msg
-  );
-  const mailto = 'mailto:alejandrogarcia12345678910e@gmail.com?subject=' + encodeURIComponent('Diagnóstico gratuito — ' + name) + '&body=' + body;
+  if (!name || !company || !email || !sector || !msg) {
+    errorBox.textContent = 'Por favor, completa todos los campos obligatorios antes de enviar.';
+    errorBox.classList.add('show');
+    return;
+  }
 
-  document.getElementById('contactForm').style.display = 'none';
-  document.getElementById('cfSuccess').classList.add('show');
-  window.location.href = mailto;
+  const originalText = btnText.textContent;
+  btn.disabled = true;
+  btn.classList.add('loading');
+  btnText.textContent = 'Enviando…';
+
+  try {
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: new FormData(form)
+    });
+
+    if (response.ok) {
+      form.style.display = 'none';
+      document.getElementById('cfSuccess').classList.add('show');
+    } else {
+      throw new Error('Formspree respondió con error');
+    }
+  } catch (err) {
+    errorBox.textContent = 'No hemos podido enviar tu solicitud. Comprueba tu conexión e inténtalo de nuevo, o escríbenos directamente por email.';
+    errorBox.classList.add('show');
+  } finally {
+    btn.disabled = false;
+    btn.classList.remove('loading');
+    btnText.textContent = originalText;
+  }
 }
 
 /* ============================================
