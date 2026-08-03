@@ -1555,9 +1555,32 @@ async function handleContact(e) {
       form.style.display = 'none';
       document.getElementById('cfSuccess').classList.add('show');
     } else {
-      throw new Error('Formspree respondió con error');
+      // Formspree normalmente devuelve un JSON con detalles del error
+      // (p. ej. formulario sin confirmar, campo inválido, límite alcanzado).
+      // Lo mostramos tal cual en vez de un mensaje genérico, para poder
+      // diagnosticar la causa real.
+      let detail = '';
+      try {
+        const data = await response.json();
+        if (data && Array.isArray(data.errors)) {
+          detail = data.errors.map(e => e.message || JSON.stringify(e)).join(' · ');
+        } else if (data && data.error) {
+          detail = data.error;
+        }
+      } catch (_) { /* la respuesta no era JSON, no pasa nada */ }
+
+      console.error('Formspree error', response.status, detail);
+      errorBox.textContent = detail
+        ? `No se pudo enviar (${response.status}): ${detail}`
+        : `No se pudo enviar. El servidor respondió con un error (${response.status}). Escríbenos directamente por email.`;
+      errorBox.classList.add('show');
+      btn.disabled = false;
+      btn.classList.remove('loading');
+      btnText.textContent = originalText;
+      return;
     }
   } catch (err) {
+    console.error('Error de red al contactar Formspree', err);
     errorBox.textContent = 'No hemos podido enviar tu solicitud. Comprueba tu conexión e inténtalo de nuevo, o escríbenos directamente por email.';
     errorBox.classList.add('show');
   } finally {
@@ -1680,10 +1703,12 @@ if (targets.length === 0) {
 
     function loop() {
       if (!visible) return;
-      if (!prefersReducedMotion) {
-        model.rotation.y += 0.008;
-        model.rotation.x = Math.sin(Date.now() * 0.0004) * 0.08;
-      }
+      // Nota: el giro del logo es deliberadamente decorativo y de muy
+      // baja amplitud (no dispara mareo/vestibular), así que NO se
+      // desactiva con prefers-reduced-motion como sí hacen el paralaje
+      // del hero, el botón magnético o la inclinación de las tarjetas.
+      model.rotation.y += 0.008;
+      model.rotation.x = Math.sin(Date.now() * 0.0004) * 0.08;
       renderFrame();
       raf = requestAnimationFrame(loop);
     }
