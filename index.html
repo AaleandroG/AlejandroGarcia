@@ -1228,7 +1228,7 @@ footer{padding:5rem 0 3rem;border-top:1px solid var(--line);background:var(--bg2
             <div class="cf-row">
               <div>
                 <label class="cf-label" for="cfEmail">Correo electrónico <span class="cf-req">*</span></label>
-                <input class="cf-input" id="cfEmail" name="email" type="email" placeholder="tu@canal.com" required style="margin-bottom:0;">
+                <input class="cf-input" id="cfEmail" name="email" type="email" placeholder="tu@email.com" required style="margin-bottom:0;">
               </div>
               <div>
                 <label class="cf-label" for="cfPhone">Teléfono <span class="cf-opt">(opcional)</span></label>
@@ -1273,14 +1273,8 @@ footer{padding:5rem 0 3rem;border-top:1px solid var(--line);background:var(--bg2
       </div>
 
       <div class="contact-info reveal reveal-right reveal-delay-1">
-        <h3>¿Prefieres escribir directamente?</h3>
-        <p>También puedes escribirme por email. Leo y respondo cada mensaje personalmente, normalmente en menos de 24 horas.</p>
-        <div class="contact-channels">
-          <a href="mailto:hola@alejandrogarcia.space?subject=Quiero%20una%20propuesta" class="channel">
-            <div class="channel-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-            <div class="channel-text"><b>Email directo</b><span>hola@alejandrogarcia.space</span></div>
-          </a>
-        </div>
+        <h3>Un solo sitio para hablar conmigo</h3>
+        <p>Rellena el formulario y me llega directamente. Lo leo y respondo yo personalmente, normalmente en menos de 24 horas.</p>
 
         <div style="margin-top:2rem;padding:1.25rem;background:var(--bg2);border:1px solid var(--line2);border-radius:var(--r2);">
           <div style="font-family:var(--mono);font-size:.65rem;letter-spacing:.09em;text-transform:uppercase;color:var(--indigo-hi);margin-bottom:.5rem;">Mi promesa</div>
@@ -1341,7 +1335,6 @@ footer{padding:5rem 0 3rem;border-top:1px solid var(--line);background:var(--bg2
           <li><a href="#casos">Casos de uso</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
           <li><a href="#contacto">Contacto</a></li>
-          <li><a href="mailto:hola@alejandrogarcia.space">Email</a></li>
         </ul>
       </div>
     </div>
@@ -1532,6 +1525,13 @@ updateScrollProgress();
    Sin mailto: el formulario se envía sin salir
    de la página. Estados: carga, éxito y error.
    ============================================ */
+/* ⚠️ IMPORTANTE — PEGA AQUÍ TU ENDPOINT DE FORMSPREE ⚠️
+   1. Entra en https://formspree.io y crea una cuenta gratis (con TU email).
+   2. Crea un formulario nuevo ("New form").
+   3. Copia el endpoint que te da (algo como https://formspree.io/f/abcdwxyz)
+      y pégalo abajo, sustituyendo el que hay.
+   4. Formspree te mandará un email de confirmación: CONFÍRMALO.
+      Hasta que no lo confirmes, los mensajes NO te llegarán. */
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnjenyep';
 
 async function handleContact(e) {
@@ -1590,7 +1590,7 @@ async function handleContact(e) {
       console.error('Formspree error', response.status, detail);
       errorBox.textContent = detail
         ? `No se pudo enviar (${response.status}): ${detail}`
-        : `No se pudo enviar. El servidor respondió con un error (${response.status}). Escríbenos directamente por email.`;
+        : `No se pudo enviar (${response.status}). Inténtalo de nuevo en unos minutos.`;
       errorBox.classList.add('show');
       btn.disabled = false;
       btn.classList.remove('loading');
@@ -1599,7 +1599,7 @@ async function handleContact(e) {
     }
   } catch (err) {
     console.error('Error de red al contactar Formspree', err);
-    errorBox.textContent = 'No hemos podido enviar tu solicitud. Comprueba tu conexión e inténtalo de nuevo, o escríbenos directamente por email.';
+    errorBox.textContent = 'No he podido recibir tu mensaje. Comprueba tu conexión e inténtalo de nuevo.';
     errorBox.classList.add('show');
   } finally {
     btn.disabled = false;
